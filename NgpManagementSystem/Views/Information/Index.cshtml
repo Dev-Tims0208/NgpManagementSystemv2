@@ -3,36 +3,34 @@
     Layout = (int)Session["Role_Id"] == 1 ? "~/Views/Shared/_LayoutAdmin.cshtml" : "~/Views/Shared/_LayoutUser.cshtml";
 }
 
-<div class="row">
+<div class="row mt-5">
     <div class="col-12 col-sm-12 col-lg-12">
         <div class="card">
-            <div class="card-header" style="background-color: #f1f1f1;">
-                <h4> NATIONAL GREENING PROJECT INFORMATION </h4>
+            <div class="card-header">
+                <h4> NATIONAL GREENING PROGRAM INFORMATION </h4>
             </div>
             <div class="card-body">
-                <ul class="nav nav-pills" id="myTab3" role="tablist">
+                <!-- Nav pills -->
+                <ul class="nav nav-pills">
                     <li class="nav-item">
-                        <a class="nav-link active" id="home-tab3" data-toggle="tab" href="#home3" role="tab" aria-controls="forContractor" aria-selected="true"> Contractor</a>
+                        <a class="nav-link active" data-bs-toggle="pill" href="#home">CONTRACTOR</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="profile-tab3" data-toggle="tab" href="#profile3" role="tab" aria-controls="forProject" aria-selected="false">Project </a>
+                        <a class="nav-link" data-bs-toggle="pill" href="#menu1">PROJECTS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="profile-tab4" data-toggle="tab" href="#profile4" role="tab" aria-controls="forContract" aria-selected="false">Contract </a>
+                        <a class="nav-link" data-bs-toggle="pill" href="#menu2">CONTRACT</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="profile-tab5" data-toggle="tab" href="#profile5" role="tab" aria-controls="forPayments" aria-selected="false">Payment </a>
+                        <a class="nav-link" data-bs-toggle="pill" href="#menu3">PAYMENTS</a>
                     </li>
-
 
                 </ul>
-                <div class="tab-content" id="myTabContent2">
-                    <div class="tab-pane fade show active" id="home3" role="tabpanel" aria-labelledby="home-tab3">
-                        @*for Contractor tab*@
 
+                <!-- Tab panes -->
 
-
-
+                <div class="tab-content ">
+                    <div class="tab-pane  active" id="home">
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
@@ -81,15 +79,8 @@
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
-
-                    <div class="tab-pane fade" id="profile3" role="tabpanel" aria-labelledby="profile-tab3">
-                        @*for project tab*@
-
-
-
+                    <div class="tab-pane  fade" id="menu1">
                         <div class="row">
                             <div class="col-12">
                                 <div class="card">
@@ -126,9 +117,7 @@
                             </div>
                         </div>
                     </div>
-
-
-                    <div class="tab-pane fade" id="profile4" role="tabpanel" aria-labelledby="profile-tab4">
+                    <div class="tab-pane  fade" id="menu2">
                         <div class="card-body p-0">
                             <div class="card-header">
                                 <h4>CONTRACT TABLE</h4>
@@ -161,8 +150,7 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="tab-pane fade" id="profile5" role="tabpanel" aria-labelledby="profile-tab5">
+                    <div class="tab-pane  fade" id="menu3">
                         <div class="card-body p-0">
                             <div class="card-header">
                                 <h4>PAYMENTS TABLE</h4>
@@ -194,49 +182,16 @@
                         </div>
                     </div>
 
-                    <div class="tab-pane fade" id="profile6" role="tabpanel" aria-labelledby="profile-tab6">
-                        <div class="card-body p-0">
-                            <div class="card-header">
-                                <h4>Sched Table</h4>
-
-                            </div>
-                            <div style="padding:2px 2.5%">
-                                <button type="button" class="btn btn-info btn-md " style="border-radius:20px;" onclick="location.href ='/Sched/Create'">Create Sched <i class="fa fa-plus-circle"></i> </button>
-                            </div>
-                            <br />
-                            <div class="table-responsive">
-                                <table id="schedtable" class="table table-hover" width="100%">
-
-
-                                    <thead style="height:46px;">
-                                        <tr>
-
-                                            <th style="display:none;">schedID</th>
-                                            <th class="bg-green text-white">ors_no</th>
-                                            <th class="bg-green text-white">ors_date</th>
-                                            <th class="bg-green text-white">dv_no</th>
-                                            <th class="bg-green text-white">dv_date</th>
-                                            <th class="bg-green text-white">lddap_no</th>
-                                            <th class="bg-green text-white">lddap_date</th>
-                                            <th class="bg-green text-white">contractor_name</th>
-                                            <th class="bg-green text-white">Role</th>
-                                            <th class="bg-green text-white">Create By:</th>
-                                            <th class="bg-green text-white">Action:</th>
-
-
-
-                                        </tr>
-                                    </thead>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
                 </div>
+
+
+
+
             </div>
         </div>
     </div>
-
 </div>
+
 
 
 
@@ -5729,7 +5684,7 @@
                     <input type="hidden" name="netamount_paid_year3_1st" id="netamount_paid_year3_1st" />
                     <input type="hidden" name="lddapno_year3_1st" id="lddapno_year3_1st" />
                     <input type="hidden" name="date_lddap_year3_1st" id="date_lddap_year3_1st" />
-                    <input type="hidden" name="survivalrate_year3_2nd" id="survivalrate_year3_2nd"   />
+                    <input type="hidden" name="survivalrate_year3_2nd" id="survivalrate_year3_2nd" />
                     <input type="hidden" name="grossammount_year3_2nd" id="grossammount_year3_2nd" />
                     <input type="hidden" name="retentionfee_year3_2nd" id="retentionfee_year3_2nd" />
                     <input type="hidden" name="amountless_rf_year3_2nd" id="amountless_rf_year3_2nd" />

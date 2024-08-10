@@ -6778,9 +6778,9 @@ function Account() {
             {
                 "data": null,
                 'render': function (data, type, full, meta) {
-                    return '<button  class=\'btn btn-success btn-sm d-block  edit \' data-id = ' + data.Id + ' > Edit <span class="fa fa-edit f-20" >  </span></button>'
+                    return '<button  class=\'btn btn-success btn-sm d-block  edit \' data-id = ' + data.Id + ' > EDIT <span class="fa fa-edit f-20" >  </span></button>'
                         +
-                        '<button  class=\'btn btn-danger deleteaccount d-block btn-sm\' data-id = ' + data.Id + ' > Delete<span class="fa fa-trash f-20" >  </span></button>'
+                        '<button  class=\'btn btn-danger deleteaccount d-block btn-sm\' data-id = ' + data.Id + ' > DELETE<span class="fa fa-trash f-20" >  </span></button>'
 
 
                 }
@@ -6788,7 +6788,7 @@ function Account() {
             {
                 "data": null,
                 'render': function (data, type, full, meta) {
-                    return '<button  class=\'btn btn-info  changephoto d-block btn-sm\' data-id = ' + data.Id + ' > Change Profile <span class="fa fa-image f-20" >  </span></button>' + '<button  class=\'btn btn-primary btn-sm  resetpass \' data-id = ' + data.Id + ' > Reset Password <span class="fa fa-key f-20" >  </span></button>'
+                    return '<button  class=\'btn btn-primary  changephoto d-block btn-sm\' data-id = ' + data.Id + ' > CHANGE PROFILE <span class="fa fa-image f-20" >  </span></button>' + '<button  class=\'btn btn-warning btn-sm  resetpass \' data-id = ' + data.Id + ' > RESET PASSWORD <span class="fa fa-key f-20" >  </span></button>'
 
                 }
             },

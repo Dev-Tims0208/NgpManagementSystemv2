@@ -23649,9 +23649,9 @@ hr.horizontal.gray-light {
 }
 
 .nav.nav-pills {
-  background: #f8f9fa;
-  border-radius: 0.75rem;
-  position: relative;
+    background: #c5fdca;
+    border-radius: 0.75rem;
+    position: relative;
 }
 
 .nav.nav-pills.nav-pills-vertical {
