@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e13530ba27c74b36b04926e3800f8552" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="NgpdbmsModel.ngp_contract" Width="1.5" PointX="5.25" PointY="64.375" />
+        <EntityTypeShape EntityType="NgpdbmsModel.ngp_contractor" Width="1.5" PointX="11.25" PointY="51.5" />
+        <EntityTypeShape EntityType="NgpdbmsModel.ngp_dropdown" Width="1.5" PointX="6" PointY="54.125" />
+        <EntityTypeShape EntityType="NgpdbmsModel.ngp_history" Width="1.5" PointX="13.5" PointY="67" />
+        <EntityTypeShape EntityType="NgpdbmsModel.ngp_payment" Width="1.5" PointX="13.5" PointY="62.125" />
+        <EntityTypeShape EntityType="NgpdbmsModel.ngp_projects" Width="1.5" PointX="8.25" PointY="60.5" />
+        <EntityTypeShape EntityType="NgpdbmsModel.NgpBarangay" Width="1.5" PointX="9" PointY="78.5" />
+        <EntityTypeShape EntityType="NgpdbmsModel.NgplocationBarangay" Width="1.5" PointX="9" PointY="57.375" />
+        <EntityTypeShape EntityType="NgpdbmsModel.NgplocationMunicipality" Width="1.5" PointX="6" PointY="57.375" />
+        <EntityTypeShape EntityType="NgpdbmsModel.NgpLogsContract" Width="1.5" PointX="5.25" PointY="72.5" />
+        <EntityTypeShape EntityType="NgpdbmsModel.NgpLogsContractor" Width="1.5" PointX="8.25" PointY="70.5" />
+        <EntityTypeShape EntityType="NgpdbmsModel.NgpLogsPayment" Width="1.5" PointX="5.25" PointY="60.5" />
+        <EntityTypeShape EntityType="NgpdbmsModel.NgpLogsProject" Width="1.5" PointX="8.25" PointY="74.5" />
+        <EntityTypeShape EntityType="NgpdbmsModel.NgpLogsSched" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="NgpdbmsModel.NgpLogsUserAccount" Width="1.5" PointX="8.25" PointY="66.375" />
+        <EntityTypeShape EntityType="NgpdbmsModel.NgpMaintenanceMode" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="NgpdbmsModel.NgpMunicipality" Width="1.5" PointX="6.75" PointY="78.5" />
+        <EntityTypeShape EntityType="NgpdbmsModel.NgpRole" Width="1.5" PointX="0.75" PointY="37.125" />
+        <EntityTypeShape EntityType="NgpdbmsModel.NgpUpload" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="NgpdbmsModel.NgpUser" Width="1.5" PointX="3" PointY="94.625" />
+        <EntityTypeShape EntityType="NgpdbmsModel.NgpYear" Width="1.5" PointX="3" PointY="64.125" />
+        <AssociationConnector Association="NgpdbmsModel.FK_ngp_contract_ngp_contractor" />
+        <AssociationConnector Association="NgpdbmsModel.FK_ngp_contract_ngp_dropdown" />
+        <AssociationConnector Association="NgpdbmsModel.FK_ngp_contract_NgpMunicipality" />
+        <AssociationConnector Association="NgpdbmsModel.FK_ngp_contract_NgpRole" />
+        <AssociationConnector Association="NgpdbmsModel.FK_ngp_contract_NgpUser" />
+        <AssociationConnector Association="NgpdbmsModel.FK_ngp_contract_NgpYear" />
+        <AssociationConnector Association="NgpdbmsModel.FK_ngp_payment_ngp_contract" />
+        <AssociationConnector Association="NgpdbmsModel.FK_ngp_contractor_NgpBarangay" />
+        <AssociationConnector Association="NgpdbmsModel.FK_ngp_contractor_NgplocationBarangay" />
+        <AssociationConnector Association="NgpdbmsModel.FK_ngp_contractor_NgplocationMunicipality" />
+        <AssociationConnector Association="NgpdbmsModel.FK_ngp_contractor_NgpMunicipality" />
+        <AssociationConnector Association="NgpdbmsModel.FK_ngp_contractor_NgpRole" />
+        <AssociationConnector Association="NgpdbmsModel.FK_ngp_contractor_NgpUser" />
+        <AssociationConnector Association="NgpdbmsModel.FK_ngp_history_ngp_contractor" />
+        <AssociationConnector Association="NgpdbmsModel.FK_ngp_projects_ngp_dropdown" />
+        <AssociationConnector Association="NgpdbmsModel.FK_ngp_payment_NgpRole" />
+        <AssociationConnector Association="NgpdbmsModel.FK_ngp_payment_NgpUser" />
+        <AssociationConnector Association="NgpdbmsModel.FK_ngp_payment_NgpYear" />
+        <AssociationConnector Association="NgpdbmsModel.FK_ngp_projects_ngp_projects" />
+        <AssociationConnector Association="NgpdbmsModel.FK_ngp_projects_NgplocationMunicipality" />
+        <AssociationConnector Association="NgpdbmsModel.FK_ngp_projects_NgpRole" />
+        <AssociationConnector Association="NgpdbmsModel.FK_ngp_projects_NgpUser" />
+        <AssociationConnector Association="NgpdbmsModel.FK_NgpBarangay_NgpMunicipality" />
+        <AssociationConnector Association="NgpdbmsModel.FK_NgplocationBarangay_NgplocationBarangay" />
+        <AssociationConnector Association="NgpdbmsModel.FK_NgplocationBarangay_NgplocationMunicipality" />
+        <AssociationConnector Association="NgpdbmsModel.FK_NgpLogsContract_NgpRole" />
+        <AssociationConnector Association="NgpdbmsModel.FK_NgpLogsContract_NgpUser" />
+        <AssociationConnector Association="NgpdbmsModel.FK_NgpLogsContractor_NgpRole" />
+        <AssociationConnector Association="NgpdbmsModel.FK_NgpLogsContractor_NgpUser" />
+        <AssociationConnector Association="NgpdbmsModel.FK_NgpLogsPayment_NgpRole" />
+        <AssociationConnector Association="NgpdbmsModel.FK_NgpLogsPayment_NgpUser" />
+        <AssociationConnector Association="NgpdbmsModel.FK_NgpLogsProject_NgpRole" />
+        <AssociationConnector Association="NgpdbmsModel.FK_NgpLogsProject_NgpUser" />
+        <AssociationConnector Association="NgpdbmsModel.FK_NgpLogsUserAccount_NgpLogsUserAccount" />
+        <AssociationConnector Association="NgpdbmsModel.FK_NgpLogsUserAccount_NgpRole" />
+        <AssociationConnector Association="NgpdbmsModel.FK_NgpLogsUserAccount_NgpUser" />
+        <AssociationConnector Association="NgpdbmsModel.FK_NgpUser_NgpRole" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,18 @@
+﻿
+
+
+
+@foreach (var adminnameinviewprofile in Model)
+{
+
+   
+<div class="text-center">
+    <span class="text-black font-weight-800">@adminnameinviewprofile.Name</span>
+    <br />
+    <span>
+        @adminnameinviewprofile.NgpRole.RoleName
+    </span>
+</div>
+
+
+}
