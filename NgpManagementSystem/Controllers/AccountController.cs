@@ -61,7 +61,8 @@ namespace NgpManagementSystem.Controllers
                             x.Name.ToString().Contains(searchValue.ToLower()) ||
                             x.Email.ToLower().Contains(searchValue.ToLower()) ||
                             x.UserName.ToString().Contains(searchValue.ToLower()) ||
-                            x.NgpRole.RoleName.ToString().Contains(searchValue.ToLower()));
+                              x.NgpRole.RoleName.ToString().Contains(searchValue.ToLower()) ||
+                            x.Position.ToString().Contains(searchValue.ToLower()));
 
 
                 }
@@ -83,8 +84,8 @@ namespace NgpManagementSystem.Controllers
                     Name = user.Name,
                     Email = user.Email,
                     UserName = user.UserName,
-                    RoleID = user.NgpRole.RoleName,
-                   
+                    Position = user.Position,
+                   RoleID = user.NgpRole.RoleName,
 
                 }).ToList();
 

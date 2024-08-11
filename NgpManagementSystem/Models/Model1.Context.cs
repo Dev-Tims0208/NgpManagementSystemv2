@@ -46,5 +46,6 @@ namespace NgpManagementSystem.Models
         public virtual DbSet<NgpUpload> NgpUploads { get; set; }
         public virtual DbSet<NgpUser> NgpUsers { get; set; }
         public virtual DbSet<NgpYear> NgpYears { get; set; }
+        public virtual DbSet<NgpPosition> NgpPositions { get; set; }
     }
 }

@@ -359,6 +359,13 @@
           <Property Name="MunicipalityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="MunicipalityName" Type="nvarchar" MaxLength="100" />
         </EntityType>
+        <EntityType Name="NgpPosition">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+        </EntityType>
         <EntityType Name="NgpRole">
           <Key>
             <PropertyRef Name="Id" />
@@ -385,6 +392,10 @@
           <Property Name="UserName" Type="nvarchar" MaxLength="50" />
           <Property Name="Password" Type="nvarchar" MaxLength="200" />
           <Property Name="RoleID" Type="int" />
+          <Property Name="Position" Type="nvarchar(max)" />
+          <Property Name="DateAdded" Type="datetime" />
+          <Property Name="DateModified" Type="datetime" />
+          <Property Name="RoleName" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="NgpYear">
           <Key>
@@ -855,6 +866,7 @@
           <EntitySet Name="NgpLogsUserAccount" EntityType="Self.NgpLogsUserAccount" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NgpMaintenanceMode" EntityType="Self.NgpMaintenanceMode" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NgpMunicipality" EntityType="Self.NgpMunicipality" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NgpPosition" EntityType="Self.NgpPosition" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NgpRole" EntityType="Self.NgpRole" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NgpUpload" EntityType="Self.NgpUpload" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NgpUser" EntityType="Self.NgpUser" Schema="dbo" store:Type="Tables" />
@@ -1182,6 +1194,7 @@
             <End Role="NgpRole" EntitySet="NgpRoles" />
             <End Role="NgpUser" EntitySet="NgpUsers" />
           </AssociationSet>
+          <EntitySet Name="NgpPositions" EntityType="NgpdbmsModel.NgpPosition" />
         </EntityContainer>
         <EntityType Name="ngp_contract">
           <Key>
@@ -1635,6 +1648,10 @@
           <NavigationProperty Name="NgpLogsProjects" Relationship="NgpdbmsModel.FK_NgpLogsProject_NgpUser" FromRole="NgpUser" ToRole="NgpLogsProject" />
           <NavigationProperty Name="NgpLogsUserAccounts" Relationship="NgpdbmsModel.FK_NgpLogsUserAccount_NgpUser" FromRole="NgpUser" ToRole="NgpLogsUserAccount" />
           <NavigationProperty Name="NgpRole" Relationship="NgpdbmsModel.FK_NgpUser_NgpRole" FromRole="NgpUser" ToRole="NgpRole" />
+          <Property Name="Position" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateAdded" Type="DateTime" Precision="3" />
+          <Property Name="DateModified" Type="DateTime" Precision="3" />
+          <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="NgpYear">
           <Key>
@@ -2089,6 +2106,13 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="NgpPosition">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2487,6 +2511,10 @@
           <EntitySetMapping Name="NgpUsers">
             <EntityTypeMapping TypeName="NgpdbmsModel.NgpUser">
               <MappingFragment StoreEntitySet="NgpUser">
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
                 <ScalarProperty Name="RoleID" ColumnName="RoleID" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
@@ -2499,6 +2527,14 @@
           <EntitySetMapping Name="NgpYears">
             <EntityTypeMapping TypeName="NgpdbmsModel.NgpYear">
               <MappingFragment StoreEntitySet="NgpYear">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NgpPositions">
+            <EntityTypeMapping TypeName="NgpdbmsModel.NgpPosition">
+              <MappingFragment StoreEntitySet="NgpPosition">
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>

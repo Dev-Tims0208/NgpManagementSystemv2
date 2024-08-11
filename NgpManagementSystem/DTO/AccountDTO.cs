@@ -15,6 +15,9 @@ namespace NgpManagementSystem.DTO
         public Nullable<int> RoleID { get; set; }
         public string FileName { get; set; }
         public string FilePath { get; set; }
+        public string Position { get; set; }
+        public Nullable<System.DateTime> DateAdded { get; set; }
+        public Nullable<System.DateTime> DateModified { get; set; }
 
     }
 }

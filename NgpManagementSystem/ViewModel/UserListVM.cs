@@ -14,5 +14,6 @@ namespace NgpManagementSystem.ViewModel
         public string Password { get; set; }
         public string RoleID { get; set; }
         public int Id { get; set; }
+        public string Position { get; set; }
     }
 }

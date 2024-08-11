@@ -31,6 +31,7 @@ namespace NgpManagementSystem.App_Start
             Mapper.CreateMap<NgpMaintenanceMode, MaintenanceModeDto>().ReverseMap();
             Mapper.CreateMap<NgplocationMunicipality, LocationMunicipalityDTO>().ReverseMap();
             Mapper.CreateMap<NgplocationBarangay, LocationBarangayDTO>().ReverseMap();
+            Mapper.CreateMap<NgpPosition, PositionDTO>().ReverseMap();
         }
     }
 }

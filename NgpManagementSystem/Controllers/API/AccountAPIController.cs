@@ -34,7 +34,14 @@ namespace NgpManagementSystem.Controllers.API
         }
 
 
-
+        //get data for position
+        [HttpGet]
+        [Route("api/positiondata/get")]
+        public IHttpActionResult GetPositionData()
+        {
+            var position = Db.NgpPositions.ToList().Select(Mapper.Map<NgpPosition, PositionDTO>);
+            return Ok(position);
+        }
 
         //get data for role
         [HttpGet]
@@ -82,7 +89,8 @@ namespace NgpManagementSystem.Controllers.API
                     res.UserName = provider.FormData["UserName"];
                     res.Password = encoder.Encode(provider.FormData["Password"]);
                     res.RoleID = Convert.ToInt32(provider.FormData["RoleID"]);
-
+                    res.Position = provider.FormData["Position"];
+                    res.DateAdded = DateTime.Now;
                     Db.NgpUsers.Add(res);
                     Db.NgpLogsUserAccounts.Add(new NgpLogsUserAccount()
                     {
@@ -243,6 +251,7 @@ namespace NgpManagementSystem.Controllers.API
                 accountdt.UserName = editaccountDTO.UserName;
                 accountdt.Email = editaccountDTO.Email;
                 accountdt.RoleID = editaccountDTO.RoleID;
+
 
             Db.NgpLogsUserAccounts.Add(new NgpLogsUserAccount()
             {

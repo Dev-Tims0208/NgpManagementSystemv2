@@ -6773,7 +6773,7 @@ function Account() {
                 "data": "UserName", "name": "UserName",
             },
             {
-                "data": "RoleID", "name": "RoleID",
+                "data": "Position", "name": "Position",
             },
             {
                 "data": null,
@@ -6793,18 +6793,27 @@ function Account() {
                 }
             },
             {
-                "data": "RoleID", "name": "RoleID",
-                "render": function (data, type, row) {
-                    if (data == "NgpAdmin") {
-
-                        return '<span  class=" badge bg-secondary text-black" stByle="font-size:12px;" >Admin</span>'
+                data: "RoleID",
+                name: "RoleID",
+                className:"pt-4 ",
+                render: function (data, type, row) {
+                    if (data == "Developer") {
+                        return '<span  class=" badge  text-white me-1" style="background-color:red;width:15vh;" >' + data + "</span>";
+                    }
+                    else if (data == "Administrator") {
+                        return '<span  class="badge badge-sm text-dark  me-1" style="background-color:yellow;width:15vh;" >' + data + "</span>";
+                    }
+                    else if (data == "User") {
+                        return '<span  class="badge bg-info badge-sm me-1"  style="width:15vh;"  >' + data + "</span>";
                     }
 
-                    return '<span  class=" badge bg-secondary text-black" style="font-size:12px;" >User</span>'
+                    else if (data == null) {
+
+                        return '<span  class=" badge bg-danger text-white" >NULL</span>'
+                    }
 
                 },
             },
-
 
 
 
@@ -6824,6 +6833,18 @@ function Account() {
     });
 
 
+
+
+    //GET DATA FOR ROLE DYNAMIC FOR TYPE CONTRACTOR
+    $.ajax({
+        type: 'GET',
+        url: '/api/positiondata/get',
+        success: function (data) {
+            $.each(data, function (index, value) {
+                $('select[name=position]').append('<option value="' + value.name + '">' + value.name + '</option>');
+            })
+        }
+    });
 
     //GET DATA FOR ROLE DYNAMIC FOR CREATE ACCOUNT
     $.ajax({
@@ -6939,10 +6960,6 @@ function Account() {
 
 
 
-
-
-
-
     // SAVING CREATE ACCOUNT WITH PICTURE
     $("#createaccount").validate({
         rules: {
@@ -6963,7 +6980,10 @@ function Account() {
                 required: true,
 
             },
+            position: {
+                required: true,
 
+            },
 
         },
         errorClass: "validationerror",
@@ -6984,7 +7004,9 @@ function Account() {
             roleId: {
                 required: "Please Select a Role",
             },
-
+            position: {
+                required: "Please Select a Designated Position",
+            },
 
         },
     });

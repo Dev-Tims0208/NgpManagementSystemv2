@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="e13530ba27c74b36b04926e3800f8552" Name="Diagram1" ZoomLevel="74">
+      <Diagram DiagramId="e13530ba27c74b36b04926e3800f8552" Name="Diagram1" ZoomLevel="72">
         <EntityTypeShape EntityType="NgpdbmsModel.ngp_contract" Width="1.5" PointX="5.25" PointY="64.375" />
         <EntityTypeShape EntityType="NgpdbmsModel.ngp_contractor" Width="1.5" PointX="11.25" PointY="51.5" />
         <EntityTypeShape EntityType="NgpdbmsModel.ngp_dropdown" Width="1.5" PointX="6" PointY="54.125" />
@@ -63,6 +63,7 @@
         <AssociationConnector Association="NgpdbmsModel.FK_NgpLogsUserAccount_NgpRole" />
         <AssociationConnector Association="NgpdbmsModel.FK_NgpLogsUserAccount_NgpUser" />
         <AssociationConnector Association="NgpdbmsModel.FK_NgpUser_NgpRole" />
+        <EntityTypeShape EntityType="NgpdbmsModel.NgpPosition" Width="1.5" PointX="5.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

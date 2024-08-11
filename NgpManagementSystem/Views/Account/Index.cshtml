@@ -16,9 +16,9 @@
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createModal">
                                 CREATE ACCOUNT
                             </button>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createroleModal">
+                            @*<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createroleModal">
                                 CREATE ROLE
-                            </button>
+                            </button>*@
                         </div>
                      
 
@@ -94,7 +94,7 @@
 
 <!-- Modal -->
 <div class="modal fade" id="createModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable modal-lg">
+    <div class="modal-dialog modal-dialog-scrollable modal-xl">
         <div class="modal-content">
             <div class="modal-header bg-green">
                 <h5 class="modal-title text-white" id="staticBackdropLabel">CREATE ACCOUNT</h5>
@@ -111,49 +111,68 @@
                         <input type="text" class="form-control" name="id" id="id" value="" />
                     </div>
                     <div class="row">
-                        <div class="col-sm-6">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label class="text-uppercase" for="name">Name</label>
                                 <input type="text" class="form-control" name="Name" id="Name" value="" />
                             </div>
-                            <div class="form-group">
-                                <label  class="text-uppercase"  for="name">UserName</label>
-                                <input type="text" class="form-control" name="UserName" id="UserName" value="" required>
-                                <p id="Status" />
-                            </div>
-
-                            <div class="form-group">
-                                <label  class="text-uppercase"  for="name">Image</label>
-                                <input type="file" class="form-control" id="FilePath" name="FilePath" accept="image/*" />
-                                <input type="hidden" class="form-control" name="FileName" id="FileName">
-
-                            </div>
-
                         </div>
-
-                        <div class="col-sm-6">
+                        <div class="col-md-4">
                             <div class="form-group">
-                                <label  class="text-uppercase"  for="name">Email</label>
+                                <label class="text-uppercase" for="name">Email</label>
                                 <input type="email" class="form-control" name="Email" id="Email" value="" />
                             </div>
-
+                        </div>
+                        <div class="col-md-4">
                             <div class="form-group">
-                                <label  class="text-uppercase"  for="name">Password</label>
-                                <input type="password" name="Password" class="form-control" required="" id="Password">
-
-
-
-                            </div>
-
-
-                            <div class="form-group">
-                                <label  class="text-uppercase"  for="RoleID">Role</label>
-                                <select class="form-control" style="width:100%" name="roleId" id="roleId">
-                                    <option value="">Please Select a Role</option>
+                                <label class="text-uppercase" for="position">Position</label>
+                                <select class="form-control" style="width:100%" name="position" id="position">
+                                    <option value="">Please Select a Designated Position</option>
                                 </select>
                             </div>
                         </div>
+
                     </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+
+                                <div class="form-group">
+                                    <label class="text-uppercase" for="name">UserName</label>
+                                    <input type="text" class="form-control" name="UserName" id="UserName" value="" required>
+                                    <p id="Status" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="text-uppercase" for="name">Image</label>
+                                    <input type="file" class="form-control" id="FilePath" name="FilePath" accept="image/*" />
+                                    <input type="hidden" class="form-control" name="FileName" id="FileName">
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-sm-6">
+
+
+                                <div class="form-group">
+                                    <label class="text-uppercase" for="name">Password</label>
+                                    <input type="password" name="Password" class="form-control" required="" id="Password">
+
+
+
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label class="text-uppercase" for="RoleID">Role</label>
+                                    <select class="form-control" style="width:100%" name="roleId" id="roleId">
+                                        <option value="">Please Select a Role</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                      
+                   
                     <div class="text-center mt-2">
 
                         <button class="btn btn-success btn-sm  text-white" id="btnsubmit" type="submit">SAVE</button>
