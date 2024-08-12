@@ -3,7 +3,6 @@
     Layout = (int)Session["Role_Id"] == 1 ? "~/Views/Shared/_LayoutAdmin.cshtml" : "~/Views/Shared/_LayoutUser.cshtml";
 }
 
-
 <head>
     <link href="~/Content/testing.css" rel="stylesheet" />
 </head>
@@ -11,10 +10,7 @@
 <div class="row justify-content-center">
     <div class="col-md-12  ">
         <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
-            <div class="text-center">
-                <h2 id="heading">National Greening Project Management System </h2>
-                <br />
-            </div>
+           
             <form id="contract_main">
                 <!-- progressbar -->
                 <ul id="progressbar">
@@ -28,450 +24,458 @@
                 <div class="progress">
                     <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                 </div> <br> <!-- fieldsets -->
-                <fieldset>
-                    <div class="form-card">
-                        <div style="padding: 2px 2.5%">
-                            <div class="row">
-                                <div class="col-7">
-                                    <h1 class="fs-title">Create Contractor</h1>
-                                    <br />
-                                </div>
+                       <fieldset>
+                           <div class="card">
+                               <div class="card-header bg-green">
+                                   <span class="text-white text-bold"> CREATE CONTRACTOR</span>
 
-                                <div class="col-5">
-                                    <h2 class="steps">Step 1 -4</h2>
-                                </div>
-                            </div>
-                            <div style="padding: 2px 4.5%">
-                                <div class="alert alert-success">
-                                    Pease Input a Field to Create a Contractor <i class="fa fa-user"></i>
-                                </div>
-                            </div>
+                               </div>
+                             
+                           </div>
+                       
+                           <div class="form-card">
+                               <div style="padding: 2px 2.5%">
+                                   <div class="row">
+                                       <div class="col-7">
+                                           <h1 class="fs-title"></h1>
+                                           <br />
+                                       </div>
 
-                            <div class="row">
-
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label style="color:black;">Contractor Name</label>
-                                        <input type="text" class="form-control" id="contractor_name" name="contractor_name">
-                                        @*<input type="checkbox" id="null_checkbox" onchange="handleNullCheckbox('id', this)">
-                                        <label for="null_checkbox">N/A</label>*@
-                                    </div>
-                                        
-                                    <label style="color:black;">Type</label>
-                                    <select class="form-control" style="width:100%" name="contractor_type" id="contractor_type">
-                                        <option value="">Type</option>
-                                        <option value="Group">Group</option>
-                                        <option value="Individual">Individual</option>
-                                    </select>
-                                    @*<input type="checkbox" id="null_checkbox" onchange="handleNullCheckbox('contractor_type', this)">
-                                    <label for="null_checkbox">N/A</label>*@
-                                </div>
-
-                                <div class="col-md-6">
-
-                                    <div class="form-group">
-                                        <label style="color:black;">Address Municipality</label>
-                                        <select id="address_municipality" name="address_municipality" class="form-control" style="width:100%">
-                                            <option value=" ">Not Applicable</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label style="color:black;">Address Barangay </label>
-                                        <select id="address_barangay" name="address_barangay" style="width:100%" class="form-control">
-                                            <option value=" ">Not Applicable</option>
-                                        </select>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
+                                       <div class="col-5">
+                                           <h2 class="steps">Step 1 -4</h2>
+                                       </div>
+                                   </div>
 
 
-                    </div> <input type="button" name="next" class="next action-button" value="Next" />
-                </fieldset>
+                                   <div class="row">
 
-                <fieldset>
-                    <div class="form-card">
-                        <div style="padding: 2px 2.5%">
-                            <div class="row">
-                                <div class="col-7">
+                                       <div class="col-md-6">
+                                           <div class="form-group">
+                                               <label style="color:black;" class="text-uppercase">Contractor Name</label>
+                                               <input type="text" class="form-control" id="contractor_name" name="contractor_name">
 
-                                    <h2 class="fs-title"> Create Projects </h2>
-                                </div>
-
-                                <div class="col-5">
-                                    <h2 class="steps">Step 2 - 4</h2>
-                                </div>
-                            </div>
-                            <div style="padding: 2px 4.5%">
-                                <div class="alert alert-success">
-                                    Pease Input a Field to Create a Project <i class="fa fa-id-card"></i>
-                                </div>
-                            </div>
+                                           </div>
+                                           <div class="form-group">
+                                               <label style="color:black;" class="text-uppercase">Type</label>
+                                               <select class="form-control" style="width:100%" name="contractor_type" id="contractor_type">
+                                                   <option value="">Type</option>
+                                                   <option value="Group">Group</option>
+                                                   <option value="Individual">Individual</option>
+                                               </select>
+                                           </div>
 
 
-                            <div class="row">
-                            
+                                       </div>
 
+                                       <div class="col-md-6">
+
+                                           <div class="form-group">
+                                               <label style="color:black;" class="text-uppercase">Address Municipality</label>
+                                               <select id="address_municipality" name="address_municipality" class="form-control" style="width:100%">
+                                                   <option value=" ">Not Applicable</option>
+                                               </select>
+                                           </div>
+
+                                           <div class="form-group pt-2">
+                                               <label style="color:black;" class="text-uppercase">Address Barangay </label>
+                                               <select id="address_barangay" name="address_barangay" style="width:100%" class="form-control">
+                                                   <option value=" ">Not Applicable</option>
+                                               </select>
+                                           </div>
+
+                                       </div>
+                                   </div>
+                               </div>
+
+
+                           </div> <input type="button" name="next" class="next action-button" value="Next" />
+                       </fieldset>
+
+                       <fieldset>
+                           <div class="card">
+                               <div class="card-header bg-green">
+                                   <span class="text-white text-bold"> CREATE PROJECTS</span>
+
+                               </div>
+
+                           </div>
+
+                           <div class="form-card">
+                               <div style="padding: 2px 2.5%">
+                                   <div class="row">
+                                       <div class="col-7">
+
+                                           <h2 class="fs-title"> </h2>
+                                       </div>
+
+                                       <div class="col-5">
+                                           <h2 class="steps">Step 2 - 4</h2>
+                                       </div>
+                                   </div>
                              
 
-                                <div class="col-md-6">
+
+                                   <div class="row">
+
+                                       <div class="col-md-6">
+
+                                           <div class="form-group ">
+                                               <div class=" sample">
+                                                   <label class="text-uppercase" style="color: black;">area </label>
+                                               </div>
+                                               <input type="text" class="form-control" id="area" name="area">
+
+                                           </div>
+
+
+                                           <div class="form-group">
+                                               <div class=" sample">
+                                                   <label class="text-uppercase" style="color: black;">location municipality </label>
+                                               </div>
+                                               <select id="location_municipality" name="location_municipality" class="form-control" style="width:100%">
+                                                   <option value=" ">Not Applicable</option>
+                                               </select>
+                                           </div>
 
 
 
-                                    <div class="form-group ">
-                                        <div class=" sample">
-                                            <label style="color: black;">area </label>
-                                        </div>
-                                        <input type="text" class="form-control" id="area" name="area">
-
-                                    </div>
+                                       </div>
 
 
-                                    <div class="form-group">
-                                        <div class=" sample">
-                                            <label style="color: black;">location_municipality </label>
-                                        </div>
-                                        <select id="location_municipality" name="location_municipality" class="form-control" style="width:100%">
-                                            <option value=" ">Not Applicable</option>
-                                        </select>
-                                    </div>
+                                       <div class="col-md-6">
 
+                                           <div class="form-group" hidden>
+                                               <div class=" sample">
 
+                                                   <label class="text-uppercase" style="color: black;">region </label>
+                                               </div>
+                                               <select id="region" name="region" style="width:100%" class="form-control">
+                                                   <option value="MIMAROPA">MIMAROPA</option>
+                                               </select>
+                                           </div>
 
-                                </div>
+                                           <div class="form-group">
+                                               <div class=" sample">
 
+                                                   <label class="text-uppercase" style="color: black;">year </label>
+                                               </div>
+                                               <select id="year_form" name="year_form" style="width:100%" class="form-control" required>
+                                                   <option value=" ">Select a Year</option>
+                                                   <option value="2028">2028</option>
+                                                   <option value="2027">2027</option>
+                                                   <option value="2026">2026</option>
+                                                   <option value="2025">2025</option>
+                                                   <option value="2024">2024</option>
+                                                   <option value="2023">2023</option>
+                                                   <option value="2022">2022</option>
+                                                   <option value="2021">2021</option>
+                                                   <option value="2020">2020</option>
+                                                   <option value="2019">2019</option>
+                                                   <option value="2018">2018</option>
+                                                   <option value="2017">2017</option>
+                                                   <option value="2016">2016</option>
+                                                   <option value="2015">2015</option>
+                                                   <option value="2014">2014</option>
+                                                   <option value="2013">2013</option>
+                                                   <option value="2012">2012</option>
+                                                   <option value="2011">2011</option>
 
-                                <div class="col-md-6">
+                                               </select>
+                                           </div>
 
-                                    <div class="form-group" hidden>
-                                        <div class=" sample">
+                                           <div class="form-group pt-2">
+                                               <div class=" sample">
 
-                                            <label style="color: black;">region </label>
-                                        </div>
-                                        <select id="region" name="region" style="width:100%" class="form-control">
-                                            <option value="MIMAROPA">MIMAROPA</option>
-                                        </select>
-                                    </div>
+                                                   <label class="text-uppercase" style="color: black;">location barangay </label>
+                                               </div>
+                                               <select id="location_barangay" name="location_barangay" style="width:100%" class="form-control">
+                                                   <option value=" ">Not Applicable</option>
+                                               </select>
+                                           </div>
 
-                                    <div class="form-group">
-                                        <div class=" sample">
+                                           <div class="form-group" hidden>
+                                               <div class=" sample">
 
-                                            <label style="color: black;">year_form </label>
-                                        </div>
-                                        <select id="year_form" name="year_form" style="width:100%" class="form-control" required>
-                                            <option value=" ">Select a Year</option>
-                                            <option value="2028">2028</option>
-                                            <option value="2027">2027</option>
-                                            <option value="2026">2026</option>
-                                            <option value="2025">2025</option>
-                                            <option value="2024">2024</option>
-                                            <option value="2023">2023</option>
-                                            <option value="2022">2022</option>
-                                            <option value="2021">2021</option>
-                                            <option value="2020">2020</option>
-                                            <option value="2019">2019</option>
-                                            <option value="2018">2018</option>
-                                            <option value="2017">2017</option>
-                                            <option value="2016">2016</option>
-                                            <option value="2015">2015</option>
-                                            <option value="2014">2014</option>
-                                            <option value="2013">2013</option>
-                                            <option value="2012">2012</option>
-                                            <option value="2011">2011</option>
-
-                                        </select>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <div class=" sample">
-
-                                            <label style="color: black;">location_barangay </label>
-                                        </div>
-                                        <select id="location_barangay" name="location_barangay" style="width:100%" class="form-control">
-                                            <option value=" ">Not Applicable</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="form-group" hidden>
-                                        <div class=" sample">
-
-                                            <label style="color: black;">penro </label>
-                                        </div>
-                                        <select id="penro" name="penro" style="width:100%" class="form-control">
-                                            <option value="PENRO">PENRO</option>
-                                        </select>
-                                    </div>
+                                                   <label style="color: black;">penro </label>
+                                               </div>
+                                               <select id="penro" name="penro" style="width:100%" class="form-control">
+                                                   <option value="PENRO">PENRO</option>
+                                               </select>
+                                           </div>
 
 
 
-                                </div>
+                                       </div>
 
 
-                            </div>
-                        </div>
-
-
-
-
-
-                    </div> <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
-                </fieldset>
-                <fieldset>
-                    <div class="form-card">
-                        <div style="padding: 2px 4.5%">
-                            <div class="row">
-                                <div class="col-7">
-
-                                    <h2 class="fs-title"> Create Contract </h2>
-                                </div>
-
-                                <div class="col-5">
-                                    <h2 class="steps">Step 3 - 4</h2>
-                                </div>
-                            </div>
-
-                            <div class="alert alert-success">
-                                Pease Input a Field to Create a Contract <i class="fa fa-id-card"></i>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="card">
-
-                                    <div class="card-body">
-                                        <ul class="nav nav-pills" id="myTab3" role="tablist">
-                                            <li class="nav-item">
-                                                <a class="nav-link active" id="home-tab3" data-toggle="tab" href="#home3" role="tab" aria-controls="home" aria-selected="true">Year 1</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" id="profile-tab3" data-toggle="tab" href="#profile3" role="tab" aria-controls="profile" aria-selected="false">Year 2</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" id="contact-tab3" data-toggle="tab" href="#contact3" role="tab" aria-controls="contact" aria-selected="false">Year 3</a>
-                                            </li>
-                                        </ul>
-                                        <div class="tab-content" id="myTabContent2">
-                                            <div class="tab-pane fade show active" id="home3" role="tabpanel" aria-labelledby="home-tab3">
-
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group ">
-                                                            <label style="color: black;">moanumber_year1 </label>
-                                                            <input type="text" class="form-control" id="moanumber_year1"
-                                                                   name="moanumber_year1">
-                                                        </div>
-                                                        <div class="form-group ">
-                                                            <label style="color: black;">datemoasigned_year1 </label>
-                                                            <input type="date" class="form-control" id="datemoasigned_year1"
-                                                                   name="datemoasigned_year1">
-                                                        </div>
-
-                                                        <div class="form-group ">
-                                                            <label style="color: black;">contractcost_year1 </label>
-                                                            <input type="text" class="form-control" id="contractcost_year1"
-                                                                   name="contractcost_year1">
-                                                        </div>
-
-                                                        <div class="form-group ">
-                                                            <label style="color: black;">dateobligated_year1 </label>
-                                                            <input type="date" class="form-control" id="dateobligated_year1"
-                                                                   name="dateobligated_year1">
-                                                        </div>
-                                                        <div class="form-group ">
-                                                            <label style="color: black;">orsno_year1 </label>
-                                                            <input type="text" class="form-control" id="orsno_year1"
-                                                                   name="orsno_year1">
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-6">
-                                                        <div class="form-group ">
-                                                            <label style="color: black;">num_seedlings_produced_year1 </label>
-                                                            <input type="text" class="form-control" id="num_seedlings_produced_year1"
-                                                                   name="num_seedlings_produced_year1">
-                                                        </div>
-
-                                                        <div class="form-group ">
-                                                            <p style="color: black;">commodity_year1</p>
-
-                                                            <input type="checkbox" id="forest_trees_checkbox" name="forest_trees_checkbox" onclick="toggleCommodityTextField(this)" />
-                                                            <label style="color: black;" for="forest_trees_checkbox">Forest trees</label>
-                                                            <input type="text" id="forest_trees_year1" name="forest_trees_year1" style="display: none;" />
-
-                                                            <input type="checkbox" id="fruit_trees_checkbox" name="fruit_trees_checkbox" onclick="toggleCommodityTextField(this)" />
-                                                            <label style="color: black;" for="fruit_trees_checkbox">Fruit trees</label>
-                                                            <input type="text" id="fruit_trees_year1" name="fruit_trees_year1" style="display: none;" />
-
-                                                            <input type="checkbox" id="bamboo_checkbox" name="bamboo_checkbox" onclick="toggleCommodityTextField(this)" />
-                                                            <label style="color: black;" for="bamboo_checkbox">Bamboo</label>
-                                                            <input type="text" id="bamboo_year1" name="bamboo_year1" style="display: none;" />
-
-                                                            <input type="checkbox" id="mangrove_checkbox" name="mangrove_checkbox" onclick="toggleCommodityTextField(this)" />
-                                                            <label style="color: black;" for="mangrove_checkbox">Mangrove</label>
-                                                            <input type="text" id="mangrove_year1" name="mangrove_year1" style="display: none;" />
-                                                        </div>
-
-                                                        <div class="form-group ">
-                                                            <label style="color: black;">num_seedlings_planted_year1 </label>
-                                                            <input type="text" class="form-control" id="num_seedlings_planted_year1"
-                                                                   name="num_seedlings_planted_year1">
-                                                        </div>
-
-                                                        <div class="form-group ">
-                                                            <label style="color: black;">num_seedlings_survive_year1 </label>
-                                                            <input type="text" class="form-control" id="num_seedlings_survive_year1"
-                                                                   name="num_seedlings_survive_year1">
-                                                        </div>
-
-                                                        <div class="form-group ">
-                                                            <label style="color: black;">survivalrate_year1 </label>
-                                                            <input type="text" class="form-control" id="survivalrate_year1"
-                                                                   name="survivalrate_year1">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="tab-pane fade" id="profile3" role="tabpanel" aria-labelledby="profile-tab3">
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group ">
-                                                            <label style="color: black;">moanumber_year2 </label>
-                                                            <input type="text" class="form-control" id="moanumber_year2"
-                                                                   name="moanumber_year2">
-                                                        </div>
-                                                        <div class="form-group ">
-                                                            <label style="color: black;">datemoasigned_year2 </label>
-                                                            <input type="date" class="form-control" id="datemoasigned_year2"
-                                                                   name="datemoasigned_year2">
-                                                        </div>
-                                                        <div class="form-group ">
-                                                            <label style="color: black;">unitcost_year2 </label>
-                                                            <input type="text" class="form-control" id="unitcost_year2"
-                                                                   name="unitcost_year2">
-                                                        </div>
-                                                        <div class="form-group ">
-                                                            <label style="color: black;">contractcost_year2 </label>
-                                                            <input type="text" class="form-control" id="contractcost_year2"
-                                                                   name="contractcost_year2">
-                                                        </div>
-                                                        <div class="form-group ">
-                                                            <label style="color: black;">dateobligated_year2 </label>
-                                                            <input type="date" class="form-control" id="dateobligated_year2"
-                                                                   name="dateobligated_year2">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-group ">
-                                                            <label style="color: black;">orsno_year2 </label>
-                                                            <input type="text" class="form-control" id="orsno_year2"
-                                                                   name="orsno_year2">
-                                                        </div>
-                                                        <div class="form-group ">
-                                                            <label style="color: black;">num_seedlings_planted_year2 </label>
-                                                            <input type="text" class="form-control" id="num_seedlings_planted_year2"
-                                                                   name="num_seedlings_planted_year2">
-                                                        </div>
-                                                        <div class="form-group ">
-                                                            <label style="color: black;">num_seedlings_survive_endofyear_1_year2 </label>
-                                                            <input type="text" class="form-control" id="num_seedlings_survive_endofyear_1_year2"
-                                                                   name="num_seedlings_survive_endofyear_1_year2">
-                                                        </div>
-                                                        <div class="form-group ">
-                                                            <label style="color: black;">survivalrate_year2 </label>
-                                                            <input type="text" class="form-control" id="survivalrate_year2"
-                                                                   name="survivalrate_year2">
-                                                        </div>
-                                                        <div class="form-group ">
-                                                            <label style="color: black;">num_seedlings_replanted_year2 </label>
-                                                            <input type="text" class="form-control" id="num_seedlings_replanted_year2"
-                                                                   name="num_seedlings_replanted_year2">
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                            </div>
-                                            <div class="tab-pane fade" id="contact3" role="tabpanel" aria-labelledby="contact-tab3">
-
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group ">
-                                                            <label style="color: black;">moanumber_year3 </label>
-                                                            <input type="text" class="form-control" id="moanumber_year3"
-                                                                   name="moanumber_year3">
-                                                        </div>
-                                                        <div class="form-group ">
-                                                            <label style="color: black;">datemoasigned_year3 </label>
-                                                            <input type="date" class="form-control" id="datemoasigned_year3"
-                                                                   name="datemoasigned_year3">
-                                                        </div>
-                                                        <div class="form-group ">
-                                                            <label style="color: black;">unitcost_year3 </label>
-                                                            <input type="text" class="form-control" id="unitcost_year3"
-                                                                   name="unitcost_year3">
-                                                        </div>
-                                                        <div class="form-group ">
-                                                            <label style="color: black;">contractcost_year3 </label>
-                                                            <input type="text" class="form-control" id="contractcost_year3"
-                                                                   name="contractcost_year3">
-                                                        </div>
-                                                        <div class="form-group ">
-                                                            <label style="color: black;">dateobligated_year3 </label>
-                                                            <input type="date" class="form-control" id="dateobligated_year3"
-                                                                   name="dateobligated_year3">
-                                                        </div>
-                                                    </div>
-
-
-                                                    <div class="col-md-6">
-                                                        <div class="form-group ">
-                                                            <label style="color: black;">orsno_year3 </label>
-                                                            <input type="text" class="form-control" id="orsno_year3"
-                                                                   name="orsno_year3">
-                                                        </div>
-                                                        <div class="form-group ">
-                                                            <label style="color: black;">num_seedlings_planted_year3 </label>
-                                                            <input type="text" class="form-control" id="num_seedlings_planted_year3"
-                                                                   name="num_seedlings_planted_year3">
-                                                        </div>
-                                                        <div class="form-group ">
-                                                            <label style="color: black;">num_seedlings_survive_endofyear_1_year3 </label>
-                                                            <input type="text" class="form-control" id="num_seedlings_survive_endofyear_1_year3"
-                                                                   name="num_seedlings_survive_endofyear_1_year3">
-                                                        </div>
-                                                        <div class="form-group ">
-                                                            <label style="color: black;">survivalrate_year3 </label>
-                                                            <input type="text" class="form-control" id="survivalrate_year3"
-                                                                   name="survivalrate_year3">
-                                                        </div>
-                                                        <div class="form-group ">
-                                                            <label style="color: black;">num_seedlings_replanted_year3 </label>
-                                                            <input type="text" class="form-control" id="num_seedlings_replanted_year3"
-                                                                   name="num_seedlings_replanted_year3">
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-
-
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
+                                   </div>
+                               </div>
 
 
 
 
-                    </div>
-                    <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
-                </fieldset>
+
+                           </div> <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                       </fieldset>
+                       <fieldset>
+                           <div class="card">
+                               <div class="card-header bg-green">
+                                   <span class="text-white text-bold"> CREATE CONTRACT</span>
+
+                               </div>
+
+                           </div>
+                           <div class="form-card">
+                               <div style="padding: 2px 4.5%">
+                                   <div class="row">
+                                       <div class="col-7">
+
+                                           <h2 class="fs-title">  </h2>
+                                       </div>
+
+                                       <div class="col-5">
+                                           <h2 class="steps">Step 3 - 4</h2>
+                                       </div>
+                                   </div>
+
+                                
+                               </div>
+
+                               <div class="row">
+                                   <div class="col-12">
+                                       <div class="card">
+
+                                           <div class="card-body">
+                                               <ul class="nav nav-pills" id="myTab3" role="tablist">
+                                                   <li class="nav-item">
+                                                       <a class="nav-link active" id="home-tab3" data-toggle="tab" href="#home3" role="tab" aria-controls="home" aria-selected="true">Year 1</a>
+                                                   </li>
+                                                   <li class="nav-item">
+                                                       <a class="nav-link" id="profile-tab3" data-toggle="tab" href="#profile3" role="tab" aria-controls="profile" aria-selected="false">Year 2</a>
+                                                   </li>
+                                                   <li class="nav-item">
+                                                       <a class="nav-link" id="contact-tab3" data-toggle="tab" href="#contact3" role="tab" aria-controls="contact" aria-selected="false">Year 3</a>
+                                                   </li>
+                                               </ul>
+                                               <div class="tab-content" id="myTabContent2">
+                                                   <div class="tab-pane fade show active" id="home3" role="tabpanel" aria-labelledby="home-tab3">
+
+                                                       <div class="row">
+                                                           <div class="col-md-6">
+                                                               <div class="form-group ">
+                                                                   <label style="color: black;">moanumber_year1 </label>
+                                                                   <input type="text" class="form-control" id="moanumber_year1"
+                                                                          name="moanumber_year1">
+                                                               </div>
+                                                               <div class="form-group ">
+                                                                   <label style="color: black;">datemoasigned_year1 </label>
+                                                                   <input type="date" class="form-control" id="datemoasigned_year1"
+                                                                          name="datemoasigned_year1">
+                                                               </div>
+
+                                                               <div class="form-group ">
+                                                                   <label style="color: black;">contractcost_year1 </label>
+                                                                   <input type="text" class="form-control" id="contractcost_year1"
+                                                                          name="contractcost_year1">
+                                                               </div>
+
+                                                               <div class="form-group ">
+                                                                   <label style="color: black;">dateobligated_year1 </label>
+                                                                   <input type="date" class="form-control" id="dateobligated_year1"
+                                                                          name="dateobligated_year1">
+                                                               </div>
+                                                               <div class="form-group ">
+                                                                   <label style="color: black;">orsno_year1 </label>
+                                                                   <input type="text" class="form-control" id="orsno_year1"
+                                                                          name="orsno_year1">
+                                                               </div>
+                                                           </div>
+
+                                                           <div class="col-md-6">
+                                                               <div class="form-group ">
+                                                                   <label style="color: black;">num_seedlings_produced_year1 </label>
+                                                                   <input type="text" class="form-control" id="num_seedlings_produced_year1"
+                                                                          name="num_seedlings_produced_year1">
+                                                               </div>
+
+                                                               <div class="form-group ">
+                                                                   <p style="color: black;">commodity_year1</p>
+
+                                                                   <input type="checkbox" id="forest_trees_checkbox" name="forest_trees_checkbox" onclick="toggleCommodityTextField(this)" />
+                                                                   <label style="color: black;" for="forest_trees_checkbox">Forest trees</label>
+                                                                   <input type="text" id="forest_trees_year1" name="forest_trees_year1" style="display: none;" />
+
+                                                                   <input type="checkbox" id="fruit_trees_checkbox" name="fruit_trees_checkbox" onclick="toggleCommodityTextField(this)" />
+                                                                   <label style="color: black;" for="fruit_trees_checkbox">Fruit trees</label>
+                                                                   <input type="text" id="fruit_trees_year1" name="fruit_trees_year1" style="display: none;" />
+
+                                                                   <input type="checkbox" id="bamboo_checkbox" name="bamboo_checkbox" onclick="toggleCommodityTextField(this)" />
+                                                                   <label style="color: black;" for="bamboo_checkbox">Bamboo</label>
+                                                                   <input type="text" id="bamboo_year1" name="bamboo_year1" style="display: none;" />
+
+                                                                   <input type="checkbox" id="mangrove_checkbox" name="mangrove_checkbox" onclick="toggleCommodityTextField(this)" />
+                                                                   <label style="color: black;" for="mangrove_checkbox">Mangrove</label>
+                                                                   <input type="text" id="mangrove_year1" name="mangrove_year1" style="display: none;" />
+                                                               </div>
+
+                                                               <div class="form-group ">
+                                                                   <label style="color: black;">num_seedlings_planted_year1 </label>
+                                                                   <input type="text" class="form-control" id="num_seedlings_planted_year1"
+                                                                          name="num_seedlings_planted_year1">
+                                                               </div>
+
+                                                               <div class="form-group ">
+                                                                   <label style="color: black;">num_seedlings_survive_year1 </label>
+                                                                   <input type="text" class="form-control" id="num_seedlings_survive_year1"
+                                                                          name="num_seedlings_survive_year1">
+                                                               </div>
+
+                                                               <div class="form-group ">
+                                                                   <label style="color: black;">survivalrate_year1 </label>
+                                                                   <input type="text" class="form-control" id="survivalrate_year1"
+                                                                          name="survivalrate_year1">
+                                                               </div>
+                                                           </div>
+                                                       </div>
+                                                   </div>
+                                                   <div class="tab-pane fade" id="profile3" role="tabpanel" aria-labelledby="profile-tab3">
+                                                       <div class="row">
+                                                           <div class="col-md-6">
+                                                               <div class="form-group ">
+                                                                   <label style="color: black;">moanumber_year2 </label>
+                                                                   <input type="text" class="form-control" id="moanumber_year2"
+                                                                          name="moanumber_year2">
+                                                               </div>
+                                                               <div class="form-group ">
+                                                                   <label style="color: black;">datemoasigned_year2 </label>
+                                                                   <input type="date" class="form-control" id="datemoasigned_year2"
+                                                                          name="datemoasigned_year2">
+                                                               </div>
+                                                               <div class="form-group ">
+                                                                   <label style="color: black;">unitcost_year2 </label>
+                                                                   <input type="text" class="form-control" id="unitcost_year2"
+                                                                          name="unitcost_year2">
+                                                               </div>
+                                                               <div class="form-group ">
+                                                                   <label style="color: black;">contractcost_year2 </label>
+                                                                   <input type="text" class="form-control" id="contractcost_year2"
+                                                                          name="contractcost_year2">
+                                                               </div>
+                                                               <div class="form-group ">
+                                                                   <label style="color: black;">dateobligated_year2 </label>
+                                                                   <input type="date" class="form-control" id="dateobligated_year2"
+                                                                          name="dateobligated_year2">
+                                                               </div>
+                                                           </div>
+                                                           <div class="col-md-6">
+                                                               <div class="form-group ">
+                                                                   <label style="color: black;">orsno_year2 </label>
+                                                                   <input type="text" class="form-control" id="orsno_year2"
+                                                                          name="orsno_year2">
+                                                               </div>
+                                                               <div class="form-group ">
+                                                                   <label style="color: black;">num_seedlings_planted_year2 </label>
+                                                                   <input type="text" class="form-control" id="num_seedlings_planted_year2"
+                                                                          name="num_seedlings_planted_year2">
+                                                               </div>
+                                                               <div class="form-group ">
+                                                                   <label style="color: black;">num_seedlings_survive_endofyear_1_year2 </label>
+                                                                   <input type="text" class="form-control" id="num_seedlings_survive_endofyear_1_year2"
+                                                                          name="num_seedlings_survive_endofyear_1_year2">
+                                                               </div>
+                                                               <div class="form-group ">
+                                                                   <label style="color: black;">survivalrate_year2 </label>
+                                                                   <input type="text" class="form-control" id="survivalrate_year2"
+                                                                          name="survivalrate_year2">
+                                                               </div>
+                                                               <div class="form-group ">
+                                                                   <label style="color: black;">num_seedlings_replanted_year2 </label>
+                                                                   <input type="text" class="form-control" id="num_seedlings_replanted_year2"
+                                                                          name="num_seedlings_replanted_year2">
+                                                               </div>
+                                                           </div>
+                                                       </div>
+
+
+                                                   </div>
+                                                   <div class="tab-pane fade" id="contact3" role="tabpanel" aria-labelledby="contact-tab3">
+
+                                                       <div class="row">
+                                                           <div class="col-md-6">
+                                                               <div class="form-group ">
+                                                                   <label style="color: black;">moanumber_year3 </label>
+                                                                   <input type="text" class="form-control" id="moanumber_year3"
+                                                                          name="moanumber_year3">
+                                                               </div>
+                                                               <div class="form-group ">
+                                                                   <label style="color: black;">datemoasigned_year3 </label>
+                                                                   <input type="date" class="form-control" id="datemoasigned_year3"
+                                                                          name="datemoasigned_year3">
+                                                               </div>
+                                                               <div class="form-group ">
+                                                                   <label style="color: black;">unitcost_year3 </label>
+                                                                   <input type="text" class="form-control" id="unitcost_year3"
+                                                                          name="unitcost_year3">
+                                                               </div>
+                                                               <div class="form-group ">
+                                                                   <label style="color: black;">contractcost_year3 </label>
+                                                                   <input type="text" class="form-control" id="contractcost_year3"
+                                                                          name="contractcost_year3">
+                                                               </div>
+                                                               <div class="form-group ">
+                                                                   <label style="color: black;">dateobligated_year3 </label>
+                                                                   <input type="date" class="form-control" id="dateobligated_year3"
+                                                                          name="dateobligated_year3">
+                                                               </div>
+                                                           </div>
+
+
+                                                           <div class="col-md-6">
+                                                               <div class="form-group ">
+                                                                   <label style="color: black;">orsno_year3 </label>
+                                                                   <input type="text" class="form-control" id="orsno_year3"
+                                                                          name="orsno_year3">
+                                                               </div>
+                                                               <div class="form-group ">
+                                                                   <label style="color: black;">num_seedlings_planted_year3 </label>
+                                                                   <input type="text" class="form-control" id="num_seedlings_planted_year3"
+                                                                          name="num_seedlings_planted_year3">
+                                                               </div>
+                                                               <div class="form-group ">
+                                                                   <label style="color: black;">num_seedlings_survive_endofyear_1_year3 </label>
+                                                                   <input type="text" class="form-control" id="num_seedlings_survive_endofyear_1_year3"
+                                                                          name="num_seedlings_survive_endofyear_1_year3">
+                                                               </div>
+                                                               <div class="form-group ">
+                                                                   <label style="color: black;">survivalrate_year3 </label>
+                                                                   <input type="text" class="form-control" id="survivalrate_year3"
+                                                                          name="survivalrate_year3">
+                                                               </div>
+                                                               <div class="form-group ">
+                                                                   <label style="color: black;">num_seedlings_replanted_year3 </label>
+                                                                   <input type="text" class="form-control" id="num_seedlings_replanted_year3"
+                                                                          name="num_seedlings_replanted_year3">
+                                                               </div>
+
+                                                           </div>
+                                                       </div>
+
+
+
+                                                   </div>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+
+                               </div>
+
+
+
+
+                           </div>
+                           <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                       </fieldset>
 
                 <fieldset>
                     <div class="form-card">
@@ -1646,7 +1650,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="grossammount_year3_1st"
+                                                                                <input type="text" class="form-control" id="grossammount_year3_1st"
                                                                                        name="grossammount_year3_1st" />
                                                                             </div>
                                                                         </div>
@@ -1685,7 +1689,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="netamount_paid_year3_1st"
+                                                                                <input type="text" class="form-control" id="netamount_paid_year3_1st"
                                                                                        name="netamount_paid_year3_1st" />
                                                                             </div>
                                                                         </div>
@@ -1711,7 +1715,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="retentionfee_year3_1st"
+                                                                                <input type="text" class="form-control" id="retentionfee_year3_1st"
                                                                                        name="retentionfee_year3_1st" />
                                                                             </div>
                                                                         </div>
@@ -1724,7 +1728,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="amountless_rf_year3_1st"
+                                                                                <input type="text" class="form-control" id="amountless_rf_year3_1st"
                                                                                        name="amountless_rf_year3_1st" />
                                                                             </div>
                                                                         </div>
@@ -1737,7 +1741,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="date_lddap_year3_1st"
+                                                                                <input type="text" class="form-control" id="date_lddap_year3_1st"
                                                                                        name="date_lddap_year3_1st" />
                                                                             </div>
                                                                         </div>
@@ -1761,7 +1765,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="survivalrate_year3_2nd"
+                                                                                <input type="text" class="form-control" id="survivalrate_year3_2nd"
                                                                                        name="survivalrate_year3_2nd" />
                                                                             </div>
                                                                         </div>
@@ -1800,7 +1804,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="amountless_rf_year3_2nd"
+                                                                                <input type="text" class="form-control" id="amountless_rf_year3_2nd"
                                                                                        name="amountless_rf_year3_2nd" />
                                                                             </div>
                                                                         </div>
@@ -1813,7 +1817,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="bir_year3_2nd"
+                                                                                <input type="text" class="form-control" id="bir_year3_2nd"
                                                                                        name="bir_year3_2nd" />
                                                                             </div>
                                                                         </div>
@@ -1826,7 +1830,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="netamount_paid_year3_2nd"
+                                                                                <input type="text" class="form-control" id="netamount_paid_year3_2nd"
                                                                                        name="netamount_paid_year3_2nd" />
                                                                             </div>
                                                                         </div>
@@ -1852,7 +1856,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="date_lddap_year3_2nd"
+                                                                                <input type="text" class="form-control" id="date_lddap_year3_2nd"
                                                                                        name="date_lddap_year3_2nd" />
                                                                             </div>
                                                                         </div>
@@ -1880,7 +1884,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="survivalrate_year3_3rd"
+                                                                                <input type="text" class="form-control" id="survivalrate_year3_3rd"
                                                                                        name="survivalrate_year3_3rd" />
                                                                             </div>
                                                                         </div>
@@ -1893,7 +1897,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="grossammount_year3_3rd"
+                                                                                <input type="text" class="form-control" id="grossammount_year3_3rd"
                                                                                        name="grossammount_year3_3rd" />
                                                                             </div>
                                                                         </div>
@@ -1906,7 +1910,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="retentionfee_year3_3rd"
+                                                                                <input type="text" class="form-control" id="retentionfee_year3_3rd"
                                                                                        name="retentionfee_year3_3rd" />
                                                                             </div>
                                                                         </div>
@@ -1932,7 +1936,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="bir_year3_3rd"
+                                                                                <input type="text" class="form-control" id="bir_year3_3rd"
                                                                                        name="bir_year3_3rd" />
                                                                             </div>
                                                                         </div>
@@ -1960,7 +1964,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="lddapno_year3_3rd"
+                                                                                <input type="text" class="form-control" id="lddapno_year3_3rd"
                                                                                        name="lddapno_year3_3rd" />
                                                                             </div>
                                                                         </div>
@@ -1973,7 +1977,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="date_lddap_year3_3rd"
+                                                                                <input type="text" class="form-control" id="date_lddap_year3_3rd"
                                                                                        name="date_lddap_year3_3rd" />
                                                                             </div>
                                                                         </div>
@@ -1996,7 +2000,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="survivalrate_year3_4th"
+                                                                                <input type="text" class="form-control" id="survivalrate_year3_4th"
                                                                                        name="survivalrate_year3_4th" />
                                                                             </div>
                                                                         </div>
@@ -2035,7 +2039,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="amountless_rf_year3_4th"
+                                                                                <input type="text" class="form-control" id="amountless_rf_year3_4th"
                                                                                        name="amountless_rf_year3_4th" />
                                                                             </div>
                                                                         </div>
@@ -2061,7 +2065,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="netamount_paid_year3_4th"
+                                                                                <input type="text" class="form-control" id="netamount_paid_year3_4th"
                                                                                        name="netamount_paid_year3_4th" />
                                                                             </div>
                                                                         </div>
@@ -2074,7 +2078,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="lddapno_year3_4th"
+                                                                                <input type="text" class="form-control" id="lddapno_year3_4th"
                                                                                        name="lddapno_year3_4th" />
                                                                             </div>
                                                                         </div>
@@ -2087,7 +2091,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="date_lddap_year3_4th"
+                                                                                <input type="text" class="form-control" id="date_lddap_year3_4th"
                                                                                        name="date_lddap_year3_4th" />
                                                                             </div>
                                                                         </div>
@@ -2151,15 +2155,6 @@
 
     });
 
-    // Uncheck each checkbox by default
-    document.addEventListener("DOMContentLoaded", function () {
-        var checkboxes = document.querySelectorAll("input[type='checkbox']");
-        checkboxes.forEach(function (checkbox) {
-            checkbox.checked = false;
-        });
-    });
-
-    var inputElements = document.querySelectorAll('input, select');
 
     inputElements.forEach(function (input) {
         // Skip these elements
@@ -2213,4 +2208,6 @@
         }
     }
 </script>
+
+
 

@@ -35,7 +35,7 @@ namespace NgpManagementSystem.Controllers.API
             if (contractorDTO.contractorID == 0)
             {
 
-                contractor.contractor_name = contractorDTO.contractor_name;
+                contractor.contractor_name = contractorDTO.contractor_name ?? "N/A";
                 contractor.address_municipality = contractorDTO.address_municipality;
                 contractor.address_barangay = contractorDTO.address_barangay;
                 contractor.contractor_type = contractorDTO.contractor_type;
