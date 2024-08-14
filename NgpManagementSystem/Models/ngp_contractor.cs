@@ -178,6 +178,10 @@ namespace NgpManagementSystem.Models
         public string netamount_paid_year3_4th { get; set; }
         public string lddapno_year3_4th { get; set; }
         public string date_lddap_year3_4th { get; set; }
+        public string forestTrees { get; set; }
+        public string fruitTrees { get; set; }
+        public string bamboo { get; set; }
+        public string mangrove { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ngp_contract> ngp_contract { get; set; }

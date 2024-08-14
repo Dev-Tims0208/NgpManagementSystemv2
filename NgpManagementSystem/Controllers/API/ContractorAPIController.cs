@@ -36,161 +36,213 @@ namespace NgpManagementSystem.Controllers.API
             {
 
                 contractor.contractor_name = contractorDTO.contractor_name ?? "N/A";
-                contractor.address_municipality = contractorDTO.address_municipality;
-                contractor.address_barangay = contractorDTO.address_barangay;
-                contractor.contractor_type = contractorDTO.contractor_type;
+                contractor.address_municipality = contractorDTO.address_municipality ; 
+                contractor.address_barangay = contractorDTO.address_barangay ;
+                contractor.contractor_type = contractorDTO.contractor_type ?? "N/A";
                 //for Project
-                contractor.location_municipality = contractorDTO.location_municipality;
+                contractor.location_municipality = contractorDTO.location_municipality ;
                 contractor.location_barangay = contractorDTO.location_barangay;
-                contractor.area = contractorDTO.area;
-                contractor.year_form = contractorDTO.year_form;
-                contractor.penro = contractorDTO.penro;
-                contractor.cenro = contractorDTO.cenro;
-                contractor.region = contractorDTO.region;
+                contractor.area = contractorDTO.area ?? "N/A";
+                contractor.year_form = contractorDTO.year_form ?? "N/A";
+                contractor.penro = contractorDTO.penro ?? "N/A";
+                contractor.cenro = contractorDTO.cenro ?? "N/A";
+                contractor.region = contractorDTO.region ?? "N/A";
+
                 //for contract year 1
-                contractor.moanumber_year1 = contractorDTO.moanumber_year1;
-                contractor.datemoasigned_year1 = contractorDTO.datemoasigned_year1;
-                contractor.contractcost_year1 = contractorDTO.contractcost_year1;
-                contractor.dateobligated_year1 = contractorDTO.dateobligated_year1;
-                contractor.orsno_year1 = contractorDTO.orsno_year1;
-                contractor.num_seedlings_produced_year1 = contractorDTO.num_seedlings_produced_year1;
-                contractor.forest_trees_year1 = contractorDTO.forest_trees_year1;
-                contractor.fruit_trees_year1 = contractorDTO.fruit_trees_year1;
-                contractor.bamboo_year1 = contractorDTO.bamboo_year1;
-                contractor.mangrove_year1 = contractorDTO.mangrove_year1;
-                contractor.num_seedlings_planted_year1 = contractorDTO.num_seedlings_planted_year1;
-                contractor.survivalrate_year1 = contractorDTO.survivalrate_year1;
+                contractor.moanumber_year1 = contractorDTO.moanumber_year1 ?? "N/A";
+                contractor.datemoasigned_year1 = contractorDTO.datemoasigned_year1 ?? "N/A";
+                contractor.contractcost_year1 = contractorDTO.contractcost_year1 ?? "N/A";
+                contractor.dateobligated_year1 = contractorDTO.dateobligated_year1 ?? "N/A";
+                contractor.orsno_year1 = contractorDTO.orsno_year1 ?? "N/A";
+                contractor.num_seedlings_produced_year1 = contractorDTO.num_seedlings_produced_year1 ?? "N/A";
+                contractor.forest_trees_year1 = contractorDTO.forest_trees_year1 ?? "N/A";
+                contractor.fruit_trees_year1 = contractorDTO.fruit_trees_year1 ?? "N/A";
+                contractor.bamboo_year1 = contractorDTO.bamboo_year1 ?? "N/A";
+                contractor.mangrove_year1 = contractorDTO.mangrove_year1 ?? "N/A";
+                contractor.num_seedlings_planted_year1 = contractorDTO.num_seedlings_planted_year1 ?? "N/A";
+                contractor.survivalrate_year1 = contractorDTO.survivalrate_year1 ?? "N/A";
+                //added
+                contractor.fruitTrees = contractorDTO.fruitTrees ?? "N/A";
+                contractor.forestTrees = contractorDTO.forestTrees ?? "N/A";
+                contractor.bamboo = contractorDTO.bamboo ?? "N/A";
+                contractor.mangrove = contractorDTO.mangrove ?? "N/A";
+
+
                 //for contract year 2
-                contractor.moanumber_year2 = contractorDTO.moanumber_year2;
-                contractor.datemoasigned_year2 = contractorDTO.datemoasigned_year2;
-                contractor.unitcost_year2 = contractorDTO.unitcost_year2;
-                contractor.contractcost_year2 = contractorDTO.contractcost_year2;
-                contractor.dateobligated_year2 = contractorDTO.dateobligated_year2;
-                contractor.orsno_year2 = contractorDTO.orsno_year2;
-                contractor.num_seedlings_planted_year2 = contractorDTO.num_seedlings_planted_year2;
-                contractor.num_seedlings_survive_endofyear_1_year2 = contractorDTO.num_seedlings_survive_endofyear_1_year2;
-                contractor.survivalrate_year2 = contractorDTO.survivalrate_year2;
-                contractor.num_seedlings_replanted_year2 = contractorDTO.num_seedlings_replanted_year2;
+                contractor.moanumber_year2 = contractorDTO.moanumber_year2 ?? "N/A";
+                contractor.datemoasigned_year2 = contractorDTO.datemoasigned_year2 ?? "N/A";
+                contractor.unitcost_year2 = contractorDTO.unitcost_year2 ?? "N/A";
+                contractor.contractcost_year2 = contractorDTO.contractcost_year2 ?? "N/A";
+                contractor.dateobligated_year2 = contractorDTO.dateobligated_year2 ?? "N/A";
+                contractor.orsno_year2 = contractorDTO.orsno_year2 ?? "N/A";
+                contractor.num_seedlings_planted_year2 = contractorDTO.num_seedlings_planted_year2 ?? "N/A";
+                contractor.num_seedlings_survive_endofyear_1_year2 = contractorDTO.num_seedlings_survive_endofyear_1_year2 ?? "N/A";
+                contractor.survivalrate_year2 = contractorDTO.survivalrate_year2 ?? "N/A";
+                contractor.num_seedlings_replanted_year2 = contractorDTO.num_seedlings_replanted_year2 ?? "N/A";
 
                 //for contract year 3
-                contractor.moanumber_year3 = contractorDTO.moanumber_year3;
-                contractor.datemoasigned_year3 = contractorDTO.datemoasigned_year3;
-                contractor.unitcost_year3 = contractorDTO.unitcost_year3;
-                contractor.contractcost_year3 = contractorDTO.contractcost_year3;
-                contractor.dateobligated_year3 = contractorDTO.dateobligated_year3;
-                contractor.orsno_year3 = contractorDTO.orsno_year3;
-                contractor.num_seedlings_planted_year3 = contractorDTO.num_seedlings_planted_year3;
-                contractor.num_seedlings_survive_endofyear_1_year3 = contractorDTO.num_seedlings_survive_endofyear_1_year3;
-                contractor.survivalrate_year3 = contractorDTO.survivalrate_year3;
-                contractor.num_seedlings_replanted_year3 = contractorDTO.num_seedlings_replanted_year3;
+                contractor.moanumber_year3 = contractorDTO.moanumber_year3 ?? "N/A";
+                contractor.datemoasigned_year3 = contractorDTO.datemoasigned_year3 ?? "N/A";
+                contractor.unitcost_year3 = contractorDTO.unitcost_year3 ?? "N/A";
+                contractor.contractcost_year3 = contractorDTO.contractcost_year3 ?? "N/A";
+                contractor.dateobligated_year3 = contractorDTO.dateobligated_year3 ?? "N/A";
+                contractor.orsno_year3 = contractorDTO.orsno_year3 ?? "N/A";
+                contractor.num_seedlings_planted_year3 = contractorDTO.num_seedlings_planted_year3 ?? "N/A";
+                contractor.num_seedlings_survive_endofyear_1_year3 = contractorDTO.num_seedlings_survive_endofyear_1_year3 ?? "N/A";
+                contractor.survivalrate_year3 = contractorDTO.survivalrate_year3 ?? "N/A";
+                contractor.num_seedlings_replanted_year3 = contractorDTO.num_seedlings_replanted_year3 ?? "N/A";
+
                 //for payments 
 
                 //year1 1st release
-                contractor.grossammount_year1_1st = contractorDTO.grossammount_year1_1st;
-                contractor.lddap_no_year1_1st = contractorDTO.lddap_no_year1_1st;
-                contractor.date_lddap_year1_1st = contractorDTO.date_lddap_year1_1st;
+                contractor.grossammount_year1_1st = contractorDTO.grossammount_year1_1st ?? "N/A";
+                contractor.lddap_no_year1_1st = contractorDTO.lddap_no_year1_1st ?? "N/A";
+                contractor.date_lddap_year1_1st = contractorDTO.date_lddap_year1_1st ?? "N/A";
 
                 //year1 2nd release
-                contractor.grossammount_year1_2nd = contractorDTO.grossammount_year1_2nd;
-                contractor.retentionfee_year1_2nd = contractorDTO.retentionfee_year1_2nd;
-                contractor.mobilization_fund_year1_2nd = contractorDTO.mobilization_fund_year1_2nd;
-                contractor.amountless_rf_mf_year1_2nd = contractorDTO.amountless_rf_mf_year1_2nd;
-                contractor.bir_year1_2nd = contractorDTO.bir_year1_2nd;
-                contractor.netammountpaid_year1_2nd = contractorDTO.netammountpaid_year1_2nd;
-                contractor.lddapno_year1_2nd = contractorDTO.lddapno_year1_2nd;
-                contractor.date_lddap_year1_2nd = contractorDTO.date_lddap_year1_2nd;
+                contractor.grossammount_year1_2nd = contractorDTO.grossammount_year1_2nd ?? "N/A";
+                contractor.retentionfee_year1_2nd = contractorDTO.retentionfee_year1_2nd ?? "N/A";
+                contractor.mobilization_fund_year1_2nd = contractorDTO.mobilization_fund_year1_2nd ?? "N/A";
+                contractor.amountless_rf_mf_year1_2nd = contractorDTO.amountless_rf_mf_year1_2nd ?? "N/A";
+                contractor.bir_year1_2nd = contractorDTO.bir_year1_2nd ?? "N/A";
+                contractor.netammountpaid_year1_2nd = contractorDTO.netammountpaid_year1_2nd ?? "N/A";
+                contractor.lddapno_year1_2nd = contractorDTO.lddapno_year1_2nd ?? "N/A";
+                contractor.date_lddap_year1_2nd = contractorDTO.date_lddap_year1_2nd ?? "N/A";
 
 
                 //year1 3rd release
-                contractor.grossammount_year1_3rd = contractorDTO.grossammount_year1_3rd;
-                contractor.retentionfee_year1_3rd = contractorDTO.retentionfee_year1_3rd;
-                contractor.mobilization_fund_year1_3rd = contractorDTO.mobilization_fund_year1_3rd;
-                contractor.amountless_rf_mf_year1_3rd = contractorDTO.amountless_rf_mf_year1_3rd;
-                contractor.bir_year1_3rd = contractorDTO.bir_year1_2nd;
-                contractor.netammountpaid_year1_3rd = contractorDTO.netammountpaid_year1_3rd;
-                contractor.lddapno_year1_3rd = contractorDTO.lddapno_year1_3rd;
-                contractor.date_lddap_year1_3rd = contractorDTO.date_lddap_year1_3rd;
+                contractor.grossammount_year1_3rd = contractorDTO.grossammount_year1_3rd ?? "N/A";
+                contractor.retentionfee_year1_3rd = contractorDTO.retentionfee_year1_3rd ?? "N/A";
+                contractor.mobilization_fund_year1_3rd = contractorDTO.mobilization_fund_year1_3rd ?? "N/A";
+                contractor.amountless_rf_mf_year1_3rd = contractorDTO.amountless_rf_mf_year1_3rd ?? "N/A";
+                contractor.bir_year1_3rd = contractorDTO.bir_year1_2nd ?? "N/A";
+                contractor.netammountpaid_year1_3rd = contractorDTO.netammountpaid_year1_3rd ?? "N/A";
+                contractor.lddapno_year1_3rd = contractorDTO.lddapno_year1_3rd ?? "N/A";
+                contractor.date_lddap_year1_3rd = contractorDTO.date_lddap_year1_3rd ?? "N/A";
 
 
                 //year1 4rd release
-                contractor.grossammount_year1_4th = contractorDTO.grossammount_year1_4th;
-                contractor.retentionfee_year1_4th = contractorDTO.retentionfee_year1_4th;
-                contractor.mobilization_fund_year1_4th = contractorDTO.mobilization_fund_year1_4th;
-                contractor.amountless_rf_mf_year1_4th = contractorDTO.amountless_rf_mf_year1_4th;
-                contractor.bir_year1_4th = contractorDTO.bir_year1_2nd;
-                contractor.netammountpaid_year1_4th = contractorDTO.netammountpaid_year1_4th;
-                contractor.lddapno_year1_4th = contractorDTO.lddapno_year1_4th;
-                contractor.date_lddap_year1_4th = contractorDTO.date_lddap_year1_4th;
+                contractor.grossammount_year1_4th = contractorDTO.grossammount_year1_4th ?? "N/A";
+                contractor.retentionfee_year1_4th = contractorDTO.retentionfee_year1_4th ?? "N/A";
+                contractor.mobilization_fund_year1_4th = contractorDTO.mobilization_fund_year1_4th ?? "N/A";
+                contractor.amountless_rf_mf_year1_4th = contractorDTO.amountless_rf_mf_year1_4th ?? "N/A";
+                contractor.bir_year1_4th = contractorDTO.bir_year1_2nd ?? "N/A";
+                contractor.netammountpaid_year1_4th = contractorDTO.netammountpaid_year1_4th ?? "N/A";
+                contractor.lddapno_year1_4th = contractorDTO.lddapno_year1_4th ?? "N/A";
+                contractor.date_lddap_year1_4th = contractorDTO.date_lddap_year1_4th ?? "N/A";
 
                 //year1 5th release
-                contractor.grossammount_year1_5th = contractorDTO.grossammount_year1_5th;
-                contractor.retentionfee_year1_5th = contractorDTO.retentionfee_year1_5th;
-                contractor.mobilization_fund_year1_5th = contractorDTO.mobilization_fund_year1_5th;
-                contractor.amountless_rf_mf_year1_5th = contractorDTO.amountless_rf_mf_year1_5th;
-                contractor.bir_year1_5th = contractorDTO.bir_year1_2nd;
-                contractor.netammountpaid_year1_5th = contractorDTO.netammountpaid_year1_5th;
-                contractor.lddapno_year1_5th = contractorDTO.lddapno_year1_5th;
-                contractor.date_lddap_year1_5th = contractorDTO.date_lddap_year1_5th;
+                contractor.grossammount_year1_5th = contractorDTO.grossammount_year1_5th ?? "N/A";
+                contractor.retentionfee_year1_5th = contractorDTO.retentionfee_year1_5th ?? "N/A";
+                contractor.mobilization_fund_year1_5th = contractorDTO.mobilization_fund_year1_5th ?? "N/A";
+                contractor.amountless_rf_mf_year1_5th = contractorDTO.amountless_rf_mf_year1_5th ?? "N/A";
+                contractor.bir_year1_5th = contractorDTO.bir_year1_2nd ?? "N/A";
+                contractor.netammountpaid_year1_5th = contractorDTO.netammountpaid_year1_5th ?? "N/A";
+                contractor.lddapno_year1_5th = contractorDTO.lddapno_year1_5th ?? "N/A";
+                contractor.date_lddap_year1_5th = contractorDTO.date_lddap_year1_5th ?? "N/A";
 
                 //year1 6th release
-                contractor.grossammount_year1_6th = contractorDTO.grossammount_year1_6th;
-                contractor.retentionfee_year1_6th = contractorDTO.retentionfee_year1_6th;
-                contractor.mobilization_fund_year1_6th = contractorDTO.mobilization_fund_year1_6th;
-                contractor.amountless_rf_mf_year1_6th = contractorDTO.amountless_rf_mf_year1_6th;
-                contractor.bir_year1_6th = contractorDTO.bir_year1_6th;
-                contractor.netammountpaid_year1_6th = contractorDTO.netammountpaid_year1_6th;
-                contractor.lddapno_year1_6th = contractorDTO.lddapno_year1_6th;
-                contractor.date_lddap_year1_6th = contractorDTO.date_lddap_year1_6th;
+                contractor.grossammount_year1_6th = contractorDTO.grossammount_year1_6th ?? "N/A";
+                contractor.retentionfee_year1_6th = contractorDTO.retentionfee_year1_6th ?? "N/A";
+                contractor.mobilization_fund_year1_6th = contractorDTO.mobilization_fund_year1_6th ?? "N/A";
+                contractor.amountless_rf_mf_year1_6th = contractorDTO.amountless_rf_mf_year1_6th ?? "N/A";
+                contractor.bir_year1_6th = contractorDTO.bir_year1_6th ?? "N/A";
+                contractor.netammountpaid_year1_6th = contractorDTO.netammountpaid_year1_6th ?? "N/A";
+                contractor.lddapno_year1_6th = contractorDTO.lddapno_year1_6th ?? "N/A";
+                contractor.date_lddap_year1_6th = contractorDTO.date_lddap_year1_6th ?? "N/A";
 
                 //year2 1st release
-                contractor.survivalrate_year2_1st = contractorDTO.survivalrate_year2_1st;
-                contractor.grossammount_year2_1st = contractorDTO.grossammount_year2_1st;
-                contractor.retentionfee_year2_1st = contractorDTO.retentionfee_year2_1st;
-                contractor.amountless_rf_year2_1st = contractorDTO.amountless_rf_year2_1st;
-                contractor.bir_year2_1st = contractorDTO.bir_year2_1st;
-                contractor.netamount_paid_year2_1st = contractorDTO.netamount_paid_year2_1st;
-                contractor.lddapno_year2_1st = contractorDTO.lddapno_year2_1st;
-                contractor.date_lddap_year2_1st = contractorDTO.date_lddap_year2_1st;
+                contractor.survivalrate_year2_1st = contractorDTO.survivalrate_year2_1st ?? "N/A";
+                contractor.grossammount_year2_1st = contractorDTO.grossammount_year2_1st ?? "N/A";
+                contractor.retentionfee_year2_1st = contractorDTO.retentionfee_year2_1st ?? "N/A";
+                contractor.amountless_rf_year2_1st = contractorDTO.amountless_rf_year2_1st ?? "N/A";
+                contractor.bir_year2_1st = contractorDTO.bir_year2_1st ?? "N/A";
+                contractor.netamount_paid_year2_1st = contractorDTO.netamount_paid_year2_1st ?? "N/A";
+                contractor.lddapno_year2_1st = contractorDTO.lddapno_year2_1st ?? "N/A";
+                contractor.date_lddap_year2_1st = contractorDTO.date_lddap_year2_1st ?? "N/A";
 
 
 
                 //year2 2nd release
-                contractor.survivalrate_year2_2nd = contractorDTO.survivalrate_year2_2nd;
-                contractor.grossammount_year2_2nd = contractorDTO.grossammount_year2_2nd;
-                contractor.retentionfee_year2_2nd = contractorDTO.retentionfee_year2_2nd;
-                contractor.amountless_rf_year2_2nd = contractorDTO.amountless_rf_year2_2nd;
-                contractor.bir_year2_2nd = contractorDTO.bir_year2_2nd;
-                contractor.netamount_paid_year2_2nd = contractorDTO.netamount_paid_year2_2nd;
-                contractor.lddapno_year2_2nd = contractorDTO.lddapno_year2_2nd;
-                contractor.date_lddap_year2_2nd = contractorDTO.date_lddap_year2_2nd;
+                contractor.survivalrate_year2_2nd = contractorDTO.survivalrate_year2_2nd ?? "N/A";
+                contractor.grossammount_year2_2nd = contractorDTO.grossammount_year2_2nd ?? "N/A";
+                contractor.retentionfee_year2_2nd = contractorDTO.retentionfee_year2_2nd ?? "N/A";
+                contractor.amountless_rf_year2_2nd = contractorDTO.amountless_rf_year2_2nd ?? "N/A";
+                contractor.bir_year2_2nd = contractorDTO.bir_year2_2nd ?? "N/A";
+                contractor.netamount_paid_year2_2nd = contractorDTO.netamount_paid_year2_2nd ?? "N/A";
+                contractor.lddapno_year2_2nd = contractorDTO.lddapno_year2_2nd ?? "N/A";
+                contractor.date_lddap_year2_2nd = contractorDTO.date_lddap_year2_2nd ?? "N/A";
 
 
 
                 //year2 3rd release
-                contractor.survivalrate_year2_3rd = contractorDTO.survivalrate_year2_3rd;
-                contractor.grossammount_year2_3rd = contractorDTO.grossammount_year2_3rd;
-                contractor.retentionfee_year2_3rd = contractorDTO.retentionfee_year2_3rd;
-                contractor.amountless_rf_year2_3rd = contractorDTO.amountless_rf_year2_3rd;
-                contractor.bir_year2_3rd = contractorDTO.bir_year2_3rd;
-                contractor.netamount_paid_year2_3rd = contractorDTO.netamount_paid_year2_3rd;
-                contractor.lddapno_year2_3rd = contractorDTO.lddapno_year2_3rd;
-                contractor.date_lddap_year2_3rd = contractorDTO.date_lddap_year2_3rd;
+                contractor.survivalrate_year2_3rd = contractorDTO.survivalrate_year2_3rd ?? "N/A";
+                contractor.grossammount_year2_3rd = contractorDTO.grossammount_year2_3rd ?? "N/A";
+                contractor.retentionfee_year2_3rd = contractorDTO.retentionfee_year2_3rd ?? "N/A";
+                contractor.amountless_rf_year2_3rd = contractorDTO.amountless_rf_year2_3rd ?? "N/A";
+                contractor.bir_year2_3rd = contractorDTO.bir_year2_3rd ?? "N/A";
+                contractor.netamount_paid_year2_3rd = contractorDTO.netamount_paid_year2_3rd ?? "N/A";
+                contractor.lddapno_year2_3rd = contractorDTO.lddapno_year2_3rd ?? "N/A";
+                contractor.date_lddap_year2_3rd = contractorDTO.date_lddap_year2_3rd ?? "N/A";
 
                 //year2 4th release
-                contractor.survivalrate_year2_4th = contractorDTO.survivalrate_year2_4th;
-                contractor.grossammount_year2_4th = contractorDTO.grossammount_year2_4th;
-                contractor.retentionfee_year2_4th = contractorDTO.retentionfee_year2_4th;
-                contractor.amountless_rf_year2_4th = contractorDTO.amountless_rf_year2_4th;
-                contractor.bir_year2_4th = contractorDTO.bir_year2_4th;
-                contractor.netamount_paid_year2_4th = contractorDTO.netamount_paid_year2_4th;
-                contractor.lddapno_year2_4th = contractorDTO.lddapno_year2_4th;
-                contractor.date_lddap_year2_4th = contractorDTO.date_lddap_year2_4th;
+                contractor.survivalrate_year2_4th = contractorDTO.survivalrate_year2_4th ?? "N/A";
+                contractor.grossammount_year2_4th = contractorDTO.grossammount_year2_4th ?? "N/A";
+                contractor.retentionfee_year2_4th = contractorDTO.retentionfee_year2_4th ?? "N/A";
+                contractor.amountless_rf_year2_4th = contractorDTO.amountless_rf_year2_4th ?? "N/A";
+                contractor.bir_year2_4th = contractorDTO.bir_year2_4th ?? "N/A";
+                contractor.netamount_paid_year2_4th = contractorDTO.netamount_paid_year2_4th ?? "N/A";
+                contractor.lddapno_year2_4th = contractorDTO.lddapno_year2_4th ?? "N/A";
+                contractor.date_lddap_year2_4th = contractorDTO.date_lddap_year2_4th ?? "N/A";
+
+                //year3 1st release
+                contractor.grossammount_year3_1st = contractorDTO.grossammount_year3_1st ?? "N/A";
+                contractor.survivalrate_year3_1st = contractorDTO.survivalrate_year3_1st ?? "N/A";
+                contractor.bir_year3_1st = contractorDTO.bir_year3_1st ?? "N/A";
+                contractor.netamount_paid_year3_1st = contractorDTO.netamount_paid_year3_1st ?? "N/A";
+                contractor.lddapno_year3_1st = contractorDTO.lddapno_year3_1st ?? "N/A";
+                contractor.retentionfee_year3_1st = contractorDTO.retentionfee_year3_1st ?? "N/A";
+                contractor.amountless_rf_year3_1st = contractorDTO.amountless_rf_year3_1st ?? "N/A";
+                contractor.date_lddap_year3_1st = contractorDTO.date_lddap_year3_1st ?? "N/A";
+
+
+                //year3 2nd release
+
+                contractor.survivalrate_year3_2nd = contractorDTO.survivalrate_year3_2nd ?? "N/A";
+                contractor.grossammount_year3_2nd = contractorDTO.grossammount_year3_2nd ?? "N/A";
+                contractor.retentionfee_year3_2nd = contractorDTO.retentionfee_year3_2nd ?? "N/A";
+                contractor.amountless_rf_year3_2nd = contractorDTO.amountless_rf_year3_2nd ?? "N/A";
+                contractor.bir_year3_2nd = contractorDTO.bir_year3_2nd ?? "N/A";
+                contractor.netamount_paid_year3_2nd = contractorDTO.netamount_paid_year3_2nd ?? "N/A";
+                contractor.lddapno_year3_2nd = contractorDTO.lddapno_year3_2nd ?? "N/A";
+                contractor.date_lddap_year3_2nd = contractorDTO.date_lddap_year3_2nd ?? "N/A";
+
+                //year3 3rd realease
+                contractor.survivalrate_year3_3rd = contractorDTO.survivalrate_year3_3rd ?? "N/A";
+                contractor.grossammount_year3_3rd = contractorDTO.grossammount_year3_3rd ?? "N/A";
+                contractor.retentionfee_year3_3rd = contractorDTO.retentionfee_year3_3rd ?? "N/A";
+                contractor.amountless_rf_year3_3rd = contractorDTO.amountless_rf_year3_3rd ?? "N/A";
+                contractor.bir_year3_3rd = contractorDTO.bir_year3_3rd ?? "N/A";
+                contractor.netamount_paid_year3_3rd = contractorDTO.netamount_paid_year3_3rd ?? "N/A";
+                contractor.lddapno_year3_3rd = contractorDTO.lddapno_year3_3rd ?? "N/A";
+                contractor.date_lddap_year3_3rd = contractorDTO.date_lddap_year3_3rd ?? "N/A";
+
+                //year3 4th release
+
+                contractor.survivalrate_year3_4th = contractorDTO.survivalrate_year3_4th ?? "N/A";
+                contractor.grossammount_year3_4th = contractorDTO.grossammount_year3_4th ?? "N/A";
+                contractor.retentionfee_year3_4th = contractorDTO.retentionfee_year3_4th ?? "N/A";
+                contractor.amountless_rf_year3_4th = contractorDTO.amountless_rf_year3_4th ?? "N/A";
+                contractor.bir_year3_4th = contractorDTO.bir_year3_4th ?? "N/A";
+                contractor.netamount_paid_year3_4th = contractorDTO.netamount_paid_year3_4th ?? "N/A";
+                contractor.lddapno_year3_4th = contractorDTO.lddapno_year3_4th ?? "N/A";
+                contractor.date_lddap_year3_4th = contractorDTO.date_lddap_year3_4th ?? "N/A";
+
+
                 contractor.DateAdded = DateTime.Now;
 
 
-
-
-
+             
                 contractor.RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.RoleID; //saving role depend in login id
                 contractor.UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id; //saving role depend in UserId login
                 contractor.UserName = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.UserName; //saving username depend in login

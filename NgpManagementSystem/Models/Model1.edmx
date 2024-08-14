@@ -196,6 +196,10 @@
           <Property Name="netamount_paid_year3_4th" Type="nvarchar(max)" />
           <Property Name="lddapno_year3_4th" Type="nvarchar(max)" />
           <Property Name="date_lddap_year3_4th" Type="nvarchar(max)" />
+          <Property Name="forestTrees" Type="nvarchar(max)" />
+          <Property Name="fruitTrees" Type="nvarchar(max)" />
+          <Property Name="bamboo" Type="nvarchar(max)" />
+          <Property Name="mangrove" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="ngp_dropdown">
           <Key>
@@ -1402,6 +1406,10 @@
           <NavigationProperty Name="NgpRole" Relationship="NgpdbmsModel.FK_ngp_contractor_NgpRole" FromRole="ngp_contractor" ToRole="NgpRole" />
           <NavigationProperty Name="NgpUser" Relationship="NgpdbmsModel.FK_ngp_contractor_NgpUser" FromRole="ngp_contractor" ToRole="NgpUser" />
           <NavigationProperty Name="ngp_history" Relationship="NgpdbmsModel.FK_ngp_history_ngp_contractor" FromRole="ngp_contractor" ToRole="ngp_history" />
+          <Property Name="forestTrees" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="fruitTrees" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="bamboo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="mangrove" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="ngp_dropdown">
           <Key>
@@ -2153,6 +2161,10 @@
           <EntitySetMapping Name="ngp_contractor">
             <EntityTypeMapping TypeName="NgpdbmsModel.ngp_contractor">
               <MappingFragment StoreEntitySet="ngp_contractor">
+                <ScalarProperty Name="mangrove" ColumnName="mangrove" />
+                <ScalarProperty Name="bamboo" ColumnName="bamboo" />
+                <ScalarProperty Name="fruitTrees" ColumnName="fruitTrees" />
+                <ScalarProperty Name="forestTrees" ColumnName="forestTrees" />
                 <ScalarProperty Name="date_lddap_year3_4th" ColumnName="date_lddap_year3_4th" />
                 <ScalarProperty Name="lddapno_year3_4th" ColumnName="lddapno_year3_4th" />
                 <ScalarProperty Name="netamount_paid_year3_4th" ColumnName="netamount_paid_year3_4th" />

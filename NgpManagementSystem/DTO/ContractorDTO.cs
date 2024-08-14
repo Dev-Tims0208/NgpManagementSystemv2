@@ -165,6 +165,11 @@ namespace NgpManagementSystem.DTO
         public string lddapno_year3_4th { get; set; }
         public string date_lddap_year3_4th { get; set; }
 
+        public string forestTrees { get; set; }
+        public string fruitTrees { get; set; }
+        public string bamboo { get; set; }
+        public string mangrove { get; set; }
+
 
     }
 }

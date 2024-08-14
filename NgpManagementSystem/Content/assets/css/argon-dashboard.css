@@ -23334,10 +23334,10 @@ hr.horizontal.gray-light {
   box-shadow: 0 0 2rem 0 rgba(136, 152, 170, 0.15);
 }
 
-.navbar-vertical.bg-white .navbar-nav>.nav-item .nav-link.active {
-  background-color: #f6f9fc;
-  box-shadow: none;
-}
+    .navbar-vertical.bg-white .navbar-nav > .nav-item .nav-link.active {
+        background-color: #c5f6d9;
+        box-shadow: none;
+    }
 
 .navbar-vertical .navbar-nav .nav-link.active {
   font-weight: 600;
@@ -23649,7 +23649,7 @@ hr.horizontal.gray-light {
 }
 
 .nav.nav-pills {
-    background: #c5fdca;
+    background: #e0f3e2;
     border-radius: 0.75rem;
     position: relative;
 }
