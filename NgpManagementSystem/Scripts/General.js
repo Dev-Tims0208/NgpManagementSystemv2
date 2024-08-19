@@ -1,4 +1,5 @@
-﻿function UserLActivityLogs() {
+﻿
+function UserLActivityLogs() {
 
     $("#accountlogsuser").DataTable({
         "ajax": {
@@ -1962,15 +1963,21 @@ function ContractorAnimation() {
 
         "columns": [
             {
-                "data": "contractorID", "name": "contractorID", "className": "hideThis",
+                "data": "contractorID", "name": "contractorID",
+                "className": "hideThis pt-2",
             },
+
             {
                 "data": "contractor_name", "name": "contractor_name",
+                "className": " pt-4 ",
                 "render": function (data, type, row) {
 
                     if (data == null) {
 
                         return '<span  class=" badge bg-danger text-white" >null</span>'
+                    }
+                    else if (data == "N/A") {
+                        return '<span  class=" badge  text-white me-1" style="background-color:red;width:9vh;" >' + data + "</span>";
                     }
 
                     return '<span >' + data + '</span>'
@@ -1982,26 +1989,34 @@ function ContractorAnimation() {
             },
             {
                 "data": "address_municipality", "name": "address_municipality",
+                "className": " pt-4",
                 "render": function (data, type, row) {
 
                     if (data == null) {
 
-                        return '<span  class=" badge bg-danger text-white" >null</span>'
+                        return '<span  class=" badge  text-white me-1" style="background-color:red;width:9vh;"  >N/A</span>'
+                    }
+                        else if (data == "N/A") {
+                        return '<span  class=" badge  text-white me-1" style="background-color:red;width:9vh;" >' + data + "</span>";
                     }
 
                     return '<span >' + data + '</span>'
 
 
 
-                },
+                },  
             },
             {
                 "data": "address_barangay", "name": "address_barangay",
+                "className": " pt-4",
                 "render": function (data, type, row) {
 
                     if (data == null) {
 
-                        return '<span  class=" badge bg-danger text-white" >null</span>'
+                        return '<span  class=" badge  text-white me-1" style="background-color:red;width:9vh;"  >N/A</span>'
+                    }
+                    else if (data == "N/A") {
+                        return '<span  class=" badge  text-white me-1" style="background-color:red;width:9vh;" >' + data + "</span>";
                     }
 
                     return '<span >' + data + '</span>'
@@ -2012,13 +2027,16 @@ function ContractorAnimation() {
             },
             {
                 "data": "contractor_type", "name": "contractor_type",
+                "className": " pt-4",
                 "render": function (data, type, row, value) {
 
                     if (data == null) {
 
-                        return '<span  class=" badge bg-danger text-white" >' + data + '</span>'
+                        return '<span  class=" badge  text-white me-1" style="background-color:red;width:9vh;"  >N/A</span>'
                     }
-
+                    else if (data == "N/A") {
+                        return '<span  class=" badge  text-white me-1" style="background-color:red;width:9vh;" >' + data + "</span>";
+                    }
                     return '<span >' + data + '</span>'
 
 
@@ -2027,6 +2045,7 @@ function ContractorAnimation() {
             },
             {
                 "data": "DateAdded", "name": "DateAdded",
+                "className": " pt-4",
                 "render": function (data, type, row, meta) {
                     return `<span >${moment(data).format("MMMM DD YYYY, h:mm:ss a")}</span>`;
                 }
@@ -2034,24 +2053,33 @@ function ContractorAnimation() {
             },
             {
                 "data": "RoleId", "name": "RoleId",
+                "className": " pt-4",
                 "render": function (data, type, row) {
 
-                    if (data == "NgpAdmin") {
-
-                        return '<span  class=" badge bg-secondary text-black" style="font-size:12px;" >NgpAdmin</span>'
+                    if (data == "Developer") {
+                        return '<span  class=" badge  text-white me-1" style="background-color:#0e37b3;width:10vh;" >' + data + "</span>";
+                    }
+                    else if (data == "Administrator") {
+                        return '<span  class="badge badge-sm text-dark  me-1" style="background-color:yellow;width:15vh;" >' + data + "</span>";
+                    }
+                    else if (data == "User") {
+                        return '<span  class="badge bg-info badge-sm me-1"  style="width:15vh;"  >' + data + "</span>";
                     }
 
-                    return '<span class=" badge bg-secondary text-black" style="font-size:12px;" >' + data + '</span>'
+                    else if (data == null) {
 
+                        return '<span  class=" badge bg-danger text-white" >NULL</span>'
+                    }
 
 
                 },
             },
             {
                 "data": "Name", "name": "Name",
+                "className": " pt-4",
                 "render": function (data, type, row) {
 
-                    return '<span class=" badge bg-info text-white" style="font-size:12px;" >' + data + '</span>'
+                    return '<span class=" badge  text-white" style="font-size:12px;background-color: #9ac863 !important;" >' + data + '</span>'
 
 
 
@@ -2061,7 +2089,8 @@ function ContractorAnimation() {
             {
                 "data": null,
                 'render': function (data, type, full, meta) {
-                    return '<button  style=width:68px;  class=\'btn btn-outline-success editcontractor d-block btn-sm\' data-id = ' + data.contractorID + ' > Edit  <span class="fa fa-edit f-20" >  </span></button>' + '<button  class=\'btn btn-outline-danger  deletecontractor d-block btn-sm\' data-id = ' + data.contractorID + ' > Delete  <span class="fa fa-trash f-20" >  </span></button>'
+                    return '<button  class=\'btn btn-success editcontractor d-block btn-sm\' data-id = ' + data.contractorID + ' style="width:14vh;" > EDIT  <span class="fa fa-edit f-20" >  </span></button>' +
+                        '<button  class=\' btn btn-danger    deletecontractor d-block btn-sm\' data-id = ' + data.contractorID + ' style="width:14vh;"> DELETE  <span class="fa fa-trash f-20" >  </span></button>'
 
                 }
             },
@@ -2122,11 +2151,15 @@ function ContractorAnimation() {
             },
             {
                 "data": "area", "name": "area",
+                "className": " pt-4",
                 "render": function (data, type, row, value) {
 
                     if (data == null) {
 
-                        return '<span  class=" badge bg-danger text-white" >' + data + '</span>'
+                        return '<span  class=" badge  text-white me-1" style="background-color:red;width:9vh;"  >N/A</span>'
+                    }
+                    else if (data == "N/A") {
+                        return '<span  class=" badge  text-white me-1" style="background-color:red;width:9vh;" >' + data + "</span>";
                     }
 
                     return '<span >' + data + '</span>'
@@ -2138,11 +2171,15 @@ function ContractorAnimation() {
            
             {
                 "data": "region", "name": "region",
+                "className": " pt-4",
                 "render": function (data, type, row, value) {
 
                     if (data == null) {
 
-                        return '<span  class=" badge bg-danger text-white" >' + data + '</span>'
+                        return '<span  class=" badge  text-white me-1" style="background-color:red;width:9vh;"  >N/A</span>'
+                    }
+                       else if (data == "N/A") {
+                        return '<span  class=" badge  text-white me-1" style="background-color:red;width:9vh;" >' + data + "</span>";
                     }
 
                     return '<span >' + data + '</span>'
@@ -2153,26 +2190,34 @@ function ContractorAnimation() {
             },
             {
                 "data": "location_municipality", "name": "location_municipality",
+                "className": " pt-4",
                 "render": function (data, type, row, value) {
 
                     if (data == null) {
 
-                        return '<span  class=" badge bg-danger text-white" >' + data + '</span>'
+                        return '<span  class=" badge  text-white me-1" style="background-color:red;width:9vh;"  >N/A</span>'
+                    }
+                    else if (data == "N/A") {
+                        return '<span  class=" badge  text-white me-1" style="background-color:red;width:9vh;" >' + data + "</span>";
                     }
 
                     return '<span >' + data + '</span>'
-
 
 
                 },
             },
             {
                 "data": "location_barangay", "name": "location_barangay",
+                "className": " pt-4",
                 "render": function (data, type, row, value) {
+
 
                     if (data == null) {
 
-                        return '<span  class=" badge bg-danger text-white" >' + data + '</span>'
+                        return '<span  class=" badge  text-white me-1" style="background-color:red;width:9vh;"  >N/A</span>'
+                    }
+                    else if (data == "N/A") {
+                        return '<span  class=" badge  text-white me-1" style="background-color:red;width:9vh;" >' + data + "</span>";
                     }
 
                     return '<span >' + data + '</span>'
@@ -2183,11 +2228,16 @@ function ContractorAnimation() {
             },
             {
                 "data": "penro", "name": "penro",
+                "className": " pt-4",
                 "render": function (data, type, row, value) {
+
 
                     if (data == null) {
 
-                        return '<span  class=" badge bg-danger text-white" >' + data + '</span>'
+                        return '<span  class=" badge  text-white me-1" style="background-color:red;width:9vh;"  >N/A</span>'
+                    }
+                    else if (data == "N/A") {
+                        return '<span  class=" badge  text-white me-1" style="background-color:red;width:9vh;" >' + data + "</span>";
                     }
 
                     return '<span >' + data + '</span>'
@@ -2198,11 +2248,16 @@ function ContractorAnimation() {
             },
             {
                 "data": "year_form", "name": "year_form",
+                "className": " pt-4",
                 "render": function (data, type, row, value) {
+
 
                     if (data == null) {
 
-                        return '<span  class=" badge bg-danger text-white" >' + data + '</span>'
+                        return '<span  class=" badge  text-white me-1" style="background-color:red;width:9vh;"  >N/A</span>'
+                    }
+                    else if (data == "N/A") {
+                        return '<span  class=" badge  text-white me-1" style="background-color:red;width:9vh;" >' + data + "</span>";
                     }
 
                     return '<span >' + data + '</span>'
@@ -2213,6 +2268,7 @@ function ContractorAnimation() {
             },
             {
                 "data": "DateAdded", "name": "DateAdded",
+                "className": " pt-4",
                 "render": function (data, type, row, meta) {
                     return `<span >${moment(data).format("MMMM DD YYYY, h:mm:ss a")}</span>`;
                 }
@@ -2220,34 +2276,44 @@ function ContractorAnimation() {
             },
             {
                 "data": "RoleId", "name": "RoleId",
+                "className": " pt-4",
                 "render": function (data, type, row) {
 
-                    if (data == "NgpAdmin") {
-
-                        return '<span  class=" badge bg-secondary text-black" style="font-size:12px;" >NgpAdmin</span>'
+                    if (data == "Developer") {
+                        return '<span  class=" badge  text-white me-1" style="background-color:#0e37b3;width:10vh;" >' + data + "</span>";
+                    }
+                    else if (data == "Administrator") {
+                        return '<span  class="badge badge-sm text-dark  me-1" style="background-color:yellow;width:15vh;" >' + data + "</span>";
+                    }
+                    else if (data == "User") {
+                        return '<span  class="badge bg-info badge-sm me-1"  style="width:15vh;"  >' + data + "</span>";
                     }
 
-                    return '<span class=" badge bg-secondary text-black" style="font-size:12px;" >' + data + '</span>'
+                    else if (data == null) {
 
+                        return '<span  class=" badge bg-danger text-white" >NULL</span>'
+                    }
 
 
                 },
             },
             {
                 "data": "Name", "name": "Name",
+                "className": " pt-4",
                 "render": function (data, type, row) {
 
-                    return '<span class=" badge bg-info text-white" style="font-size:12px;" >' + data + '</span>'
+                    return '<span class=" badge  text-white" style="font-size:12px;background-color: #9ac863 !important;" >' + data + '</span>'
 
 
 
                 },
 
             },
-            {
+            { 
                 "data": null,
+                "className": " pt-4", 
                 'render': function (data, type, full, meta) {
-                    return '<button  style=width:68px;  class=\'btn btn-outline-success editdataproject d-block btn-sm\' data-id = ' + data.contractorID + ' > Edit  <span class="fa fa-edit f-20" >  </span></button>'
+                    return '<button  class=\'btn btn-success editdataproject d-block btn-sm\' data-id = ' + data.contractorID + ' > EDIT  <span class="fa fa-edit f-20" >  </span></button>'
 
                 }
             },
@@ -2854,25 +2920,34 @@ function ContractorAnimation() {
 
             },
             {
-                "data": "RoleId", "name": "RoleId",
+                "data": "RoleId", "name": "RoleId", "className": "pt-4",
+
                 "render": function (data, type, row) {
 
-                    if (data == "NgpAdmin") {
-
-                        return '<span  class=" badge bg-secondary text-black" style="font-size:12px;" >NgpAdmin</span>'
+                    if (data == "Developer") {
+                        return '<span  class=" badge  text-white me-1" style="background-color:#0e37b3;width:10vh;" >' + data + "</span>";
+                    }
+                    else if (data == "Administrator") {
+                        return '<span  class="badge badge-sm text-dark  me-1" style="background-color:yellow;width:15vh;" >' + data + "</span>";
+                    }
+                    else if (data == "User") {
+                        return '<span  class="badge bg-info badge-sm me-1"  style="width:15vh;"  >' + data + "</span>";
                     }
 
-                    return '<span class=" badge bg-secondary text-black" style="font-size:12px;" >' + data + '</span>'
+                    else if (data == null) {
 
+                        return '<span  class=" badge bg-danger text-white" >NULL</span>'
+                    }
 
 
                 },
             },
             {
-                "data": "Name", "name": "Name",
+                "data": "Name", "name": "Name", "className": "pt-4",
+
                 "render": function (data, type, row) {
 
-                    return '<span class=" badge bg-info text-white" style="font-size:12px;" >' + data + '</span>'
+                    return '<span class=" badge  text-white" style="font-size:12px;background-color: #9ac863 !important;" >' + data + '</span>'
 
 
 
@@ -4576,18 +4651,7 @@ function ContractorAnimation() {
     });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+    
 
     //SERVER SIDE DATATABLE SHOW DATA FOR CONTRACTOR
     $("#contracttables").DataTable({
@@ -4607,52 +4671,65 @@ function ContractorAnimation() {
                 "data": "contractorID", "name": "contractorID", "className": "hideThis",
             },
             {
-                "data": "contractor_name", "name": "contractor_name",
+                "data": "contractor_name", "name": "contractor_name", "className": "pt-4",
+
+               
             },
             {
                 "data": null,
                 'render': function (data, type, full, meta) {
-                    return '<button  style=width:72px;  class=\'btn btn-primary getdatayear1contract d-block btn-sm\' data-id = ' + data.contractorID + ' > YEAR1  <span class="fa fa-list f-20" >  </span></button>' + '<button  class=\'btn btn-info  getdatayear2contract d-block btn-sm\' data-id = ' + data.contractorID + ' > YEAR2  <span class="fa fa-list f-20" >  </span></button>' + '<button  class=\'btn btn-success  getdatayear3contract d-block btn-sm\' data-id = ' + data.contractorID + ' > YEAR3  <span class="fa fa-list f-20" >  </span></button>'
+                    return '<button  class=\'btn btn-primary getdatayear1contract d-block btn-sm\' data-id = ' + data.contractorID + ' > YEAR1  <span class="fa fa-list f-20" >  </span></button>' + '<button  class=\'btn btn-info  getdatayear2contract d-block btn-sm\' data-id = ' + data.contractorID + ' > YEAR2  <span class="fa fa-list f-20" >  </span></button>' + '<button  class=\'btn btn-success  getdatayear3contract d-block btn-sm\' data-id = ' + data.contractorID + ' > YEAR3  <span class="fa fa-list f-20" >  </span></button>'
 
                 }
             },
             {
-                "data": "DateAdded", "name": "DateAdded",
+                "data": "DateAdded", "name": "DateAdded", "className": "pt-4",
                 "render": function (data, type, row, meta) {
                     return `<span >${moment(data).format("MMMM DD YYYY, h:mm:ss a")}</span>`;
                 }
 
             },
             {
-                "data": "RoleId", "name": "RoleId",
+                "data": "RoleId", "name": "RoleId", "className": "pt-4",
+
                 "render": function (data, type, row) {
 
-                    if (data == "NgpAdmin") {
-
-                        return '<span  class=" badge bg-secondary text-black" style="font-size:12px;" >NgpAdmin</span>'
+                    if (data == "Developer") {
+                        return '<span  class=" badge  text-white me-1" style="background-color:#0e37b3;width:10vh;" >' + data + "</span>";
+                    }
+                    else if (data == "Administrator") {
+                        return '<span  class="badge badge-sm text-dark  me-1" style="background-color:yellow;width:15vh;" >' + data + "</span>";
+                    }
+                    else if (data == "User") {
+                        return '<span  class="badge bg-info badge-sm me-1"  style="width:15vh;"  >' + data + "</span>";
                     }
 
-                    return '<span class=" badge bg-secondary text-black" style="font-size:12px;" >' + data + '</span>'
+                    else if (data == null) {
 
+                        return '<span  class=" badge bg-danger text-white" >NULL</span>'
+                    }
 
 
                 },
             },
             {
-                "data": "Name", "name": "Name",
+                "data": "Name", "name": "Name", "className": "pt-4",
+            
                 "render": function (data, type, row) {
 
-                    return '<span class=" badge bg-info text-white" style="font-size:12px;" >' + data + '</span>'
+                    return '<span class=" badge  text-white" style="font-size:12px;background-color: #9ac863 !important;" >' + data + '</span>'
 
 
 
-                },
+                },  
 
             },
             {
                 "data": null,
                 'render': function (data, type, full, meta) {
-                    return '<button  style=width:100px;  class=\'btn btn-outline-primary edityear1contract d-block btn-sm\' data-id = ' + data.contractorID + ' > EDITYEAR1  <span class="fa fa-edit f-20" >  </span></button>' + '<button  style=width:100px;  class=\'btn btn-outline-info edityear2contract d-block btn-sm\' data-id = ' + data.contractorID + ' > EDITYEAR2  <span class="fa fa-edit f-20" >  </span></button>' + '<button  style=width:100px;  class=\'btn btn-outline-success edityear3contract d-block btn-sm\' data-id = ' + data.contractorID + ' > EDITYEAR3  <span class="fa fa-edit f-20" >  </span></button>'
+                    return '<button   class=\'btn btn-outline-primary edityear1contract d-block btn-sm\' data-id = ' + data.contractorID + ' > EDITYEAR1  <span class="fa fa-edit f-20" >  </span></button>' +
+                        '<button   class=\'btn btn-outline-info edityear2contract d-block btn-sm\' data-id = ' + data.contractorID + ' > EDITYEAR2  <span class="fa fa-edit f-20" >  </span></button>' +
+                        '<button   class=\'btn btn-outline-success edityear3contract d-block btn-sm\' data-id = ' + data.contractorID + ' > EDITYEAR3  <span class="fa fa-edit f-20" >  </span></button>'
                 }
             },
 
