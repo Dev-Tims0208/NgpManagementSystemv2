@@ -515,6 +515,9 @@
     <Content Include="Content\datatables.min.css" />
     <Content Include="Content\jquery.dataTables.css" />
     <Content Include="Content\jquery.dataTables.min.css" />
+    <Content Include="Content\Login\bootstrap.min.css" />
+    <Content Include="Content\Login\CustomLoginTemplate.css" />
+    <Content Include="Content\Login\login-5.css" />
     <Content Include="Content\select2.css" />
     <Content Include="Content\select2.min.css" />
     <Content Include="Content\testing.css" />
@@ -523,6 +526,9 @@
     <Content Include="DefaultImage\city-hall.png" />
     <Content Include="DefaultImage\denr.png" />
     <Content Include="DefaultImage\maintenance.jpg" />
+    <Content Include="DefaultImage\PcwinVZL.jpg" />
+    <Content Include="DefaultImage\QbMsgUuP.jpg" />
+    <Content Include="DefaultImage\zqn9K8zB.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fontawesome-free-5.15.4-web\attribution.js" />
     <Content Include="fontawesome-free-5.15.4-web\css\all.css" />

@@ -41,11 +41,10 @@ function UserLActivityLogs() {
 
                     return '<span class=" badge bg-info text-white" style="font-size:12px;" >' + data + '</span>'
 
-
-
                 },
 
             },
+
 
             {
                 "data": "RoleId", "name": "RoleId",
@@ -82,10 +81,6 @@ function UserLActivityLogs() {
 
 
     });
-
-
-
-
 
 
 
