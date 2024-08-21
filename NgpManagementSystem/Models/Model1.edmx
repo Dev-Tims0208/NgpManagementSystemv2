@@ -205,6 +205,7 @@
           <Property Name="LogMessage" Type="nvarchar(max)" />
           <Property Name="UserId" Type="int" />
           <Property Name="RoleId" Type="int" />
+          <Property Name="Position" Type="nvarchar" MaxLength="250" />
         </EntityType>
         <EntityType Name="NgpMaintenanceMode">
           <Key>
@@ -755,6 +756,7 @@
           <Property Name="RoleId" Type="Int32" />
           <NavigationProperty Name="NgpRole" Relationship="NgpdbmsModel.FK_NgpLogsContractor_NgpRole" FromRole="NgpLog" ToRole="NgpRole" />
           <NavigationProperty Name="NgpUser" Relationship="NgpdbmsModel.FK_NgpLogsContractor_NgpUser" FromRole="NgpLog" ToRole="NgpUser" />
+          <Property Name="Position" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="NgpMaintenanceMode">
           <Key>
@@ -1171,6 +1173,7 @@
           <EntitySetMapping Name="NgpLogs">
             <EntityTypeMapping TypeName="NgpdbmsModel.NgpLog">
               <MappingFragment StoreEntitySet="NgpLogs">
+                <ScalarProperty Name="Position" ColumnName="Position" />
                 <ScalarProperty Name="RoleId" ColumnName="RoleId" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="LogMessage" ColumnName="LogMessage" />

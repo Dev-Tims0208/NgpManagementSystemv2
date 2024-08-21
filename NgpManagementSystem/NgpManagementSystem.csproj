@@ -284,6 +284,7 @@
     <Compile Include="ViewModel\ContractorReportsVM.cs" />
     <Compile Include="ViewModel\ContractorVM.cs" />
     <Compile Include="ViewModel\ContractVM.cs" />
+    <Compile Include="ViewModel\NgpLogsVM.cs" />
     <Compile Include="ViewModel\PaymentLogs.cs" />
     <Compile Include="ViewModel\PaymentVM.cs" />
     <Compile Include="ViewModel\ProjectLogs.cs" />

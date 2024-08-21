@@ -1,6 +1,143 @@
 ﻿
 function ContractorReports() {
 
+    $("#logstotaldatatable").DataTable({
+        "ajax": {
+            "url": "/Dashboard/NgpLogsTotal",
+            "type": "POST",
+            "datatype": "json", dataSrc: "data"
+        },
+
+        "processing": "true",
+        "serverSide": "true",
+        "serverSide": "true",
+        "order": [[1, "desc"]],
+
+        "columns": [
+            {
+                "data": "LogMessage", "name": "LogMessage",
+                "className": " pt-4",
+                "render": function (data, type, row, value) {
+
+                    if (data == null) {
+
+                        return '<span  class=" badge  text-white me-1" style="background-color:red;width:9vh;"  >N/A</span>'
+                    }
+                    else if (data == "N/A") {
+                        return '<span  class=" badge  text-white me-1" style="background-color:red;width:9vh;" >' + data + "</span>";
+                    }
+                    return '<span >' + data + '</span>'
+
+
+
+                },
+            },
+            {
+                "data": "Name", "name": "Name",
+                "className": " pt-4 hideThis" ,
+                "render": function (data, type, row, value) {
+
+                    if (data == null) {
+
+                        return '<span  class=" badge  text-white me-1" style="background-color:red;width:9vh;"  >N/A</span>'
+                    }
+                    else if (data == "N/A") {
+                        return '<span  class=" badge  text-white me-1" style="background-color:red;width:9vh;" >' + data + "</span>";
+                    }
+                    return '<span class=" badge  text-white" style="font-size:12px;background-color: #9ac863 !important;" >' + data + '</span>'
+
+
+
+                },
+            },
+            
+            {
+                "data": "DateAdded", "name": "DateAdded",
+                "className": " pt-4",
+                "render": function (data, type, row, meta) {
+                    return `<span >${moment(data).format("MMMM DD YYYY, h:mm:ss a")}</span>`;
+                }
+
+            },
+            {
+                "data": "Name", "name": "Name",
+                "className": " pt-4",
+                "render": function (data, type, row, value) {
+
+                    if (data == null) {
+
+                        return '<span  class=" badge  text-white me-1" style="background-color:red;width:9vh;"  >N/A</span>'
+                    }
+                    else if (data == "N/A") {
+                        return '<span  class=" badge  text-white me-1" style="background-color:red;width:9vh;" >' + data + "</span>";
+                    }
+                    return '<span class=" badge  text-white" style="font-size:12px;background-color: #9ac863 !important;" >' + data + '</span>'
+
+
+
+                },
+            },
+            {
+                "data": "Position", "name": "Position",
+                "className": " pt-4",
+                "render": function (data, type, row, value) {
+
+                    if (data == null) {
+
+                        return '<span  class=" badge  text-white me-1" style="background-color:red;width:9vh;"  >N/A</span>'
+                    }
+                    else if (data == "N/A") {
+                        return '<span  class=" badge  text-white me-1" style="background-color:red;width:9vh;" >' + data + "</span>";
+                    }
+                    return '<span class=" badge  text-white" style="font-size:12px;background-color: #b30010 !important" >' + data + '</span>'
+
+
+
+                },
+            },
+            {
+                "data": "RoleId", "name": "RoleId",
+                "className": " pt-4",
+                "render": function (data, type, row) {
+
+                    if (data == "Developer") {
+                        return '<span  class=" badge  text-white me-1" style="background-color:#0e37b3;width:10vh;" >' + data + "</span>";
+                    }
+                    else if (data == "Administrator") {
+                        return '<span  class="badge badge-sm text-dark  me-1" style="background-color:yellow;width:15vh;" >' + data + "</span>";
+                    }
+                    else if (data == "User") {
+                        return '<span  class="badge bg-info badge-sm me-1"  style="width:15vh;"  >' + data + "</span>";
+                    }
+
+                    else if (data == null) {
+
+                        return '<span  class=" badge bg-danger text-white" >NULL</span>'
+                    }
+
+
+                },
+            },
+
+
+
+        ],
+
+
+        "processing": "true",
+        "language": {
+            "processing": "processing... please wait"
+        },
+
+        "fnInitComplete": function (oSettings, json) {
+
+            /*  SearchfilterContractor(json);*/
+        }
+
+
+    });
+
+
 
 
     $("#reportscontractordatatable").DataTable({
@@ -732,9 +869,6 @@ function AdminLActivitLogs() {
 
 
     });
-
-
-
 
 
 

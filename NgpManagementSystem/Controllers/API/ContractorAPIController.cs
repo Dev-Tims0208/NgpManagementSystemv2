@@ -241,33 +241,30 @@ namespace NgpManagementSystem.Controllers.API
 
                 contractor.DateAdded = DateTime.Now;
 
-
-             
                 contractor.RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.RoleID; //saving role depend in login id
                 contractor.UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id; //saving role depend in UserId login
                 contractor.UserName = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.UserName; //saving username depend in login
                 contractor.Name = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Name; //saving username depend in login
+
+                //contractor.Position = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Position;
+
                 Db.ngp_contractor.Add(contractor);
             }
 
 
             Db.NgpLogs.Add(new NgpLog()
             {
-
                 Date = DateTime.Now,
                 Name = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Name,
                 UserName = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.UserName,
                 LogMessage = "Added a Contractor " + "Name: " + contractorDTO.contractor_name,
                 UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id,
                 RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.RoleID,
-
+                Position = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Position,
 
             });
 
      
-
-
-
             Db.SaveChanges();
 
             return Ok();
@@ -542,6 +539,7 @@ namespace NgpManagementSystem.Controllers.API
                 LogMessage = "Delete a Contractor " + "Name: " + contractorinDb.contractor_name,
                 UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id,
                 RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.RoleID,
+                Position = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Position,
 
 
             });

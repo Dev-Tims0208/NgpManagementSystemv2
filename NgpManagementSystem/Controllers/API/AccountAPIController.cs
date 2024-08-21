@@ -101,6 +101,7 @@ namespace NgpManagementSystem.Controllers.API
                         LogMessage = "Added a  User Account  " + "Name of user: " + res.Name,
                         UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id,
                         RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.RoleID,
+                        Position = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Position,
 
 
                     });
@@ -262,6 +263,7 @@ namespace NgpManagementSystem.Controllers.API
                 LogMessage = "Edit a  User Account  " + "Name of user: " + accountdt.Name+ "Name of Editor:"+ accountdt.UserName + "Role:" + accountdt.NgpRole.RoleName,
                 UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id,
                 RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.RoleID,
+                Position = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Position,
             });
 
             }
@@ -297,6 +299,7 @@ namespace NgpManagementSystem.Controllers.API
                 LogMessage = "Delete  a  User Account  " + "Name of user: " + deletedb.Name + "Name of Editor:" + deletedb.UserName + "Role:" + deletedb.NgpRole.RoleName,
                 UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id,
                 RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.RoleID,
+                Position = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Position,
             });
 
             Db.SaveChanges();
@@ -344,6 +347,7 @@ namespace NgpManagementSystem.Controllers.API
                     LogMessage = "Reset a Password " + "Name of user: " + accountdt.Name + "UserName:" + accountdt.UserName + " Role:" + accountdt.NgpRole.RoleName,
                     UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id,
                     RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.RoleID,
+                    Position = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Position,
                 });
 
             }

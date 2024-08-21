@@ -88,8 +88,6 @@ namespace NgpManagementSystem.Controllers
                 //paging
                 contractorlist = contractorlist.Skip(start).Take(length);
 
-
-
                 var contractorview = contractorlist.Select(user => new ContractorReportsVM()
                 {
 
@@ -113,6 +111,78 @@ namespace NgpManagementSystem.Controllers
 
             }
 
+
+
         }
+
+
+        public ActionResult NgpLogsTotal()
+        {
+            //Server Side Parameter
+            int start = Convert.ToInt32(Request["start"]);
+            int length = Convert.ToInt32(Request["length"]);
+            string searchValue = Request["search[value]"];
+            string sortColumnName = Request["columns[" + Request["order[0][column]"] + "][name]"];
+            string sortDirection = Request["order[0][dir]"];
+
+            using (NgpdbmsEntities Db = new NgpdbmsEntities())
+
+            {
+                IQueryable<NgpLog> loglist = Db.NgpLogs;
+
+
+
+
+                int totalrows = loglist.Count();
+
+                if (!string.IsNullOrEmpty(searchValue))//FILTER SEARCH
+                {
+                    loglist = loglist.
+                        Where(x => x.Id.ToString().Contains(searchValue.ToLower()) ||
+                            x.Date.ToString().Contains(searchValue.ToLower()) ||
+                            x.UserName.ToLower().Contains(searchValue.ToLower()) ||
+                            x.Name.ToString().Contains(searchValue.ToLower()) ||
+                            x.LogMessage.ToString().Contains(searchValue.ToLower()) ||
+                            x.UserId.ToString().Contains(searchValue.ToLower()) ||
+                             x.Position.ToString().Contains(searchValue.ToLower()) ||
+                            x.NgpRole.RoleName.ToString().Contains(searchValue.ToLower()));
+
+                }
+
+         
+
+
+                int totalrowsafterfiltering = loglist.Count();
+                //sorting
+                loglist = loglist.OrderBy(sortColumnName + " " + sortDirection)
+                    .OrderByDescending(a => a.Id); //ADD SYSTEM LINQ DYNAMINC IN NUGGET MANAGER(DOWNLOAD)
+
+                //paging
+                loglist = loglist.Skip(start).Take(length);
+
+                var totallogsview = loglist.Select(user => new NgpLogsVM()
+                {
+
+
+                    Id = user.Id,
+                    Date = user.Date,
+                    UserName = user.UserName,
+                    Name = user.Name,
+                    LogMessage = user.LogMessage,
+                    RoleId = user.NgpRole.RoleName,
+                    Position = user.Position,
+
+                }).ToList();
+
+
+                return Json(new { data = totallogsview, draw = Request["draw"], recordsTotal = totalrows, recordsFiltered = totalrowsafterfiltering }, JsonRequestBehavior.AllowGet);
+
+            }
+
+
+
+        }
+
+
     }
 }
