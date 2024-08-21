@@ -51,12 +51,12 @@ namespace NgpManagementSystem.Controllers
                 //IF admin
                 if (result.RoleID == 1)
                 {
-                    return RedirectToAction("Index", "Admin");
+                    return RedirectToAction("Index", "Dashboard");
 
                 }
                 if (result.RoleID == 2)
                 {
-                    return RedirectToAction("Index", "Admin");
+                    return RedirectToAction("Index", "Dashboard");
 
                 }
                 else 

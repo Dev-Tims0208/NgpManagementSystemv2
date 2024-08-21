@@ -251,7 +251,7 @@ namespace NgpManagementSystem.Controllers.API
             }
 
 
-            Db.NgpLogsContractors.Add(new NgpLogsContractor()
+            Db.NgpLogs.Add(new NgpLog()
             {
 
                 Date = DateTime.Now,
@@ -264,60 +264,7 @@ namespace NgpManagementSystem.Controllers.API
 
             });
 
-            Db.NgpLogsProjects.Add(new NgpLogsProject()
-            {
-
-                Date = DateTime.Now,
-                Name = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Name,
-                UserName = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.UserName,
-                LogMessage = "Project " + "Year:" + contractorDTO.year_form + "Contractor Name:" + contractorDTO.contractor_name,
-                UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id,
-                RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.RoleID,
-
-
-            });
-
-            Db.NgpLogsContracts.Add(new NgpLogsContract()
-            {
-
-                Date = DateTime.Now,
-                Name = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Name,
-                UserName = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.UserName,
-                LogMessage = " Contract "
-                + "Year1:" + contractorDTO.moanumber_year1 + "OrsnoYear1:" + contractorDTO.orsno_year1
-                + "Year2:" + contractorDTO.moanumber_year2 + "OrsnoYear2:" + contractorDTO.orsno_year2
-                + "Year3:" + contractorDTO.moanumber_year3 + "OrsnoYear3" + contractorDTO.orsno_year3
-                + "Contractor Name:" + contractorDTO.contractor_name,
-                UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id,
-                RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.RoleID,
-
-
-            });
-
-
-            Db.NgpLogsPayments.Add(new NgpLogsPayment()
-            {
-
-                Date = DateTime.Now,
-                Name = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Name,
-                UserName = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.UserName,
-                LogMessage = "Payment " + "LDDAP year1: 1st Release:" + contractorDTO.lddap_no_year1_1st
-               + "Payment " + "LDDAP year1: 2nd Release:" + contractorDTO.lddapno_year1_2nd
-               + "Payment " + "LDDAP year1: 3rd Release:" + contractorDTO.lddapno_year1_3rd
-               + "Payment " + "LDDAP year1: 4th Release:" + contractorDTO.lddapno_year1_4th
-               + "Payment " + "LDDAP year1: 5th Release:" + contractorDTO.lddapno_year1_5th
-               + "Payment " + "LDDAP year2: 1st Release:" + contractorDTO.date_lddap_year2_1st
-               + "Payment " + "LDDAP year2: 2nd Release:" + contractorDTO.date_lddap_year2_2nd
-               + "Payment " + "LDDAP year2: 3rd Release:" + contractorDTO.date_lddap_year2_3rd
-                + "Payment " + "LDDAP year2: 4th Release:" + contractorDTO.date_lddap_year2_4th
-
-                + contractorDTO.contractor_name,
-                UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id,
-                RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.RoleID,
-
-
-            });
-
+     
 
 
 
@@ -586,7 +533,7 @@ namespace NgpManagementSystem.Controllers.API
                 return NotFound();
             }
             Db.ngp_contractor.Remove(contractorinDb);
-            Db.NgpLogsContractors.Add(new NgpLogsContractor()
+            Db.NgpLogs.Add(new NgpLog()
             {
 
                 Date = DateTime.Now,

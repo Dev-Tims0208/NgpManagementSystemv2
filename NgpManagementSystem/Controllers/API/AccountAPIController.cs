@@ -92,7 +92,7 @@ namespace NgpManagementSystem.Controllers.API
                     res.Position = provider.FormData["Position"];
                     res.DateAdded = DateTime.Now;
                     Db.NgpUsers.Add(res);
-                    Db.NgpLogsUserAccounts.Add(new NgpLogsUserAccount()
+                    Db.NgpLogs.Add(new NgpLog()
                     {
 
                         Date = DateTime.Now,
@@ -253,7 +253,7 @@ namespace NgpManagementSystem.Controllers.API
                 accountdt.RoleID = editaccountDTO.RoleID;
 
 
-            Db.NgpLogsUserAccounts.Add(new NgpLogsUserAccount()
+            Db.NgpLogs.Add(new NgpLog()
             {
 
                 Date = DateTime.Now,
@@ -279,6 +279,7 @@ namespace NgpManagementSystem.Controllers.API
         public IHttpActionResult DeleteAccount(int id)
         {
 
+            var sess_id = (int)HttpContext.Current.Session["LoginID"];
 
             var deletedb = Db.NgpUsers.SingleOrDefault(d => d.Id == id);
 
@@ -287,7 +288,16 @@ namespace NgpManagementSystem.Controllers.API
                 return NotFound();
             }
             Db.NgpUsers.Remove(deletedb);
+            Db.NgpLogs.Add(new NgpLog()
+            {
 
+                Date = DateTime.Now,
+                Name = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Name,
+                UserName = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.UserName,
+                LogMessage = "Delete  a  User Account  " + "Name of user: " + deletedb.Name + "Name of Editor:" + deletedb.UserName + "Role:" + deletedb.NgpRole.RoleName,
+                UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id,
+                RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.RoleID,
+            });
 
             Db.SaveChanges();
             return Ok();
@@ -325,7 +335,7 @@ namespace NgpManagementSystem.Controllers.API
                 accountdt.RoleID = resetpass.RoleID;
                 accountdt.Password = encoder.Encode(resetpass.Password);
 
-                Db.NgpLogsUserAccounts.Add(new NgpLogsUserAccount()
+                Db.NgpLogs.Add(new NgpLog()
                 {
 
                     Date = DateTime.Now,

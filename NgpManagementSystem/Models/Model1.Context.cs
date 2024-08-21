@@ -25,27 +25,17 @@ namespace NgpManagementSystem.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<ngp_contract> ngp_contract { get; set; }
         public virtual DbSet<ngp_contractor> ngp_contractor { get; set; }
-        public virtual DbSet<ngp_dropdown> ngp_dropdown { get; set; }
-        public virtual DbSet<ngp_history> ngp_history { get; set; }
-        public virtual DbSet<ngp_payment> ngp_payment { get; set; }
-        public virtual DbSet<ngp_projects> ngp_projects { get; set; }
         public virtual DbSet<NgpBarangay> NgpBarangays { get; set; }
         public virtual DbSet<NgplocationBarangay> NgplocationBarangays { get; set; }
         public virtual DbSet<NgplocationMunicipality> NgplocationMunicipalities { get; set; }
-        public virtual DbSet<NgpLogsContract> NgpLogsContracts { get; set; }
-        public virtual DbSet<NgpLogsContractor> NgpLogsContractors { get; set; }
-        public virtual DbSet<NgpLogsPayment> NgpLogsPayments { get; set; }
-        public virtual DbSet<NgpLogsProject> NgpLogsProjects { get; set; }
-        public virtual DbSet<NgpLogsSched> NgpLogsScheds { get; set; }
-        public virtual DbSet<NgpLogsUserAccount> NgpLogsUserAccounts { get; set; }
+        public virtual DbSet<NgpLog> NgpLogs { get; set; }
         public virtual DbSet<NgpMaintenanceMode> NgpMaintenanceModes { get; set; }
         public virtual DbSet<NgpMunicipality> NgpMunicipalities { get; set; }
+        public virtual DbSet<NgpPosition> NgpPositions { get; set; }
         public virtual DbSet<NgpRole> NgpRoles { get; set; }
         public virtual DbSet<NgpUpload> NgpUploads { get; set; }
         public virtual DbSet<NgpUser> NgpUsers { get; set; }
         public virtual DbSet<NgpYear> NgpYears { get; set; }
-        public virtual DbSet<NgpPosition> NgpPositions { get; set; }
     }
 }

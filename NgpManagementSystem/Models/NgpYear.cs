@@ -14,19 +14,7 @@ namespace NgpManagementSystem.Models
     
     public partial class NgpYear
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public NgpYear()
-        {
-            this.ngp_contract = new HashSet<ngp_contract>();
-            this.ngp_payment = new HashSet<ngp_payment>();
-        }
-    
         public int Id { get; set; }
         public string Name { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ngp_contract> ngp_contract { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ngp_payment> ngp_payment { get; set; }
     }
 }

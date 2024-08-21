@@ -27,6 +27,7 @@ namespace NgpManagementSystem.Controllers
             }
             return View();
         }
+       
         //SERVERSIDE DATATABLES
         public ActionResult GetUserDatatable()
         {
@@ -100,7 +101,7 @@ namespace NgpManagementSystem.Controllers
         {
             if (Session["Role_Id"] == null)
             {
-                return RedirectToAction("logout", "Account");
+                return RedirectToAction("logout", "NgpManagement");
             }
 
 
@@ -152,9 +153,39 @@ namespace NgpManagementSystem.Controllers
             return PartialView(adminnameviewinprofile);
         }
 
+
+        public ActionResult DisplayPcitureOnlyDeveloperOnly() //IMAGE AND NAME VIEW IN DASHBOARD
+        {
+            if (Session["Role_Id"] == null)
+            {
+                return RedirectToAction("logout", "NgpManagement");
+            }
+          
+            var imageuploadprofile = Db.NgpUploads.ToList();
+
+            var sess_id = (int)Session["LoginID"];
+            var userID = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id;
+
+            if ((int)Session["Role_Id"] == 1)
+            {
+                imageuploadprofile = imageuploadprofile.Where(d => d.AccountId == userID).ToList();
+            }
+            else
+            {
+                if ((int)Session["Role_Id"] != 1)
+                {
+                    imageuploadprofile = imageuploadprofile.Where(d => d.AccountId == userID).ToList();
+                }
+            }
+
+            return PartialView(imageuploadprofile);
+        }
+
+
       
 
 
-     
+
+
     }
 }

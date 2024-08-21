@@ -12,21 +12,17 @@ namespace NgpManagementSystem.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class ngp_payment
+    public partial class NgpLog
     {
-        public int paymentID { get; set; }
-        public Nullable<int> contract_no { get; set; }
-        public string contractorName { get; set; }
-        public string num_release { get; set; }
-        public Nullable<int> yearestablishedId { get; set; }
-        public Nullable<int> RoleId { get; set; }
-        public Nullable<int> UserId { get; set; }
+        public int Id { get; set; }
+        public Nullable<System.DateTime> Date { get; set; }
         public string UserName { get; set; }
         public string Name { get; set; }
+        public string LogMessage { get; set; }
+        public Nullable<int> UserId { get; set; }
+        public Nullable<int> RoleId { get; set; }
     
-        public virtual ngp_contract ngp_contract { get; set; }
         public virtual NgpRole NgpRole { get; set; }
         public virtual NgpUser NgpUser { get; set; }
-        public virtual NgpYear NgpYear { get; set; }
     }
 }

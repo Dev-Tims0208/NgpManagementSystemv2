@@ -18,7 +18,6 @@ namespace NgpManagementSystem.Models
         public NgplocationMunicipality()
         {
             this.ngp_contractor = new HashSet<ngp_contractor>();
-            this.ngp_projects = new HashSet<ngp_projects>();
             this.NgplocationBarangays = new HashSet<NgplocationBarangay>();
         }
     
@@ -27,8 +26,6 @@ namespace NgpManagementSystem.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ngp_contractor> ngp_contractor { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ngp_projects> ngp_projects { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NgplocationBarangay> NgplocationBarangays { get; set; }
     }

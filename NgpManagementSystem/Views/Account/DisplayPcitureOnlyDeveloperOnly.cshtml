@@ -1,0 +1,14 @@
+﻿
+@foreach (var adminname in Model)
+{
+
+    if (adminname.FilePath == null)
+    {
+        <img src="~/DefaultImage/denr.png" style="width:120px;height:120px;border-radius:100%;" />
+    }
+    else
+    {
+        <img src="@adminname.FilePath" style="width:120px;height:120px;border-radius:100%;" />
+    }
+
+}

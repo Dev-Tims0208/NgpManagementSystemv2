@@ -17,7 +17,6 @@ namespace NgpManagementSystem.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public NgpMunicipality()
         {
-            this.ngp_contract = new HashSet<ngp_contract>();
             this.ngp_contractor = new HashSet<ngp_contractor>();
             this.NgpBarangays = new HashSet<NgpBarangay>();
         }
@@ -25,8 +24,6 @@ namespace NgpManagementSystem.Models
         public int MunicipalityId { get; set; }
         public string MunicipalityName { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ngp_contract> ngp_contract { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ngp_contractor> ngp_contractor { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

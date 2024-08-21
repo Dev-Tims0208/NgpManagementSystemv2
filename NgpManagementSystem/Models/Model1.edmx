@@ -5,36 +5,6 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="NgpdbmsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="ngp_contract">
-          <Key>
-            <PropertyRef Name="contractID" />
-          </Key>
-          <Property Name="contractID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="moa" Type="nvarchar" MaxLength="100" />
-          <Property Name="contractorId" Type="int" />
-          <Property Name="location_municipality" Type="int" />
-          <Property Name="location_barangay" Type="int" />
-          <Property Name="location_sitio" Type="nvarchar" MaxLength="100" />
-          <Property Name="area" Type="nvarchar" MaxLength="100" />
-          <Property Name="commodity" Type="nvarchar" MaxLength="100" />
-          <Property Name="commodity_type" Type="nvarchar" MaxLength="100" />
-          <Property Name="survival_rate" Type="nvarchar" MaxLength="100" />
-          <Property Name="project_name" Type="nvarchar" MaxLength="100" />
-          <Property Name="contract_cost" Type="nvarchar" MaxLength="100" />
-          <Property Name="site_code" Type="nvarchar" MaxLength="100" />
-          <Property Name="year_established" Type="int" />
-          <Property Name="num_seedlings_planted" Type="nvarchar" MaxLength="100" />
-          <Property Name="num_seedlings_produced" Type="nvarchar" MaxLength="100" />
-          <Property Name="num_seedlings_survived" Type="nvarchar" MaxLength="100" />
-          <Property Name="num_seedlings_replanted" Type="nvarchar" MaxLength="100" />
-          <Property Name="num_seedlings_survived_year1" Type="nvarchar" MaxLength="100" />
-          <Property Name="dropdownID" Type="int" />
-          <Property Name="contractorName" Type="nvarchar" MaxLength="100" />
-          <Property Name="RoleId" Type="int" />
-          <Property Name="UserId" Type="int" />
-          <Property Name="UserName" Type="nvarchar(max)" />
-          <Property Name="Name" Type="nvarchar(max)" />
-        </EntityType>
         <EntityType Name="ngp_contractor">
           <Key>
             <PropertyRef Name="contractorID" />
@@ -201,57 +171,6 @@
           <Property Name="bamboo" Type="nvarchar(max)" />
           <Property Name="mangrove" Type="nvarchar(max)" />
         </EntityType>
-        <EntityType Name="ngp_dropdown">
-          <Key>
-            <PropertyRef Name="dropdownID" />
-          </Key>
-          <Property Name="dropdownID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="year_established" Type="int" Nullable="false" />
-          <Property Name="region" Type="int" Nullable="false" />
-          <Property Name="penro" Type="int" Nullable="false" />
-          <Property Name="cenro" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="ngp_history">
-          <Key>
-            <PropertyRef Name="historyID" />
-          </Key>
-          <Property Name="historyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="user_no" Type="int" />
-          <Property Name="contractor_no" Type="int" />
-        </EntityType>
-        <EntityType Name="ngp_payment">
-          <Key>
-            <PropertyRef Name="paymentID" />
-          </Key>
-          <Property Name="paymentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="contract_no" Type="int" />
-          <Property Name="contractorName" Type="nvarchar" MaxLength="100" />
-          <Property Name="num_release" Type="nvarchar" MaxLength="100" />
-          <Property Name="yearestablishedId" Type="int" />
-          <Property Name="RoleId" Type="int" />
-          <Property Name="UserId" Type="int" />
-          <Property Name="UserName" Type="nvarchar" MaxLength="100" />
-          <Property Name="Name" Type="nvarchar" MaxLength="100" />
-        </EntityType>
-        <EntityType Name="ngp_projects">
-          <Key>
-            <PropertyRef Name="projectID" />
-          </Key>
-          <Property Name="projectID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="site_code" Type="nvarchar" MaxLength="100" />
-          <Property Name="location_municipality" Type="int" />
-          <Property Name="location_barangay" Type="int" />
-          <Property Name="area" Type="nvarchar" MaxLength="100" />
-          <Property Name="year_form" Type="nvarchar" MaxLength="100" />
-          <Property Name="penro" Type="nvarchar" MaxLength="100" />
-          <Property Name="cenro" Type="nvarchar" MaxLength="100" />
-          <Property Name="region" Type="nvarchar" MaxLength="100" />
-          <Property Name="dropdownID" Type="int" />
-          <Property Name="RoleId" Type="int" />
-          <Property Name="UserId" Type="int" />
-          <Property Name="UserName" Type="nvarchar(max)" />
-          <Property Name="Name" Type="nvarchar(max)" />
-        </EntityType>
         <EntityType Name="NgpBarangay">
           <Key>
             <PropertyRef Name="BarangayId" />
@@ -275,19 +194,7 @@
           <Property Name="MunicipalityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="MunicipalityName" Type="nvarchar" MaxLength="100" />
         </EntityType>
-        <EntityType Name="NgpLogsContract">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Date" Type="datetime" />
-          <Property Name="UserName" Type="nvarchar" MaxLength="200" />
-          <Property Name="Name" Type="nvarchar" MaxLength="200" />
-          <Property Name="LogMessage" Type="nvarchar(max)" />
-          <Property Name="UserId" Type="int" />
-          <Property Name="RoleId" Type="int" />
-        </EntityType>
-        <EntityType Name="NgpLogsContractor">
+        <EntityType Name="NgpLogs">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -296,54 +203,6 @@
           <Property Name="UserName" Type="nvarchar" MaxLength="100" />
           <Property Name="Name" Type="nvarchar" MaxLength="100" />
           <Property Name="LogMessage" Type="nvarchar(max)" />
-          <Property Name="UserId" Type="int" />
-          <Property Name="RoleId" Type="int" />
-        </EntityType>
-        <EntityType Name="NgpLogsPayment">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Date" Type="datetime" />
-          <Property Name="UserName" Type="nvarchar" MaxLength="200" />
-          <Property Name="Name" Type="nvarchar" MaxLength="200" />
-          <Property Name="LogMessage" Type="nvarchar(max)" />
-          <Property Name="UserId" Type="int" />
-          <Property Name="RoleId" Type="int" />
-        </EntityType>
-        <EntityType Name="NgpLogsProject">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Date" Type="datetime" />
-          <Property Name="UserName" Type="nvarchar" MaxLength="200" />
-          <Property Name="Name" Type="nvarchar" MaxLength="200" />
-          <Property Name="LogMessage" Type="nvarchar(max)" />
-          <Property Name="UserId" Type="int" />
-          <Property Name="RoleId" Type="int" />
-        </EntityType>
-        <EntityType Name="NgpLogsSched">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Date" Type="datetime" />
-          <Property Name="UserName" Type="nvarchar" MaxLength="200" />
-          <Property Name="Name" Type="nvarchar" MaxLength="200" />
-          <Property Name="LogMessage" Type="nvarchar" MaxLength="200" />
-          <Property Name="UserId" Type="int" />
-          <Property Name="RoleId" Type="nvarchar" MaxLength="200" />
-        </EntityType>
-        <EntityType Name="NgpLogsUserAccount">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Date" Type="datetime" />
-          <Property Name="UserName" Type="nvarchar" MaxLength="200" />
-          <Property Name="Name" Type="nvarchar" MaxLength="200" />
-          <Property Name="LogMessage" Type="nvarchar" MaxLength="200" />
           <Property Name="UserId" Type="int" />
           <Property Name="RoleId" Type="int" />
         </EntityType>
@@ -408,78 +267,6 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="100" />
         </EntityType>
-        <Association Name="FK_ngp_contract_ngp_contractor">
-          <End Role="ngp_contractor" Type="Self.ngp_contractor" Multiplicity="0..1" />
-          <End Role="ngp_contract" Type="Self.ngp_contract" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ngp_contractor">
-              <PropertyRef Name="contractorID" />
-            </Principal>
-            <Dependent Role="ngp_contract">
-              <PropertyRef Name="contractorId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ngp_contract_ngp_dropdown">
-          <End Role="ngp_dropdown" Type="Self.ngp_dropdown" Multiplicity="0..1" />
-          <End Role="ngp_contract" Type="Self.ngp_contract" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ngp_dropdown">
-              <PropertyRef Name="dropdownID" />
-            </Principal>
-            <Dependent Role="ngp_contract">
-              <PropertyRef Name="dropdownID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ngp_contract_NgpMunicipality">
-          <End Role="NgpMunicipality" Type="Self.NgpMunicipality" Multiplicity="0..1" />
-          <End Role="ngp_contract" Type="Self.ngp_contract" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NgpMunicipality">
-              <PropertyRef Name="MunicipalityId" />
-            </Principal>
-            <Dependent Role="ngp_contract">
-              <PropertyRef Name="location_municipality" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ngp_contract_NgpRole">
-          <End Role="NgpRole" Type="Self.NgpRole" Multiplicity="0..1" />
-          <End Role="ngp_contract" Type="Self.ngp_contract" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NgpRole">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ngp_contract">
-              <PropertyRef Name="RoleId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ngp_contract_NgpUser">
-          <End Role="NgpUser" Type="Self.NgpUser" Multiplicity="0..1" />
-          <End Role="ngp_contract" Type="Self.ngp_contract" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NgpUser">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ngp_contract">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ngp_contract_NgpYear">
-          <End Role="NgpYear" Type="Self.NgpYear" Multiplicity="0..1" />
-          <End Role="ngp_contract" Type="Self.ngp_contract" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NgpYear">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ngp_contract">
-              <PropertyRef Name="year_established" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_ngp_contractor_NgpBarangay">
           <End Role="NgpBarangay" Type="Self.NgpBarangay" Multiplicity="0..1" />
           <End Role="ngp_contractor" Type="Self.ngp_contractor" Multiplicity="*" />
@@ -552,126 +339,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ngp_history_ngp_contractor">
-          <End Role="ngp_contractor" Type="Self.ngp_contractor" Multiplicity="0..1" />
-          <End Role="ngp_history" Type="Self.ngp_history" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ngp_contractor">
-              <PropertyRef Name="contractorID" />
-            </Principal>
-            <Dependent Role="ngp_history">
-              <PropertyRef Name="contractor_no" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ngp_payment_ngp_contract">
-          <End Role="ngp_contract" Type="Self.ngp_contract" Multiplicity="0..1" />
-          <End Role="ngp_payment" Type="Self.ngp_payment" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ngp_contract">
-              <PropertyRef Name="contractID" />
-            </Principal>
-            <Dependent Role="ngp_payment">
-              <PropertyRef Name="contract_no" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ngp_payment_NgpRole">
-          <End Role="NgpRole" Type="Self.NgpRole" Multiplicity="0..1" />
-          <End Role="ngp_payment" Type="Self.ngp_payment" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NgpRole">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ngp_payment">
-              <PropertyRef Name="RoleId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ngp_payment_NgpUser">
-          <End Role="NgpUser" Type="Self.NgpUser" Multiplicity="0..1" />
-          <End Role="ngp_payment" Type="Self.ngp_payment" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NgpUser">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ngp_payment">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ngp_payment_NgpYear">
-          <End Role="NgpYear" Type="Self.NgpYear" Multiplicity="0..1" />
-          <End Role="ngp_payment" Type="Self.ngp_payment" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NgpYear">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ngp_payment">
-              <PropertyRef Name="yearestablishedId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ngp_projects_ngp_dropdown">
-          <End Role="ngp_dropdown" Type="Self.ngp_dropdown" Multiplicity="0..1" />
-          <End Role="ngp_projects" Type="Self.ngp_projects" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ngp_dropdown">
-              <PropertyRef Name="dropdownID" />
-            </Principal>
-            <Dependent Role="ngp_projects">
-              <PropertyRef Name="dropdownID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ngp_projects_ngp_projects">
-          <End Role="ngp_projects" Type="Self.ngp_projects" Multiplicity="1" />
-          <End Role="ngp_projects1" Type="Self.ngp_projects" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="ngp_projects">
-              <PropertyRef Name="projectID" />
-            </Principal>
-            <Dependent Role="ngp_projects1">
-              <PropertyRef Name="projectID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ngp_projects_NgplocationMunicipality">
-          <End Role="NgplocationMunicipality" Type="Self.NgplocationMunicipality" Multiplicity="0..1" />
-          <End Role="ngp_projects" Type="Self.ngp_projects" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NgplocationMunicipality">
-              <PropertyRef Name="MunicipalityId" />
-            </Principal>
-            <Dependent Role="ngp_projects">
-              <PropertyRef Name="location_municipality" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ngp_projects_NgpRole">
-          <End Role="NgpRole" Type="Self.NgpRole" Multiplicity="0..1" />
-          <End Role="ngp_projects" Type="Self.ngp_projects" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NgpRole">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ngp_projects">
-              <PropertyRef Name="RoleId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ngp_projects_NgpUser">
-          <End Role="NgpUser" Type="Self.NgpUser" Multiplicity="0..1" />
-          <End Role="ngp_projects" Type="Self.ngp_projects" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NgpUser">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ngp_projects">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_NgpBarangay_NgpMunicipality">
           <End Role="NgpMunicipality" Type="Self.NgpMunicipality" Multiplicity="0..1" />
           <End Role="NgpBarangay" Type="Self.NgpBarangay" Multiplicity="*" />
@@ -708,134 +375,26 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_NgpLogsContract_NgpRole">
-          <End Role="NgpRole" Type="Self.NgpRole" Multiplicity="0..1" />
-          <End Role="NgpLogsContract" Type="Self.NgpLogsContract" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NgpRole">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="NgpLogsContract">
-              <PropertyRef Name="RoleId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_NgpLogsContract_NgpUser">
-          <End Role="NgpUser" Type="Self.NgpUser" Multiplicity="0..1" />
-          <End Role="NgpLogsContract" Type="Self.NgpLogsContract" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NgpUser">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="NgpLogsContract">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_NgpLogsContractor_NgpRole">
           <End Role="NgpRole" Type="Self.NgpRole" Multiplicity="0..1" />
-          <End Role="NgpLogsContractor" Type="Self.NgpLogsContractor" Multiplicity="*" />
+          <End Role="NgpLogs" Type="Self.NgpLogs" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="NgpRole">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="NgpLogsContractor">
+            <Dependent Role="NgpLogs">
               <PropertyRef Name="RoleId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_NgpLogsContractor_NgpUser">
           <End Role="NgpUser" Type="Self.NgpUser" Multiplicity="0..1" />
-          <End Role="NgpLogsContractor" Type="Self.NgpLogsContractor" Multiplicity="*" />
+          <End Role="NgpLogs" Type="Self.NgpLogs" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="NgpUser">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="NgpLogsContractor">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_NgpLogsPayment_NgpRole">
-          <End Role="NgpRole" Type="Self.NgpRole" Multiplicity="0..1" />
-          <End Role="NgpLogsPayment" Type="Self.NgpLogsPayment" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NgpRole">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="NgpLogsPayment">
-              <PropertyRef Name="RoleId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_NgpLogsPayment_NgpUser">
-          <End Role="NgpUser" Type="Self.NgpUser" Multiplicity="0..1" />
-          <End Role="NgpLogsPayment" Type="Self.NgpLogsPayment" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NgpUser">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="NgpLogsPayment">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_NgpLogsProject_NgpRole">
-          <End Role="NgpRole" Type="Self.NgpRole" Multiplicity="0..1" />
-          <End Role="NgpLogsProject" Type="Self.NgpLogsProject" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NgpRole">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="NgpLogsProject">
-              <PropertyRef Name="RoleId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_NgpLogsProject_NgpUser">
-          <End Role="NgpUser" Type="Self.NgpUser" Multiplicity="0..1" />
-          <End Role="NgpLogsProject" Type="Self.NgpLogsProject" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NgpUser">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="NgpLogsProject">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_NgpLogsUserAccount_NgpLogsUserAccount">
-          <End Role="NgpLogsUserAccount" Type="Self.NgpLogsUserAccount" Multiplicity="1" />
-          <End Role="NgpLogsUserAccount1" Type="Self.NgpLogsUserAccount" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="NgpLogsUserAccount">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="NgpLogsUserAccount1">
-              <PropertyRef Name="Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_NgpLogsUserAccount_NgpRole">
-          <End Role="NgpRole" Type="Self.NgpRole" Multiplicity="0..1" />
-          <End Role="NgpLogsUserAccount" Type="Self.NgpLogsUserAccount" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NgpRole">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="NgpLogsUserAccount">
-              <PropertyRef Name="RoleId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_NgpLogsUserAccount_NgpUser">
-          <End Role="NgpUser" Type="Self.NgpUser" Multiplicity="0..1" />
-          <End Role="NgpLogsUserAccount" Type="Self.NgpLogsUserAccount" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NgpUser">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="NgpLogsUserAccount">
+            <Dependent Role="NgpLogs">
               <PropertyRef Name="UserId" />
             </Dependent>
           </ReferentialConstraint>
@@ -853,21 +412,11 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="NgpdbmsModelStoreContainer">
-          <EntitySet Name="ngp_contract" EntityType="Self.ngp_contract" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ngp_contractor" EntityType="Self.ngp_contractor" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ngp_dropdown" EntityType="Self.ngp_dropdown" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ngp_history" EntityType="Self.ngp_history" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ngp_payment" EntityType="Self.ngp_payment" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ngp_projects" EntityType="Self.ngp_projects" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NgpBarangay" EntityType="Self.NgpBarangay" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NgplocationBarangay" EntityType="Self.NgplocationBarangay" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NgplocationMunicipality" EntityType="Self.NgplocationMunicipality" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="NgpLogsContract" EntityType="Self.NgpLogsContract" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="NgpLogsContractor" EntityType="Self.NgpLogsContractor" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="NgpLogsPayment" EntityType="Self.NgpLogsPayment" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="NgpLogsProject" EntityType="Self.NgpLogsProject" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="NgpLogsSched" EntityType="Self.NgpLogsSched" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="NgpLogsUserAccount" EntityType="Self.NgpLogsUserAccount" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NgpLogs" EntityType="Self.NgpLogs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NgpMaintenanceMode" EntityType="Self.NgpMaintenanceMode" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NgpMunicipality" EntityType="Self.NgpMunicipality" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NgpPosition" EntityType="Self.NgpPosition" Schema="dbo" store:Type="Tables" />
@@ -875,30 +424,6 @@
           <EntitySet Name="NgpUpload" EntityType="Self.NgpUpload" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NgpUser" EntityType="Self.NgpUser" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NgpYear" EntityType="Self.NgpYear" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_ngp_contract_ngp_contractor" Association="Self.FK_ngp_contract_ngp_contractor">
-            <End Role="ngp_contractor" EntitySet="ngp_contractor" />
-            <End Role="ngp_contract" EntitySet="ngp_contract" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ngp_contract_ngp_dropdown" Association="Self.FK_ngp_contract_ngp_dropdown">
-            <End Role="ngp_dropdown" EntitySet="ngp_dropdown" />
-            <End Role="ngp_contract" EntitySet="ngp_contract" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ngp_contract_NgpMunicipality" Association="Self.FK_ngp_contract_NgpMunicipality">
-            <End Role="NgpMunicipality" EntitySet="NgpMunicipality" />
-            <End Role="ngp_contract" EntitySet="ngp_contract" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ngp_contract_NgpRole" Association="Self.FK_ngp_contract_NgpRole">
-            <End Role="NgpRole" EntitySet="NgpRole" />
-            <End Role="ngp_contract" EntitySet="ngp_contract" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ngp_contract_NgpUser" Association="Self.FK_ngp_contract_NgpUser">
-            <End Role="NgpUser" EntitySet="NgpUser" />
-            <End Role="ngp_contract" EntitySet="ngp_contract" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ngp_contract_NgpYear" Association="Self.FK_ngp_contract_NgpYear">
-            <End Role="NgpYear" EntitySet="NgpYear" />
-            <End Role="ngp_contract" EntitySet="ngp_contract" />
-          </AssociationSet>
           <AssociationSet Name="FK_ngp_contractor_NgpBarangay" Association="Self.FK_ngp_contractor_NgpBarangay">
             <End Role="NgpBarangay" EntitySet="NgpBarangay" />
             <End Role="ngp_contractor" EntitySet="ngp_contractor" />
@@ -923,46 +448,6 @@
             <End Role="NgpUser" EntitySet="NgpUser" />
             <End Role="ngp_contractor" EntitySet="ngp_contractor" />
           </AssociationSet>
-          <AssociationSet Name="FK_ngp_history_ngp_contractor" Association="Self.FK_ngp_history_ngp_contractor">
-            <End Role="ngp_contractor" EntitySet="ngp_contractor" />
-            <End Role="ngp_history" EntitySet="ngp_history" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ngp_payment_ngp_contract" Association="Self.FK_ngp_payment_ngp_contract">
-            <End Role="ngp_contract" EntitySet="ngp_contract" />
-            <End Role="ngp_payment" EntitySet="ngp_payment" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ngp_payment_NgpRole" Association="Self.FK_ngp_payment_NgpRole">
-            <End Role="NgpRole" EntitySet="NgpRole" />
-            <End Role="ngp_payment" EntitySet="ngp_payment" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ngp_payment_NgpUser" Association="Self.FK_ngp_payment_NgpUser">
-            <End Role="NgpUser" EntitySet="NgpUser" />
-            <End Role="ngp_payment" EntitySet="ngp_payment" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ngp_payment_NgpYear" Association="Self.FK_ngp_payment_NgpYear">
-            <End Role="NgpYear" EntitySet="NgpYear" />
-            <End Role="ngp_payment" EntitySet="ngp_payment" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ngp_projects_ngp_dropdown" Association="Self.FK_ngp_projects_ngp_dropdown">
-            <End Role="ngp_dropdown" EntitySet="ngp_dropdown" />
-            <End Role="ngp_projects" EntitySet="ngp_projects" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ngp_projects_ngp_projects" Association="Self.FK_ngp_projects_ngp_projects">
-            <End Role="ngp_projects" EntitySet="ngp_projects" />
-            <End Role="ngp_projects1" EntitySet="ngp_projects" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ngp_projects_NgplocationMunicipality" Association="Self.FK_ngp_projects_NgplocationMunicipality">
-            <End Role="NgplocationMunicipality" EntitySet="NgplocationMunicipality" />
-            <End Role="ngp_projects" EntitySet="ngp_projects" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ngp_projects_NgpRole" Association="Self.FK_ngp_projects_NgpRole">
-            <End Role="NgpRole" EntitySet="NgpRole" />
-            <End Role="ngp_projects" EntitySet="ngp_projects" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ngp_projects_NgpUser" Association="Self.FK_ngp_projects_NgpUser">
-            <End Role="NgpUser" EntitySet="NgpUser" />
-            <End Role="ngp_projects" EntitySet="ngp_projects" />
-          </AssociationSet>
           <AssociationSet Name="FK_NgpBarangay_NgpMunicipality" Association="Self.FK_NgpBarangay_NgpMunicipality">
             <End Role="NgpMunicipality" EntitySet="NgpMunicipality" />
             <End Role="NgpBarangay" EntitySet="NgpBarangay" />
@@ -975,49 +460,13 @@
             <End Role="NgplocationMunicipality" EntitySet="NgplocationMunicipality" />
             <End Role="NgplocationBarangay" EntitySet="NgplocationBarangay" />
           </AssociationSet>
-          <AssociationSet Name="FK_NgpLogsContract_NgpRole" Association="Self.FK_NgpLogsContract_NgpRole">
-            <End Role="NgpRole" EntitySet="NgpRole" />
-            <End Role="NgpLogsContract" EntitySet="NgpLogsContract" />
-          </AssociationSet>
-          <AssociationSet Name="FK_NgpLogsContract_NgpUser" Association="Self.FK_NgpLogsContract_NgpUser">
-            <End Role="NgpUser" EntitySet="NgpUser" />
-            <End Role="NgpLogsContract" EntitySet="NgpLogsContract" />
-          </AssociationSet>
           <AssociationSet Name="FK_NgpLogsContractor_NgpRole" Association="Self.FK_NgpLogsContractor_NgpRole">
             <End Role="NgpRole" EntitySet="NgpRole" />
-            <End Role="NgpLogsContractor" EntitySet="NgpLogsContractor" />
+            <End Role="NgpLogs" EntitySet="NgpLogs" />
           </AssociationSet>
           <AssociationSet Name="FK_NgpLogsContractor_NgpUser" Association="Self.FK_NgpLogsContractor_NgpUser">
             <End Role="NgpUser" EntitySet="NgpUser" />
-            <End Role="NgpLogsContractor" EntitySet="NgpLogsContractor" />
-          </AssociationSet>
-          <AssociationSet Name="FK_NgpLogsPayment_NgpRole" Association="Self.FK_NgpLogsPayment_NgpRole">
-            <End Role="NgpRole" EntitySet="NgpRole" />
-            <End Role="NgpLogsPayment" EntitySet="NgpLogsPayment" />
-          </AssociationSet>
-          <AssociationSet Name="FK_NgpLogsPayment_NgpUser" Association="Self.FK_NgpLogsPayment_NgpUser">
-            <End Role="NgpUser" EntitySet="NgpUser" />
-            <End Role="NgpLogsPayment" EntitySet="NgpLogsPayment" />
-          </AssociationSet>
-          <AssociationSet Name="FK_NgpLogsProject_NgpRole" Association="Self.FK_NgpLogsProject_NgpRole">
-            <End Role="NgpRole" EntitySet="NgpRole" />
-            <End Role="NgpLogsProject" EntitySet="NgpLogsProject" />
-          </AssociationSet>
-          <AssociationSet Name="FK_NgpLogsProject_NgpUser" Association="Self.FK_NgpLogsProject_NgpUser">
-            <End Role="NgpUser" EntitySet="NgpUser" />
-            <End Role="NgpLogsProject" EntitySet="NgpLogsProject" />
-          </AssociationSet>
-          <AssociationSet Name="FK_NgpLogsUserAccount_NgpLogsUserAccount" Association="Self.FK_NgpLogsUserAccount_NgpLogsUserAccount">
-            <End Role="NgpLogsUserAccount" EntitySet="NgpLogsUserAccount" />
-            <End Role="NgpLogsUserAccount1" EntitySet="NgpLogsUserAccount" />
-          </AssociationSet>
-          <AssociationSet Name="FK_NgpLogsUserAccount_NgpRole" Association="Self.FK_NgpLogsUserAccount_NgpRole">
-            <End Role="NgpRole" EntitySet="NgpRole" />
-            <End Role="NgpLogsUserAccount" EntitySet="NgpLogsUserAccount" />
-          </AssociationSet>
-          <AssociationSet Name="FK_NgpLogsUserAccount_NgpUser" Association="Self.FK_NgpLogsUserAccount_NgpUser">
-            <End Role="NgpUser" EntitySet="NgpUser" />
-            <End Role="NgpLogsUserAccount" EntitySet="NgpLogsUserAccount" />
+            <End Role="NgpLogs" EntitySet="NgpLogs" />
           </AssociationSet>
           <AssociationSet Name="FK_NgpUser_NgpRole" Association="Self.FK_NgpUser_NgpRole">
             <End Role="NgpRole" EntitySet="NgpRole" />
@@ -1029,55 +478,18 @@
     <edmx:ConceptualModels>
       <Schema Namespace="NgpdbmsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="NgpdbmsEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="ngp_contract" EntityType="NgpdbmsModel.ngp_contract" />
           <EntitySet Name="ngp_contractor" EntityType="NgpdbmsModel.ngp_contractor" />
-          <EntitySet Name="ngp_dropdown" EntityType="NgpdbmsModel.ngp_dropdown" />
-          <EntitySet Name="ngp_history" EntityType="NgpdbmsModel.ngp_history" />
-          <EntitySet Name="ngp_payment" EntityType="NgpdbmsModel.ngp_payment" />
-          <EntitySet Name="ngp_projects" EntityType="NgpdbmsModel.ngp_projects" />
           <EntitySet Name="NgpBarangays" EntityType="NgpdbmsModel.NgpBarangay" />
           <EntitySet Name="NgplocationBarangays" EntityType="NgpdbmsModel.NgplocationBarangay" />
           <EntitySet Name="NgplocationMunicipalities" EntityType="NgpdbmsModel.NgplocationMunicipality" />
-          <EntitySet Name="NgpLogsContracts" EntityType="NgpdbmsModel.NgpLogsContract" />
-          <EntitySet Name="NgpLogsContractors" EntityType="NgpdbmsModel.NgpLogsContractor" />
-          <EntitySet Name="NgpLogsPayments" EntityType="NgpdbmsModel.NgpLogsPayment" />
-          <EntitySet Name="NgpLogsProjects" EntityType="NgpdbmsModel.NgpLogsProject" />
-          <EntitySet Name="NgpLogsScheds" EntityType="NgpdbmsModel.NgpLogsSched" />
-          <EntitySet Name="NgpLogsUserAccounts" EntityType="NgpdbmsModel.NgpLogsUserAccount" />
+          <EntitySet Name="NgpLogs" EntityType="NgpdbmsModel.NgpLog" />
           <EntitySet Name="NgpMaintenanceModes" EntityType="NgpdbmsModel.NgpMaintenanceMode" />
           <EntitySet Name="NgpMunicipalities" EntityType="NgpdbmsModel.NgpMunicipality" />
+          <EntitySet Name="NgpPositions" EntityType="NgpdbmsModel.NgpPosition" />
           <EntitySet Name="NgpRoles" EntityType="NgpdbmsModel.NgpRole" />
           <EntitySet Name="NgpUploads" EntityType="NgpdbmsModel.NgpUpload" />
           <EntitySet Name="NgpUsers" EntityType="NgpdbmsModel.NgpUser" />
           <EntitySet Name="NgpYears" EntityType="NgpdbmsModel.NgpYear" />
-          <AssociationSet Name="FK_ngp_contract_ngp_contractor" Association="NgpdbmsModel.FK_ngp_contract_ngp_contractor">
-            <End Role="ngp_contractor" EntitySet="ngp_contractor" />
-            <End Role="ngp_contract" EntitySet="ngp_contract" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ngp_contract_ngp_dropdown" Association="NgpdbmsModel.FK_ngp_contract_ngp_dropdown">
-            <End Role="ngp_dropdown" EntitySet="ngp_dropdown" />
-            <End Role="ngp_contract" EntitySet="ngp_contract" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ngp_contract_NgpMunicipality" Association="NgpdbmsModel.FK_ngp_contract_NgpMunicipality">
-            <End Role="NgpMunicipality" EntitySet="NgpMunicipalities" />
-            <End Role="ngp_contract" EntitySet="ngp_contract" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ngp_contract_NgpRole" Association="NgpdbmsModel.FK_ngp_contract_NgpRole">
-            <End Role="NgpRole" EntitySet="NgpRoles" />
-            <End Role="ngp_contract" EntitySet="ngp_contract" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ngp_contract_NgpUser" Association="NgpdbmsModel.FK_ngp_contract_NgpUser">
-            <End Role="NgpUser" EntitySet="NgpUsers" />
-            <End Role="ngp_contract" EntitySet="ngp_contract" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ngp_contract_NgpYear" Association="NgpdbmsModel.FK_ngp_contract_NgpYear">
-            <End Role="NgpYear" EntitySet="NgpYears" />
-            <End Role="ngp_contract" EntitySet="ngp_contract" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ngp_payment_ngp_contract" Association="NgpdbmsModel.FK_ngp_payment_ngp_contract">
-            <End Role="ngp_contract" EntitySet="ngp_contract" />
-            <End Role="ngp_payment" EntitySet="ngp_payment" />
-          </AssociationSet>
           <AssociationSet Name="FK_ngp_contractor_NgpBarangay" Association="NgpdbmsModel.FK_ngp_contractor_NgpBarangay">
             <End Role="NgpBarangay" EntitySet="NgpBarangays" />
             <End Role="ngp_contractor" EntitySet="ngp_contractor" />
@@ -1102,42 +514,6 @@
             <End Role="NgpUser" EntitySet="NgpUsers" />
             <End Role="ngp_contractor" EntitySet="ngp_contractor" />
           </AssociationSet>
-          <AssociationSet Name="FK_ngp_history_ngp_contractor" Association="NgpdbmsModel.FK_ngp_history_ngp_contractor">
-            <End Role="ngp_contractor" EntitySet="ngp_contractor" />
-            <End Role="ngp_history" EntitySet="ngp_history" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ngp_projects_ngp_dropdown" Association="NgpdbmsModel.FK_ngp_projects_ngp_dropdown">
-            <End Role="ngp_dropdown" EntitySet="ngp_dropdown" />
-            <End Role="ngp_projects" EntitySet="ngp_projects" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ngp_payment_NgpRole" Association="NgpdbmsModel.FK_ngp_payment_NgpRole">
-            <End Role="NgpRole" EntitySet="NgpRoles" />
-            <End Role="ngp_payment" EntitySet="ngp_payment" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ngp_payment_NgpUser" Association="NgpdbmsModel.FK_ngp_payment_NgpUser">
-            <End Role="NgpUser" EntitySet="NgpUsers" />
-            <End Role="ngp_payment" EntitySet="ngp_payment" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ngp_payment_NgpYear" Association="NgpdbmsModel.FK_ngp_payment_NgpYear">
-            <End Role="NgpYear" EntitySet="NgpYears" />
-            <End Role="ngp_payment" EntitySet="ngp_payment" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ngp_projects_ngp_projects" Association="NgpdbmsModel.FK_ngp_projects_ngp_projects">
-            <End Role="ngp_projects" EntitySet="ngp_projects" />
-            <End Role="ngp_projects1" EntitySet="ngp_projects" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ngp_projects_NgplocationMunicipality" Association="NgpdbmsModel.FK_ngp_projects_NgplocationMunicipality">
-            <End Role="NgplocationMunicipality" EntitySet="NgplocationMunicipalities" />
-            <End Role="ngp_projects" EntitySet="ngp_projects" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ngp_projects_NgpRole" Association="NgpdbmsModel.FK_ngp_projects_NgpRole">
-            <End Role="NgpRole" EntitySet="NgpRoles" />
-            <End Role="ngp_projects" EntitySet="ngp_projects" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ngp_projects_NgpUser" Association="NgpdbmsModel.FK_ngp_projects_NgpUser">
-            <End Role="NgpUser" EntitySet="NgpUsers" />
-            <End Role="ngp_projects" EntitySet="ngp_projects" />
-          </AssociationSet>
           <AssociationSet Name="FK_NgpBarangay_NgpMunicipality" Association="NgpdbmsModel.FK_NgpBarangay_NgpMunicipality">
             <End Role="NgpMunicipality" EntitySet="NgpMunicipalities" />
             <End Role="NgpBarangay" EntitySet="NgpBarangays" />
@@ -1150,93 +526,19 @@
             <End Role="NgplocationMunicipality" EntitySet="NgplocationMunicipalities" />
             <End Role="NgplocationBarangay" EntitySet="NgplocationBarangays" />
           </AssociationSet>
-          <AssociationSet Name="FK_NgpLogsContract_NgpRole" Association="NgpdbmsModel.FK_NgpLogsContract_NgpRole">
-            <End Role="NgpRole" EntitySet="NgpRoles" />
-            <End Role="NgpLogsContract" EntitySet="NgpLogsContracts" />
-          </AssociationSet>
-          <AssociationSet Name="FK_NgpLogsContract_NgpUser" Association="NgpdbmsModel.FK_NgpLogsContract_NgpUser">
-            <End Role="NgpUser" EntitySet="NgpUsers" />
-            <End Role="NgpLogsContract" EntitySet="NgpLogsContracts" />
-          </AssociationSet>
           <AssociationSet Name="FK_NgpLogsContractor_NgpRole" Association="NgpdbmsModel.FK_NgpLogsContractor_NgpRole">
             <End Role="NgpRole" EntitySet="NgpRoles" />
-            <End Role="NgpLogsContractor" EntitySet="NgpLogsContractors" />
+            <End Role="NgpLog" EntitySet="NgpLogs" />
           </AssociationSet>
           <AssociationSet Name="FK_NgpLogsContractor_NgpUser" Association="NgpdbmsModel.FK_NgpLogsContractor_NgpUser">
             <End Role="NgpUser" EntitySet="NgpUsers" />
-            <End Role="NgpLogsContractor" EntitySet="NgpLogsContractors" />
-          </AssociationSet>
-          <AssociationSet Name="FK_NgpLogsPayment_NgpRole" Association="NgpdbmsModel.FK_NgpLogsPayment_NgpRole">
-            <End Role="NgpRole" EntitySet="NgpRoles" />
-            <End Role="NgpLogsPayment" EntitySet="NgpLogsPayments" />
-          </AssociationSet>
-          <AssociationSet Name="FK_NgpLogsPayment_NgpUser" Association="NgpdbmsModel.FK_NgpLogsPayment_NgpUser">
-            <End Role="NgpUser" EntitySet="NgpUsers" />
-            <End Role="NgpLogsPayment" EntitySet="NgpLogsPayments" />
-          </AssociationSet>
-          <AssociationSet Name="FK_NgpLogsProject_NgpRole" Association="NgpdbmsModel.FK_NgpLogsProject_NgpRole">
-            <End Role="NgpRole" EntitySet="NgpRoles" />
-            <End Role="NgpLogsProject" EntitySet="NgpLogsProjects" />
-          </AssociationSet>
-          <AssociationSet Name="FK_NgpLogsProject_NgpUser" Association="NgpdbmsModel.FK_NgpLogsProject_NgpUser">
-            <End Role="NgpUser" EntitySet="NgpUsers" />
-            <End Role="NgpLogsProject" EntitySet="NgpLogsProjects" />
-          </AssociationSet>
-          <AssociationSet Name="FK_NgpLogsUserAccount_NgpLogsUserAccount" Association="NgpdbmsModel.FK_NgpLogsUserAccount_NgpLogsUserAccount">
-            <End Role="NgpLogsUserAccount" EntitySet="NgpLogsUserAccounts" />
-            <End Role="NgpLogsUserAccount1" EntitySet="NgpLogsUserAccounts" />
-          </AssociationSet>
-          <AssociationSet Name="FK_NgpLogsUserAccount_NgpRole" Association="NgpdbmsModel.FK_NgpLogsUserAccount_NgpRole">
-            <End Role="NgpRole" EntitySet="NgpRoles" />
-            <End Role="NgpLogsUserAccount" EntitySet="NgpLogsUserAccounts" />
-          </AssociationSet>
-          <AssociationSet Name="FK_NgpLogsUserAccount_NgpUser" Association="NgpdbmsModel.FK_NgpLogsUserAccount_NgpUser">
-            <End Role="NgpUser" EntitySet="NgpUsers" />
-            <End Role="NgpLogsUserAccount" EntitySet="NgpLogsUserAccounts" />
+            <End Role="NgpLog" EntitySet="NgpLogs" />
           </AssociationSet>
           <AssociationSet Name="FK_NgpUser_NgpRole" Association="NgpdbmsModel.FK_NgpUser_NgpRole">
             <End Role="NgpRole" EntitySet="NgpRoles" />
             <End Role="NgpUser" EntitySet="NgpUsers" />
           </AssociationSet>
-          <EntitySet Name="NgpPositions" EntityType="NgpdbmsModel.NgpPosition" />
         </EntityContainer>
-        <EntityType Name="ngp_contract">
-          <Key>
-            <PropertyRef Name="contractID" />
-          </Key>
-          <Property Name="contractID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="moa" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="contractorId" Type="Int32" />
-          <Property Name="location_municipality" Type="Int32" />
-          <Property Name="location_barangay" Type="Int32" />
-          <Property Name="location_sitio" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="area" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="commodity" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="commodity_type" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="survival_rate" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="project_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="contract_cost" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="site_code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="year_established" Type="Int32" />
-          <Property Name="num_seedlings_planted" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="num_seedlings_produced" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="num_seedlings_survived" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="num_seedlings_replanted" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="num_seedlings_survived_year1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="dropdownID" Type="Int32" />
-          <Property Name="contractorName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="RoleId" Type="Int32" />
-          <Property Name="UserId" Type="Int32" />
-          <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="ngp_contractor" Relationship="NgpdbmsModel.FK_ngp_contract_ngp_contractor" FromRole="ngp_contract" ToRole="ngp_contractor" />
-          <NavigationProperty Name="ngp_dropdown" Relationship="NgpdbmsModel.FK_ngp_contract_ngp_dropdown" FromRole="ngp_contract" ToRole="ngp_dropdown" />
-          <NavigationProperty Name="NgpMunicipality" Relationship="NgpdbmsModel.FK_ngp_contract_NgpMunicipality" FromRole="ngp_contract" ToRole="NgpMunicipality" />
-          <NavigationProperty Name="NgpRole" Relationship="NgpdbmsModel.FK_ngp_contract_NgpRole" FromRole="ngp_contract" ToRole="NgpRole" />
-          <NavigationProperty Name="NgpUser" Relationship="NgpdbmsModel.FK_ngp_contract_NgpUser" FromRole="ngp_contract" ToRole="NgpUser" />
-          <NavigationProperty Name="NgpYear" Relationship="NgpdbmsModel.FK_ngp_contract_NgpYear" FromRole="ngp_contract" ToRole="NgpYear" />
-          <NavigationProperty Name="ngp_payment" Relationship="NgpdbmsModel.FK_ngp_payment_ngp_contract" FromRole="ngp_contract" ToRole="ngp_payment" />
-        </EntityType>
         <EntityType Name="ngp_contractor">
           <Key>
             <PropertyRef Name="contractorID" />
@@ -1398,82 +700,16 @@
           <Property Name="netamount_paid_year3_4th" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="lddapno_year3_4th" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="date_lddap_year3_4th" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="ngp_contract" Relationship="NgpdbmsModel.FK_ngp_contract_ngp_contractor" FromRole="ngp_contractor" ToRole="ngp_contract" />
+          <Property Name="forestTrees" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="fruitTrees" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="bamboo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="mangrove" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="NgpBarangay" Relationship="NgpdbmsModel.FK_ngp_contractor_NgpBarangay" FromRole="ngp_contractor" ToRole="NgpBarangay" />
           <NavigationProperty Name="NgplocationBarangay" Relationship="NgpdbmsModel.FK_ngp_contractor_NgplocationBarangay" FromRole="ngp_contractor" ToRole="NgplocationBarangay" />
           <NavigationProperty Name="NgplocationMunicipality" Relationship="NgpdbmsModel.FK_ngp_contractor_NgplocationMunicipality" FromRole="ngp_contractor" ToRole="NgplocationMunicipality" />
           <NavigationProperty Name="NgpMunicipality" Relationship="NgpdbmsModel.FK_ngp_contractor_NgpMunicipality" FromRole="ngp_contractor" ToRole="NgpMunicipality" />
           <NavigationProperty Name="NgpRole" Relationship="NgpdbmsModel.FK_ngp_contractor_NgpRole" FromRole="ngp_contractor" ToRole="NgpRole" />
           <NavigationProperty Name="NgpUser" Relationship="NgpdbmsModel.FK_ngp_contractor_NgpUser" FromRole="ngp_contractor" ToRole="NgpUser" />
-          <NavigationProperty Name="ngp_history" Relationship="NgpdbmsModel.FK_ngp_history_ngp_contractor" FromRole="ngp_contractor" ToRole="ngp_history" />
-          <Property Name="forestTrees" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="fruitTrees" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="bamboo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="mangrove" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="ngp_dropdown">
-          <Key>
-            <PropertyRef Name="dropdownID" />
-          </Key>
-          <Property Name="dropdownID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="year_established" Type="Int32" Nullable="false" />
-          <Property Name="region" Type="Int32" Nullable="false" />
-          <Property Name="penro" Type="Int32" Nullable="false" />
-          <Property Name="cenro" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="ngp_contract" Relationship="NgpdbmsModel.FK_ngp_contract_ngp_dropdown" FromRole="ngp_dropdown" ToRole="ngp_contract" />
-          <NavigationProperty Name="ngp_projects" Relationship="NgpdbmsModel.FK_ngp_projects_ngp_dropdown" FromRole="ngp_dropdown" ToRole="ngp_projects" />
-        </EntityType>
-        <EntityType Name="ngp_history">
-          <Key>
-            <PropertyRef Name="historyID" />
-          </Key>
-          <Property Name="historyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="user_no" Type="Int32" />
-          <Property Name="contractor_no" Type="Int32" />
-          <NavigationProperty Name="ngp_contractor" Relationship="NgpdbmsModel.FK_ngp_history_ngp_contractor" FromRole="ngp_history" ToRole="ngp_contractor" />
-        </EntityType>
-        <EntityType Name="ngp_payment">
-          <Key>
-            <PropertyRef Name="paymentID" />
-          </Key>
-          <Property Name="paymentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="contract_no" Type="Int32" />
-          <Property Name="contractorName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="num_release" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="yearestablishedId" Type="Int32" />
-          <Property Name="RoleId" Type="Int32" />
-          <Property Name="UserId" Type="Int32" />
-          <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="ngp_contract" Relationship="NgpdbmsModel.FK_ngp_payment_ngp_contract" FromRole="ngp_payment" ToRole="ngp_contract" />
-          <NavigationProperty Name="NgpRole" Relationship="NgpdbmsModel.FK_ngp_payment_NgpRole" FromRole="ngp_payment" ToRole="NgpRole" />
-          <NavigationProperty Name="NgpUser" Relationship="NgpdbmsModel.FK_ngp_payment_NgpUser" FromRole="ngp_payment" ToRole="NgpUser" />
-          <NavigationProperty Name="NgpYear" Relationship="NgpdbmsModel.FK_ngp_payment_NgpYear" FromRole="ngp_payment" ToRole="NgpYear" />
-        </EntityType>
-        <EntityType Name="ngp_projects">
-          <Key>
-            <PropertyRef Name="projectID" />
-          </Key>
-          <Property Name="projectID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="site_code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="location_municipality" Type="Int32" />
-          <Property Name="location_barangay" Type="Int32" />
-          <Property Name="area" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="year_form" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="penro" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="cenro" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="region" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="dropdownID" Type="Int32" />
-          <Property Name="RoleId" Type="Int32" />
-          <Property Name="UserId" Type="Int32" />
-          <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="ngp_dropdown" Relationship="NgpdbmsModel.FK_ngp_projects_ngp_dropdown" FromRole="ngp_projects" ToRole="ngp_dropdown" />
-          <NavigationProperty Name="ngp_projects1" Relationship="NgpdbmsModel.FK_ngp_projects_ngp_projects" FromRole="ngp_projects" ToRole="ngp_projects1" />
-          <NavigationProperty Name="ngp_projects2" Relationship="NgpdbmsModel.FK_ngp_projects_ngp_projects" FromRole="ngp_projects1" ToRole="ngp_projects" />
-          <NavigationProperty Name="NgplocationMunicipality" Relationship="NgpdbmsModel.FK_ngp_projects_NgplocationMunicipality" FromRole="ngp_projects" ToRole="NgplocationMunicipality" />
-          <NavigationProperty Name="NgpRole" Relationship="NgpdbmsModel.FK_ngp_projects_NgpRole" FromRole="ngp_projects" ToRole="NgpRole" />
-          <NavigationProperty Name="NgpUser" Relationship="NgpdbmsModel.FK_ngp_projects_NgpUser" FromRole="ngp_projects" ToRole="NgpUser" />
         </EntityType>
         <EntityType Name="NgpBarangay">
           <Key>
@@ -1504,24 +740,9 @@
           <Property Name="MunicipalityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="MunicipalityName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="ngp_contractor" Relationship="NgpdbmsModel.FK_ngp_contractor_NgplocationMunicipality" FromRole="NgplocationMunicipality" ToRole="ngp_contractor" />
-          <NavigationProperty Name="ngp_projects" Relationship="NgpdbmsModel.FK_ngp_projects_NgplocationMunicipality" FromRole="NgplocationMunicipality" ToRole="ngp_projects" />
           <NavigationProperty Name="NgplocationBarangays" Relationship="NgpdbmsModel.FK_NgplocationBarangay_NgplocationMunicipality" FromRole="NgplocationMunicipality" ToRole="NgplocationBarangay" />
         </EntityType>
-        <EntityType Name="NgpLogsContract">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Date" Type="DateTime" Precision="3" />
-          <Property Name="UserName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="LogMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="UserId" Type="Int32" />
-          <Property Name="RoleId" Type="Int32" />
-          <NavigationProperty Name="NgpRole" Relationship="NgpdbmsModel.FK_NgpLogsContract_NgpRole" FromRole="NgpLogsContract" ToRole="NgpRole" />
-          <NavigationProperty Name="NgpUser" Relationship="NgpdbmsModel.FK_NgpLogsContract_NgpUser" FromRole="NgpLogsContract" ToRole="NgpUser" />
-        </EntityType>
-        <EntityType Name="NgpLogsContractor">
+        <EntityType Name="NgpLog">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -1532,64 +753,8 @@
           <Property Name="LogMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="UserId" Type="Int32" />
           <Property Name="RoleId" Type="Int32" />
-          <NavigationProperty Name="NgpRole" Relationship="NgpdbmsModel.FK_NgpLogsContractor_NgpRole" FromRole="NgpLogsContractor" ToRole="NgpRole" />
-          <NavigationProperty Name="NgpUser" Relationship="NgpdbmsModel.FK_NgpLogsContractor_NgpUser" FromRole="NgpLogsContractor" ToRole="NgpUser" />
-        </EntityType>
-        <EntityType Name="NgpLogsPayment">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Date" Type="DateTime" Precision="3" />
-          <Property Name="UserName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="LogMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="UserId" Type="Int32" />
-          <Property Name="RoleId" Type="Int32" />
-          <NavigationProperty Name="NgpRole" Relationship="NgpdbmsModel.FK_NgpLogsPayment_NgpRole" FromRole="NgpLogsPayment" ToRole="NgpRole" />
-          <NavigationProperty Name="NgpUser" Relationship="NgpdbmsModel.FK_NgpLogsPayment_NgpUser" FromRole="NgpLogsPayment" ToRole="NgpUser" />
-        </EntityType>
-        <EntityType Name="NgpLogsProject">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Date" Type="DateTime" Precision="3" />
-          <Property Name="UserName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="LogMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="UserId" Type="Int32" />
-          <Property Name="RoleId" Type="Int32" />
-          <NavigationProperty Name="NgpRole" Relationship="NgpdbmsModel.FK_NgpLogsProject_NgpRole" FromRole="NgpLogsProject" ToRole="NgpRole" />
-          <NavigationProperty Name="NgpUser" Relationship="NgpdbmsModel.FK_NgpLogsProject_NgpUser" FromRole="NgpLogsProject" ToRole="NgpUser" />
-        </EntityType>
-        <EntityType Name="NgpLogsSched">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Date" Type="DateTime" Precision="3" />
-          <Property Name="UserName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="LogMessage" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="UserId" Type="Int32" />
-          <Property Name="RoleId" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="NgpLogsUserAccount">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Date" Type="DateTime" Precision="3" />
-          <Property Name="UserName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="LogMessage" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="UserId" Type="Int32" />
-          <Property Name="RoleId" Type="Int32" />
-          <NavigationProperty Name="NgpLogsUserAccount1" Relationship="NgpdbmsModel.FK_NgpLogsUserAccount_NgpLogsUserAccount" FromRole="NgpLogsUserAccount" ToRole="NgpLogsUserAccount1" />
-          <NavigationProperty Name="NgpLogsUserAccount2" Relationship="NgpdbmsModel.FK_NgpLogsUserAccount_NgpLogsUserAccount" FromRole="NgpLogsUserAccount1" ToRole="NgpLogsUserAccount" />
-          <NavigationProperty Name="NgpRole" Relationship="NgpdbmsModel.FK_NgpLogsUserAccount_NgpRole" FromRole="NgpLogsUserAccount" ToRole="NgpRole" />
-          <NavigationProperty Name="NgpUser" Relationship="NgpdbmsModel.FK_NgpLogsUserAccount_NgpUser" FromRole="NgpLogsUserAccount" ToRole="NgpUser" />
+          <NavigationProperty Name="NgpRole" Relationship="NgpdbmsModel.FK_NgpLogsContractor_NgpRole" FromRole="NgpLog" ToRole="NgpRole" />
+          <NavigationProperty Name="NgpUser" Relationship="NgpdbmsModel.FK_NgpLogsContractor_NgpUser" FromRole="NgpLog" ToRole="NgpUser" />
         </EntityType>
         <EntityType Name="NgpMaintenanceMode">
           <Key>
@@ -1606,9 +771,15 @@
           </Key>
           <Property Name="MunicipalityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="MunicipalityName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="ngp_contract" Relationship="NgpdbmsModel.FK_ngp_contract_NgpMunicipality" FromRole="NgpMunicipality" ToRole="ngp_contract" />
           <NavigationProperty Name="ngp_contractor" Relationship="NgpdbmsModel.FK_ngp_contractor_NgpMunicipality" FromRole="NgpMunicipality" ToRole="ngp_contractor" />
           <NavigationProperty Name="NgpBarangays" Relationship="NgpdbmsModel.FK_NgpBarangay_NgpMunicipality" FromRole="NgpMunicipality" ToRole="NgpBarangay" />
+        </EntityType>
+        <EntityType Name="NgpPosition">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="NgpRole">
           <Key>
@@ -1616,15 +787,8 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="RoleName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="ngp_contract" Relationship="NgpdbmsModel.FK_ngp_contract_NgpRole" FromRole="NgpRole" ToRole="ngp_contract" />
           <NavigationProperty Name="ngp_contractor" Relationship="NgpdbmsModel.FK_ngp_contractor_NgpRole" FromRole="NgpRole" ToRole="ngp_contractor" />
-          <NavigationProperty Name="ngp_payment" Relationship="NgpdbmsModel.FK_ngp_payment_NgpRole" FromRole="NgpRole" ToRole="ngp_payment" />
-          <NavigationProperty Name="ngp_projects" Relationship="NgpdbmsModel.FK_ngp_projects_NgpRole" FromRole="NgpRole" ToRole="ngp_projects" />
-          <NavigationProperty Name="NgpLogsContracts" Relationship="NgpdbmsModel.FK_NgpLogsContract_NgpRole" FromRole="NgpRole" ToRole="NgpLogsContract" />
-          <NavigationProperty Name="NgpLogsContractors" Relationship="NgpdbmsModel.FK_NgpLogsContractor_NgpRole" FromRole="NgpRole" ToRole="NgpLogsContractor" />
-          <NavigationProperty Name="NgpLogsPayments" Relationship="NgpdbmsModel.FK_NgpLogsPayment_NgpRole" FromRole="NgpRole" ToRole="NgpLogsPayment" />
-          <NavigationProperty Name="NgpLogsProjects" Relationship="NgpdbmsModel.FK_NgpLogsProject_NgpRole" FromRole="NgpRole" ToRole="NgpLogsProject" />
-          <NavigationProperty Name="NgpLogsUserAccounts" Relationship="NgpdbmsModel.FK_NgpLogsUserAccount_NgpRole" FromRole="NgpRole" ToRole="NgpLogsUserAccount" />
+          <NavigationProperty Name="NgpLogs" Relationship="NgpdbmsModel.FK_NgpLogsContractor_NgpRole" FromRole="NgpRole" ToRole="NgpLog" />
           <NavigationProperty Name="NgpUsers" Relationship="NgpdbmsModel.FK_NgpUser_NgpRole" FromRole="NgpRole" ToRole="NgpUser" />
         </EntityType>
         <EntityType Name="NgpUpload">
@@ -1646,20 +810,13 @@
           <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="RoleID" Type="Int32" />
-          <NavigationProperty Name="ngp_contract" Relationship="NgpdbmsModel.FK_ngp_contract_NgpUser" FromRole="NgpUser" ToRole="ngp_contract" />
-          <NavigationProperty Name="ngp_contractor" Relationship="NgpdbmsModel.FK_ngp_contractor_NgpUser" FromRole="NgpUser" ToRole="ngp_contractor" />
-          <NavigationProperty Name="ngp_payment" Relationship="NgpdbmsModel.FK_ngp_payment_NgpUser" FromRole="NgpUser" ToRole="ngp_payment" />
-          <NavigationProperty Name="ngp_projects" Relationship="NgpdbmsModel.FK_ngp_projects_NgpUser" FromRole="NgpUser" ToRole="ngp_projects" />
-          <NavigationProperty Name="NgpLogsContracts" Relationship="NgpdbmsModel.FK_NgpLogsContract_NgpUser" FromRole="NgpUser" ToRole="NgpLogsContract" />
-          <NavigationProperty Name="NgpLogsContractors" Relationship="NgpdbmsModel.FK_NgpLogsContractor_NgpUser" FromRole="NgpUser" ToRole="NgpLogsContractor" />
-          <NavigationProperty Name="NgpLogsPayments" Relationship="NgpdbmsModel.FK_NgpLogsPayment_NgpUser" FromRole="NgpUser" ToRole="NgpLogsPayment" />
-          <NavigationProperty Name="NgpLogsProjects" Relationship="NgpdbmsModel.FK_NgpLogsProject_NgpUser" FromRole="NgpUser" ToRole="NgpLogsProject" />
-          <NavigationProperty Name="NgpLogsUserAccounts" Relationship="NgpdbmsModel.FK_NgpLogsUserAccount_NgpUser" FromRole="NgpUser" ToRole="NgpLogsUserAccount" />
-          <NavigationProperty Name="NgpRole" Relationship="NgpdbmsModel.FK_NgpUser_NgpRole" FromRole="NgpUser" ToRole="NgpRole" />
           <Property Name="Position" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="DateAdded" Type="DateTime" Precision="3" />
           <Property Name="DateModified" Type="DateTime" Precision="3" />
           <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ngp_contractor" Relationship="NgpdbmsModel.FK_ngp_contractor_NgpUser" FromRole="NgpUser" ToRole="ngp_contractor" />
+          <NavigationProperty Name="NgpLogs" Relationship="NgpdbmsModel.FK_NgpLogsContractor_NgpUser" FromRole="NgpUser" ToRole="NgpLog" />
+          <NavigationProperty Name="NgpRole" Relationship="NgpdbmsModel.FK_NgpUser_NgpRole" FromRole="NgpUser" ToRole="NgpRole" />
         </EntityType>
         <EntityType Name="NgpYear">
           <Key>
@@ -1667,93 +824,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="ngp_contract" Relationship="NgpdbmsModel.FK_ngp_contract_NgpYear" FromRole="NgpYear" ToRole="ngp_contract" />
-          <NavigationProperty Name="ngp_payment" Relationship="NgpdbmsModel.FK_ngp_payment_NgpYear" FromRole="NgpYear" ToRole="ngp_payment" />
         </EntityType>
-        <Association Name="FK_ngp_contract_ngp_contractor">
-          <End Type="NgpdbmsModel.ngp_contractor" Role="ngp_contractor" Multiplicity="0..1" />
-          <End Type="NgpdbmsModel.ngp_contract" Role="ngp_contract" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ngp_contractor">
-              <PropertyRef Name="contractorID" />
-            </Principal>
-            <Dependent Role="ngp_contract">
-              <PropertyRef Name="contractorId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ngp_contract_ngp_dropdown">
-          <End Type="NgpdbmsModel.ngp_dropdown" Role="ngp_dropdown" Multiplicity="0..1" />
-          <End Type="NgpdbmsModel.ngp_contract" Role="ngp_contract" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ngp_dropdown">
-              <PropertyRef Name="dropdownID" />
-            </Principal>
-            <Dependent Role="ngp_contract">
-              <PropertyRef Name="dropdownID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ngp_contract_NgpMunicipality">
-          <End Type="NgpdbmsModel.NgpMunicipality" Role="NgpMunicipality" Multiplicity="0..1" />
-          <End Type="NgpdbmsModel.ngp_contract" Role="ngp_contract" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NgpMunicipality">
-              <PropertyRef Name="MunicipalityId" />
-            </Principal>
-            <Dependent Role="ngp_contract">
-              <PropertyRef Name="location_municipality" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ngp_contract_NgpRole">
-          <End Type="NgpdbmsModel.NgpRole" Role="NgpRole" Multiplicity="0..1" />
-          <End Type="NgpdbmsModel.ngp_contract" Role="ngp_contract" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NgpRole">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ngp_contract">
-              <PropertyRef Name="RoleId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ngp_contract_NgpUser">
-          <End Type="NgpdbmsModel.NgpUser" Role="NgpUser" Multiplicity="0..1" />
-          <End Type="NgpdbmsModel.ngp_contract" Role="ngp_contract" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NgpUser">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ngp_contract">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ngp_contract_NgpYear">
-          <End Type="NgpdbmsModel.NgpYear" Role="NgpYear" Multiplicity="0..1" />
-          <End Type="NgpdbmsModel.ngp_contract" Role="ngp_contract" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NgpYear">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ngp_contract">
-              <PropertyRef Name="year_established" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ngp_payment_ngp_contract">
-          <End Type="NgpdbmsModel.ngp_contract" Role="ngp_contract" Multiplicity="0..1" />
-          <End Type="NgpdbmsModel.ngp_payment" Role="ngp_payment" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ngp_contract">
-              <PropertyRef Name="contractID" />
-            </Principal>
-            <Dependent Role="ngp_payment">
-              <PropertyRef Name="contract_no" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_ngp_contractor_NgpBarangay">
           <End Type="NgpdbmsModel.NgpBarangay" Role="NgpBarangay" Multiplicity="0..1" />
           <End Type="NgpdbmsModel.ngp_contractor" Role="ngp_contractor" Multiplicity="*" />
@@ -1826,114 +897,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ngp_history_ngp_contractor">
-          <End Type="NgpdbmsModel.ngp_contractor" Role="ngp_contractor" Multiplicity="0..1" />
-          <End Type="NgpdbmsModel.ngp_history" Role="ngp_history" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ngp_contractor">
-              <PropertyRef Name="contractorID" />
-            </Principal>
-            <Dependent Role="ngp_history">
-              <PropertyRef Name="contractor_no" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ngp_projects_ngp_dropdown">
-          <End Type="NgpdbmsModel.ngp_dropdown" Role="ngp_dropdown" Multiplicity="0..1" />
-          <End Type="NgpdbmsModel.ngp_projects" Role="ngp_projects" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ngp_dropdown">
-              <PropertyRef Name="dropdownID" />
-            </Principal>
-            <Dependent Role="ngp_projects">
-              <PropertyRef Name="dropdownID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ngp_payment_NgpRole">
-          <End Type="NgpdbmsModel.NgpRole" Role="NgpRole" Multiplicity="0..1" />
-          <End Type="NgpdbmsModel.ngp_payment" Role="ngp_payment" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NgpRole">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ngp_payment">
-              <PropertyRef Name="RoleId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ngp_payment_NgpUser">
-          <End Type="NgpdbmsModel.NgpUser" Role="NgpUser" Multiplicity="0..1" />
-          <End Type="NgpdbmsModel.ngp_payment" Role="ngp_payment" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NgpUser">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ngp_payment">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ngp_payment_NgpYear">
-          <End Type="NgpdbmsModel.NgpYear" Role="NgpYear" Multiplicity="0..1" />
-          <End Type="NgpdbmsModel.ngp_payment" Role="ngp_payment" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NgpYear">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ngp_payment">
-              <PropertyRef Name="yearestablishedId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ngp_projects_ngp_projects">
-          <End Type="NgpdbmsModel.ngp_projects" Role="ngp_projects" Multiplicity="1" />
-          <End Type="NgpdbmsModel.ngp_projects" Role="ngp_projects1" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="ngp_projects">
-              <PropertyRef Name="projectID" />
-            </Principal>
-            <Dependent Role="ngp_projects1">
-              <PropertyRef Name="projectID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ngp_projects_NgplocationMunicipality">
-          <End Type="NgpdbmsModel.NgplocationMunicipality" Role="NgplocationMunicipality" Multiplicity="0..1" />
-          <End Type="NgpdbmsModel.ngp_projects" Role="ngp_projects" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NgplocationMunicipality">
-              <PropertyRef Name="MunicipalityId" />
-            </Principal>
-            <Dependent Role="ngp_projects">
-              <PropertyRef Name="location_municipality" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ngp_projects_NgpRole">
-          <End Type="NgpdbmsModel.NgpRole" Role="NgpRole" Multiplicity="0..1" />
-          <End Type="NgpdbmsModel.ngp_projects" Role="ngp_projects" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NgpRole">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ngp_projects">
-              <PropertyRef Name="RoleId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ngp_projects_NgpUser">
-          <End Type="NgpdbmsModel.NgpUser" Role="NgpUser" Multiplicity="0..1" />
-          <End Type="NgpdbmsModel.ngp_projects" Role="ngp_projects" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NgpUser">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ngp_projects">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_NgpBarangay_NgpMunicipality">
           <End Type="NgpdbmsModel.NgpMunicipality" Role="NgpMunicipality" Multiplicity="0..1" />
           <End Type="NgpdbmsModel.NgpBarangay" Role="NgpBarangay" Multiplicity="*" />
@@ -1970,134 +933,26 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_NgpLogsContract_NgpRole">
-          <End Type="NgpdbmsModel.NgpRole" Role="NgpRole" Multiplicity="0..1" />
-          <End Type="NgpdbmsModel.NgpLogsContract" Role="NgpLogsContract" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NgpRole">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="NgpLogsContract">
-              <PropertyRef Name="RoleId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_NgpLogsContract_NgpUser">
-          <End Type="NgpdbmsModel.NgpUser" Role="NgpUser" Multiplicity="0..1" />
-          <End Type="NgpdbmsModel.NgpLogsContract" Role="NgpLogsContract" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NgpUser">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="NgpLogsContract">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_NgpLogsContractor_NgpRole">
           <End Type="NgpdbmsModel.NgpRole" Role="NgpRole" Multiplicity="0..1" />
-          <End Type="NgpdbmsModel.NgpLogsContractor" Role="NgpLogsContractor" Multiplicity="*" />
+          <End Type="NgpdbmsModel.NgpLog" Role="NgpLog" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="NgpRole">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="NgpLogsContractor">
+            <Dependent Role="NgpLog">
               <PropertyRef Name="RoleId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_NgpLogsContractor_NgpUser">
           <End Type="NgpdbmsModel.NgpUser" Role="NgpUser" Multiplicity="0..1" />
-          <End Type="NgpdbmsModel.NgpLogsContractor" Role="NgpLogsContractor" Multiplicity="*" />
+          <End Type="NgpdbmsModel.NgpLog" Role="NgpLog" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="NgpUser">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="NgpLogsContractor">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_NgpLogsPayment_NgpRole">
-          <End Type="NgpdbmsModel.NgpRole" Role="NgpRole" Multiplicity="0..1" />
-          <End Type="NgpdbmsModel.NgpLogsPayment" Role="NgpLogsPayment" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NgpRole">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="NgpLogsPayment">
-              <PropertyRef Name="RoleId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_NgpLogsPayment_NgpUser">
-          <End Type="NgpdbmsModel.NgpUser" Role="NgpUser" Multiplicity="0..1" />
-          <End Type="NgpdbmsModel.NgpLogsPayment" Role="NgpLogsPayment" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NgpUser">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="NgpLogsPayment">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_NgpLogsProject_NgpRole">
-          <End Type="NgpdbmsModel.NgpRole" Role="NgpRole" Multiplicity="0..1" />
-          <End Type="NgpdbmsModel.NgpLogsProject" Role="NgpLogsProject" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NgpRole">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="NgpLogsProject">
-              <PropertyRef Name="RoleId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_NgpLogsProject_NgpUser">
-          <End Type="NgpdbmsModel.NgpUser" Role="NgpUser" Multiplicity="0..1" />
-          <End Type="NgpdbmsModel.NgpLogsProject" Role="NgpLogsProject" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NgpUser">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="NgpLogsProject">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_NgpLogsUserAccount_NgpLogsUserAccount">
-          <End Type="NgpdbmsModel.NgpLogsUserAccount" Role="NgpLogsUserAccount" Multiplicity="1" />
-          <End Type="NgpdbmsModel.NgpLogsUserAccount" Role="NgpLogsUserAccount1" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="NgpLogsUserAccount">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="NgpLogsUserAccount1">
-              <PropertyRef Name="Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_NgpLogsUserAccount_NgpRole">
-          <End Type="NgpdbmsModel.NgpRole" Role="NgpRole" Multiplicity="0..1" />
-          <End Type="NgpdbmsModel.NgpLogsUserAccount" Role="NgpLogsUserAccount" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NgpRole">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="NgpLogsUserAccount">
-              <PropertyRef Name="RoleId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_NgpLogsUserAccount_NgpUser">
-          <End Type="NgpdbmsModel.NgpUser" Role="NgpUser" Multiplicity="0..1" />
-          <End Type="NgpdbmsModel.NgpLogsUserAccount" Role="NgpLogsUserAccount" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NgpUser">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="NgpLogsUserAccount">
+            <Dependent Role="NgpLog">
               <PropertyRef Name="UserId" />
             </Dependent>
           </ReferentialConstraint>
@@ -2114,50 +969,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="NgpPosition">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-        </EntityType>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="NgpdbmsModelStoreContainer" CdmEntityContainer="NgpdbmsEntities">
-          <EntitySetMapping Name="ngp_contract">
-            <EntityTypeMapping TypeName="NgpdbmsModel.ngp_contract">
-              <MappingFragment StoreEntitySet="ngp_contract">
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
-                <ScalarProperty Name="contractorName" ColumnName="contractorName" />
-                <ScalarProperty Name="dropdownID" ColumnName="dropdownID" />
-                <ScalarProperty Name="num_seedlings_survived_year1" ColumnName="num_seedlings_survived_year1" />
-                <ScalarProperty Name="num_seedlings_replanted" ColumnName="num_seedlings_replanted" />
-                <ScalarProperty Name="num_seedlings_survived" ColumnName="num_seedlings_survived" />
-                <ScalarProperty Name="num_seedlings_produced" ColumnName="num_seedlings_produced" />
-                <ScalarProperty Name="num_seedlings_planted" ColumnName="num_seedlings_planted" />
-                <ScalarProperty Name="year_established" ColumnName="year_established" />
-                <ScalarProperty Name="site_code" ColumnName="site_code" />
-                <ScalarProperty Name="contract_cost" ColumnName="contract_cost" />
-                <ScalarProperty Name="project_name" ColumnName="project_name" />
-                <ScalarProperty Name="survival_rate" ColumnName="survival_rate" />
-                <ScalarProperty Name="commodity_type" ColumnName="commodity_type" />
-                <ScalarProperty Name="commodity" ColumnName="commodity" />
-                <ScalarProperty Name="area" ColumnName="area" />
-                <ScalarProperty Name="location_sitio" ColumnName="location_sitio" />
-                <ScalarProperty Name="location_barangay" ColumnName="location_barangay" />
-                <ScalarProperty Name="location_municipality" ColumnName="location_municipality" />
-                <ScalarProperty Name="contractorId" ColumnName="contractorId" />
-                <ScalarProperty Name="moa" ColumnName="moa" />
-                <ScalarProperty Name="contractID" ColumnName="contractID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="ngp_contractor">
             <EntityTypeMapping TypeName="NgpdbmsModel.ngp_contractor">
               <MappingFragment StoreEntitySet="ngp_contractor">
@@ -2325,61 +1142,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ngp_dropdown">
-            <EntityTypeMapping TypeName="NgpdbmsModel.ngp_dropdown">
-              <MappingFragment StoreEntitySet="ngp_dropdown">
-                <ScalarProperty Name="cenro" ColumnName="cenro" />
-                <ScalarProperty Name="penro" ColumnName="penro" />
-                <ScalarProperty Name="region" ColumnName="region" />
-                <ScalarProperty Name="year_established" ColumnName="year_established" />
-                <ScalarProperty Name="dropdownID" ColumnName="dropdownID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ngp_history">
-            <EntityTypeMapping TypeName="NgpdbmsModel.ngp_history">
-              <MappingFragment StoreEntitySet="ngp_history">
-                <ScalarProperty Name="contractor_no" ColumnName="contractor_no" />
-                <ScalarProperty Name="user_no" ColumnName="user_no" />
-                <ScalarProperty Name="historyID" ColumnName="historyID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ngp_payment">
-            <EntityTypeMapping TypeName="NgpdbmsModel.ngp_payment">
-              <MappingFragment StoreEntitySet="ngp_payment">
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
-                <ScalarProperty Name="yearestablishedId" ColumnName="yearestablishedId" />
-                <ScalarProperty Name="num_release" ColumnName="num_release" />
-                <ScalarProperty Name="contractorName" ColumnName="contractorName" />
-                <ScalarProperty Name="contract_no" ColumnName="contract_no" />
-                <ScalarProperty Name="paymentID" ColumnName="paymentID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ngp_projects">
-            <EntityTypeMapping TypeName="NgpdbmsModel.ngp_projects">
-              <MappingFragment StoreEntitySet="ngp_projects">
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
-                <ScalarProperty Name="dropdownID" ColumnName="dropdownID" />
-                <ScalarProperty Name="region" ColumnName="region" />
-                <ScalarProperty Name="cenro" ColumnName="cenro" />
-                <ScalarProperty Name="penro" ColumnName="penro" />
-                <ScalarProperty Name="year_form" ColumnName="year_form" />
-                <ScalarProperty Name="area" ColumnName="area" />
-                <ScalarProperty Name="location_barangay" ColumnName="location_barangay" />
-                <ScalarProperty Name="location_municipality" ColumnName="location_municipality" />
-                <ScalarProperty Name="site_code" ColumnName="site_code" />
-                <ScalarProperty Name="projectID" ColumnName="projectID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="NgpBarangays">
             <EntityTypeMapping TypeName="NgpdbmsModel.NgpBarangay">
               <MappingFragment StoreEntitySet="NgpBarangay">
@@ -2406,74 +1168,9 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="NgpLogsContracts">
-            <EntityTypeMapping TypeName="NgpdbmsModel.NgpLogsContract">
-              <MappingFragment StoreEntitySet="NgpLogsContract">
-                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="LogMessage" ColumnName="LogMessage" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="NgpLogsContractors">
-            <EntityTypeMapping TypeName="NgpdbmsModel.NgpLogsContractor">
-              <MappingFragment StoreEntitySet="NgpLogsContractor">
-                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="LogMessage" ColumnName="LogMessage" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="NgpLogsPayments">
-            <EntityTypeMapping TypeName="NgpdbmsModel.NgpLogsPayment">
-              <MappingFragment StoreEntitySet="NgpLogsPayment">
-                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="LogMessage" ColumnName="LogMessage" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="NgpLogsProjects">
-            <EntityTypeMapping TypeName="NgpdbmsModel.NgpLogsProject">
-              <MappingFragment StoreEntitySet="NgpLogsProject">
-                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="LogMessage" ColumnName="LogMessage" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="NgpLogsScheds">
-            <EntityTypeMapping TypeName="NgpdbmsModel.NgpLogsSched">
-              <MappingFragment StoreEntitySet="NgpLogsSched">
-                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="LogMessage" ColumnName="LogMessage" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="NgpLogsUserAccounts">
-            <EntityTypeMapping TypeName="NgpdbmsModel.NgpLogsUserAccount">
-              <MappingFragment StoreEntitySet="NgpLogsUserAccount">
+          <EntitySetMapping Name="NgpLogs">
+            <EntityTypeMapping TypeName="NgpdbmsModel.NgpLog">
+              <MappingFragment StoreEntitySet="NgpLogs">
                 <ScalarProperty Name="RoleId" ColumnName="RoleId" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="LogMessage" ColumnName="LogMessage" />
@@ -2499,6 +1196,14 @@
               <MappingFragment StoreEntitySet="NgpMunicipality">
                 <ScalarProperty Name="MunicipalityName" ColumnName="MunicipalityName" />
                 <ScalarProperty Name="MunicipalityId" ColumnName="MunicipalityId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NgpPositions">
+            <EntityTypeMapping TypeName="NgpdbmsModel.NgpPosition">
+              <MappingFragment StoreEntitySet="NgpPosition">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2539,14 +1244,6 @@
           <EntitySetMapping Name="NgpYears">
             <EntityTypeMapping TypeName="NgpdbmsModel.NgpYear">
               <MappingFragment StoreEntitySet="NgpYear">
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="NgpPositions">
-            <EntityTypeMapping TypeName="NgpdbmsModel.NgpPosition">
-              <MappingFragment StoreEntitySet="NgpPosition">
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>

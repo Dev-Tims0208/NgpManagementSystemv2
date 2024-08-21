@@ -32,19 +32,14 @@ namespace NgpManagementSystem.Controllers.API
             return Ok(contractor.Count);
         }
 
-        [Route("api/totalprojects/count")]
-        public IHttpActionResult GetTotalProjects()
+        [Route("api/totallogs/count")]
+        public IHttpActionResult GetTotalLogs()
         {
-            var projects = Db.ngp_projects.ToList();
-            return Ok(projects.Count);
+            var logs = Db.NgpLogs.ToList();
+            return Ok(logs.Count);
         }
 
-        [Route("api/totalcontract/count")]
-        public IHttpActionResult GetContracts()
-        {
-            var contract = Db.ngp_contract.ToList();
-            return Ok(contract.Count);
-        }
+
 
     }
 }
