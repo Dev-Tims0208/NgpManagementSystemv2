@@ -21,7 +21,7 @@ namespace NgpManagementSystem.Controllers
         // GET: Account
         public ActionResult Index()
         {
-            if (Session["Role_Id"] == null)
+            if (Request.Cookies["auth"].Values["Role_Id"] == null)
             {
                 return RedirectToAction("logout", "NgpManagement");
             }
@@ -29,7 +29,7 @@ namespace NgpManagementSystem.Controllers
         }
         public ActionResult UserView()
         {
-            if (Session["Role_Id"] == null)
+            if (Request.Cookies["auth"].Values["Role_Id"] == null)
             {
                 return RedirectToAction("logout", "NgpManagement");
             }
@@ -52,11 +52,11 @@ namespace NgpManagementSystem.Controllers
                 IQueryable<NgpUser> userlist = Db.NgpUsers;
 
                 //SHOWING FILTER DATA BASE ON ROLE ID  DEPENDENT IN LOGIN ID
-                var sess_id = (int)Session["LoginID"];
+                var sess_id = Request.Cookies["auth"].Values["LoginID"];
 
-                if ((int)Session["Role_Id"] != 1)
+                if (Request.Cookies["auth"].Values["Role_Id"] != "1")
                 {
-                    userlist = userlist.Where(d => d.Id == sess_id);
+                    userlist = userlist.Where(d => d.Id.ToString() == sess_id);
                 }
 
 
@@ -107,7 +107,7 @@ namespace NgpManagementSystem.Controllers
 
         public ActionResult AdminNameViewinProfile() //IMAGE AND NAME VIEW IN DASHBOARD
         {
-            if (Session["Role_Id"] == null)
+            if (Request.Cookies["auth"].Values["Role_Id"] == null)
             {
                 return RedirectToAction("logout", "NgpManagement");
             }
@@ -116,17 +116,17 @@ namespace NgpManagementSystem.Controllers
             var adminnameviewinprofile = Db.NgpUsers.ToList();
 
 
-            var sess_id = (int)Session["LoginID"];
+            var sess_id = Request.Cookies["auth"].Values["LoginID"];
 
-            if ((int)Session["Role_Id"] == 1)
+            if (Request.Cookies["auth"].Values["Role_Id"] == "1")
             {
-                adminnameviewinprofile = adminnameviewinprofile.Where(d => d.Id == sess_id).ToList();
+                adminnameviewinprofile = adminnameviewinprofile.Where(d => d.Id.ToString() == sess_id).ToList();
             }
             else
 
-             if ((int)Session["Role_Id"] != 1)
+             if (Request.Cookies["auth"].Values["Role_Id"] != "1")
             {
-                adminnameviewinprofile = adminnameviewinprofile.Where(d => d.Id == sess_id).ToList();
+                adminnameviewinprofile = adminnameviewinprofile.Where(d => d.Id.ToString() == sess_id).ToList();
             }
 
 
@@ -135,7 +135,7 @@ namespace NgpManagementSystem.Controllers
 
         public ActionResult DisplayPicNameandRole() //DISPLAY
         {
-            if (Session["Role_Id"] == null)
+            if (Request.Cookies["auth"].Values["Role_Id"] == null)
             {
                 return RedirectToAction("logout", "Account");
             }
@@ -144,17 +144,17 @@ namespace NgpManagementSystem.Controllers
             var adminnameviewinprofile = Db.NgpUsers.ToList();
 
 
-            var sess_id = (int)Session["LoginID"];
+            var sess_id = Request.Cookies["auth"].Values["LoginID"];
 
-            if ((int)Session["Role_Id"] == 1)
+            if (Request.Cookies["auth"].Values["Role_Id"] == "1")
             {
-                adminnameviewinprofile = adminnameviewinprofile.Where(d => d.Id == sess_id).ToList();
+                adminnameviewinprofile = adminnameviewinprofile.Where(d => d.Id.ToString() == sess_id).ToList();
             }
             else
 
-             if ((int)Session["Role_Id"] != 1)
+             if (Request.Cookies["auth"].Values["Role_Id"] != "1")
             {
-                adminnameviewinprofile = adminnameviewinprofile.Where(d => d.Id == sess_id).ToList();
+                adminnameviewinprofile = adminnameviewinprofile.Where(d => d.Id.ToString() == sess_id).ToList();
             }
 
 
@@ -164,15 +164,15 @@ namespace NgpManagementSystem.Controllers
 
         public ActionResult DisplayPcitureOnlyDeveloperOnly() //IMAGE AND NAME VIEW IN DASHBOARD
         {
-            if (Session["Role_Id"] == null)
+            if (Request.Cookies["auth"].Values["Role_Id"] == null)
             {
                 return RedirectToAction("logout", "NgpManagement");
             }
 
             var adminname = Db.NgpUploads.ToList();
 
-            var sess_id = (int)Session["LoginID"];
-            var userID = Db.NgpUploads.FirstOrDefault(o => o.AccountId == sess_id)?.AccountId;
+            var sess_id = Request.Cookies["auth"].Values["LoginID"];
+            var userID = Db.NgpUploads.FirstOrDefault(o => o.AccountId.ToString() == sess_id)?.AccountId;
 
             adminname = adminname.Where(d => d.AccountId == userID).ToList();
 

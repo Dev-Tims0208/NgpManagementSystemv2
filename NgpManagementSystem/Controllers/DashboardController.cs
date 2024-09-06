@@ -19,9 +19,26 @@ namespace NgpManagementSystem.Controllers
 
             Db.Dispose();
         }
-        public ActionResult Index()
+        public ActionResult Developer()
         {
-            if (Session["Role_Id"] == null)
+            if (Request.Cookies["auth"].Values["Role_Id"] == null)
+            {
+                return RedirectToAction("logout", "NgpManagement");
+            }
+            return View();
+        }
+
+        public ActionResult Administrator()
+        {
+            if (Request.Cookies["auth"].Values["Role_Id"] == null)
+            {
+                return RedirectToAction("logout", "NgpManagement");
+            }
+            return View();
+        }
+        public ActionResult Users()
+        {
+            if (Request.Cookies["auth"].Values["Role_Id"] == null)
             {
                 return RedirectToAction("logout", "NgpManagement");
             }

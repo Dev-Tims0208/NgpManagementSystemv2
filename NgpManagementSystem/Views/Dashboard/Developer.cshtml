@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutDeveloper.cshtml";
+}
+<div class="row">
+    <div class="col-12 mt-5">
+        <div class="card">
+            <div class="card-header">
+                <h6>LOGS TABLE</h6>
+
+            </div>
+
+
+            <div class="card-body p-0">
+                <div class="table-responsive ms-3  mx-3">
+                    <table class="table table-striped" id="logstotaldatatable" width="100%">
+                        <thead>
+                            <tr>
+                                <th class="">MESSAGE LOGS</th>
+                                <th class="">HIDE</th>
+                                <th class="">DATE</th>
+                                <th class="">CREATE BY</th>
+                                <th class="">POSITION</th>
+                                <th class="">ROLE</th>
+
+                            </tr>
+                        </thead>
+
+                    </table>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="/Logs/Index" class="btn btn-success">See All Activity Logs</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="row ">
+    <div class="col-12 mt-5">
+        <div class="card">
+            <div class="card-header">
+                <h6>CONTRACTOR REPORTS </h6>
+            </div>
+            <div class="card-body p-0">
+                <div class="table-responsive  ms-3  mx-3">
+                    <table class="table table-striped" id="reportscontractordatatable" width="100%">
+                        <thead>
+                            <tr>
+
+                                <th class="">Contractor Name</th>
+                                <th class="">1st Year Contract Cost</th>
+                                <th class="">2nd Year Contract Cost</th>
+                                <th class="">3rd Year Contract Cost</th>
+                                <th class="">Area</th>
+                                <th class="">Forest Trees</th>
+                                <th class="">Fruit Trees</th>
+                                <th class="">Bamboo</th>
+                                <th class="">Mangroove</th>
+
+                            </tr>
+                        </thead>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>$(document).ready(function () {
+        ContractorReports();
+    });</script>
+
+

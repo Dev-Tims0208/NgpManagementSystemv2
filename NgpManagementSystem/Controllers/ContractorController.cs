@@ -21,7 +21,7 @@ namespace NgpManagementSystem.Controllers
         }
         public ActionResult Index()
         {
-            if (Session["Role_Id"] == null)
+            if (Request.Cookies["auth"].Values["Role_Id"] == null)
             {
                 return RedirectToAction("logout", "NgpManagement");
             }
@@ -29,7 +29,7 @@ namespace NgpManagementSystem.Controllers
         }
         public ActionResult Create()
         {
-            if (Session["Role_Id"] == null)
+            if (Request.Cookies["auth"].Values["Role_Id"] == null)
             {
                 return RedirectToAction("logout", "NgpManagement");
             }
@@ -50,11 +50,11 @@ namespace NgpManagementSystem.Controllers
                 IQueryable<ngp_contractor> contractorlist = Db.ngp_contractor;
 
                 //SHOWING FILTER DATA BASE ON ROLE ID  DEPENDENT IN LOGIN ID
-                //var sess_id = (int)Session["LoginID"];
+                //var sess_id = Request.Cookies["auth"].Values["LoginID"];
 
-                //if ((int)Session["Role_Id"] != 1)
+                //if (Request.Cookies["auth"].Values["Role_Id"] != "1")
                 //{
-                //    userlist = userlist.Where(d => d.Id == sess_id);
+                //    userlist = userlist.Where(d => d.Id.ToString() == sess_id);
                 //}
 
 
@@ -143,11 +143,11 @@ namespace NgpManagementSystem.Controllers
                 IQueryable<ngp_contractor> contractorlist = Db.ngp_contractor;
 
                 //SHOWING FILTER DATA BASE ON ROLE ID  DEPENDENT IN LOGIN ID
-                //var sess_id = (int)Session["LoginID"];
+                //var sess_id = Request.Cookies["auth"].Values["LoginID"];
 
-                //if ((int)Session["Role_Id"] != 1)
+                //if (Request.Cookies["auth"].Values["Role_Id"] != "1")
                 //{
-                //    userlist = userlist.Where(d => d.Id == sess_id);
+                //    userlist = userlist.Where(d => d.Id.ToString() == sess_id);
                 //}
 
 
@@ -218,11 +218,11 @@ namespace NgpManagementSystem.Controllers
                 IQueryable<ngp_contractor> contractorlist = Db.ngp_contractor;
 
                 //SHOWING FILTER DATA BASE ON ROLE ID  DEPENDENT IN LOGIN ID
-                //var sess_id = (int)Session["LoginID"];
+                //var sess_id = Request.Cookies["auth"].Values["LoginID"];
 
-                //if ((int)Session["Role_Id"] != 1)
+                //if (Request.Cookies["auth"].Values["Role_Id"] != "1")
                 //{
-                //    userlist = userlist.Where(d => d.Id == sess_id);
+                //    userlist = userlist.Where(d => d.Id.ToString() == sess_id);
                 //}
 
 
@@ -288,11 +288,11 @@ namespace NgpManagementSystem.Controllers
                 IQueryable<ngp_contractor> contractorlist = Db.ngp_contractor;
 
                 //SHOWING FILTER DATA BASE ON ROLE ID  DEPENDENT IN LOGIN ID
-                //var sess_id = (int)Session["LoginID"];
+                //var sess_id = Request.Cookies["auth"].Values["LoginID"];
 
-                //if ((int)Session["Role_Id"] != 1)
+                //if (Request.Cookies["auth"].Values["Role_Id"] != "1")
                 //{
-                //    userlist = userlist.Where(d => d.Id == sess_id);
+                //    userlist = userlist.Where(d => d.Id.ToString() == sess_id);
                 //}
 
 

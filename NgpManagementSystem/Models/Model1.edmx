@@ -194,6 +194,19 @@
           <Property Name="MunicipalityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="MunicipalityName" Type="nvarchar" MaxLength="100" />
         </EntityType>
+        <EntityType Name="NgpLoginLogs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LoginId" Type="int" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Position" Type="nvarchar(max)" />
+          <Property Name="RoleID" Type="int" />
+          <Property Name="RoleName" Type="nvarchar(max)" />
+          <Property Name="LoginTime" Type="datetime" Nullable="false" />
+          <Property Name="LogoutTime" Type="datetime" Nullable="false" />
+        </EntityType>
         <EntityType Name="NgpLogs">
           <Key>
             <PropertyRef Name="Id" />
@@ -417,6 +430,7 @@
           <EntitySet Name="NgpBarangay" EntityType="Self.NgpBarangay" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NgplocationBarangay" EntityType="Self.NgplocationBarangay" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NgplocationMunicipality" EntityType="Self.NgplocationMunicipality" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NgpLoginLogs" EntityType="Self.NgpLoginLogs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NgpLogs" EntityType="Self.NgpLogs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NgpMaintenanceMode" EntityType="Self.NgpMaintenanceMode" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NgpMunicipality" EntityType="Self.NgpMunicipality" Schema="dbo" store:Type="Tables" />
@@ -483,6 +497,7 @@
           <EntitySet Name="NgpBarangays" EntityType="NgpdbmsModel.NgpBarangay" />
           <EntitySet Name="NgplocationBarangays" EntityType="NgpdbmsModel.NgplocationBarangay" />
           <EntitySet Name="NgplocationMunicipalities" EntityType="NgpdbmsModel.NgplocationMunicipality" />
+          <EntitySet Name="NgpLoginLogs" EntityType="NgpdbmsModel.NgpLoginLog" />
           <EntitySet Name="NgpLogs" EntityType="NgpdbmsModel.NgpLog" />
           <EntitySet Name="NgpMaintenanceModes" EntityType="NgpdbmsModel.NgpMaintenanceMode" />
           <EntitySet Name="NgpMunicipalities" EntityType="NgpdbmsModel.NgpMunicipality" />
@@ -743,6 +758,19 @@
           <NavigationProperty Name="ngp_contractor" Relationship="NgpdbmsModel.FK_ngp_contractor_NgplocationMunicipality" FromRole="NgplocationMunicipality" ToRole="ngp_contractor" />
           <NavigationProperty Name="NgplocationBarangays" Relationship="NgpdbmsModel.FK_NgplocationBarangay_NgplocationMunicipality" FromRole="NgplocationMunicipality" ToRole="NgplocationBarangay" />
         </EntityType>
+        <EntityType Name="NgpLoginLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LoginId" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Position" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RoleID" Type="Int32" />
+          <Property Name="RoleName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LoginTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LogoutTime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
         <EntityType Name="NgpLog">
           <Key>
             <PropertyRef Name="Id" />
@@ -754,9 +782,9 @@
           <Property Name="LogMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="UserId" Type="Int32" />
           <Property Name="RoleId" Type="Int32" />
+          <Property Name="Position" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="NgpRole" Relationship="NgpdbmsModel.FK_NgpLogsContractor_NgpRole" FromRole="NgpLog" ToRole="NgpRole" />
           <NavigationProperty Name="NgpUser" Relationship="NgpdbmsModel.FK_NgpLogsContractor_NgpUser" FromRole="NgpLog" ToRole="NgpUser" />
-          <Property Name="Position" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="NgpMaintenanceMode">
           <Key>
@@ -1167,6 +1195,20 @@
               <MappingFragment StoreEntitySet="NgplocationMunicipality">
                 <ScalarProperty Name="MunicipalityName" ColumnName="MunicipalityName" />
                 <ScalarProperty Name="MunicipalityId" ColumnName="MunicipalityId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NgpLoginLogs">
+            <EntityTypeMapping TypeName="NgpdbmsModel.NgpLoginLog">
+              <MappingFragment StoreEntitySet="NgpLoginLogs">
+                <ScalarProperty Name="LogoutTime" ColumnName="LogoutTime" />
+                <ScalarProperty Name="LoginTime" ColumnName="LoginTime" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="LoginId" ColumnName="LoginId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

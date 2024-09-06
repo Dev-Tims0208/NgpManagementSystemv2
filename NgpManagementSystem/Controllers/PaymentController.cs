@@ -26,7 +26,7 @@ namespace NgpManagementSystem.Controllers
         public ActionResult Create()
 
         {
-            if (Session["Role_Id"] == null)
+            if (Request.Cookies["auth"].Values["Role_Id"] == null)
             {
                 return RedirectToAction("logout", "NgpManagement");
             }

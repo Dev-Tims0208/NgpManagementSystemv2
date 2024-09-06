@@ -25,7 +25,7 @@ namespace NgpManagementSystem.Controllers
 
         public ActionResult UserContractorLogs()
         {
-            if (Session["Role_Id"] == null)
+            if (Request.Cookies["auth"].Values["Role_Id"] == null)
             {
                 return RedirectToAction("logout", "NgpManagement");
             }
@@ -35,7 +35,7 @@ namespace NgpManagementSystem.Controllers
 
         public ActionResult UserProjectLogs()
         {
-            if (Session["Role_Id"] == null)
+            if (Request.Cookies["auth"].Values["Role_Id"] == null)
             {
                 return RedirectToAction("logout", "NgpManagement");
             }
@@ -44,7 +44,7 @@ namespace NgpManagementSystem.Controllers
 
         public ActionResult UserContractLogs()
         {
-            if (Session["Role_Id"] == null)
+            if (Request.Cookies["auth"].Values["Role_Id"] == null)
             {
                 return RedirectToAction("logout", "NgpManagement");
             }
@@ -54,7 +54,7 @@ namespace NgpManagementSystem.Controllers
 
         public ActionResult UserPaymentLogs()
         {
-            if (Session["Role_Id"] == null)
+            if (Request.Cookies["auth"].Values["Role_Id"] == null)
             {
                 return RedirectToAction("logout", "NgpManagement");
             }
@@ -64,7 +64,7 @@ namespace NgpManagementSystem.Controllers
 
         public ActionResult UserAccountLogs()
         {
-            if (Session["Role_Id"] == null)
+            if (Request.Cookies["auth"].Values["Role_Id"] == null)
             {
                 return RedirectToAction("logout", "NgpManagement");
             }

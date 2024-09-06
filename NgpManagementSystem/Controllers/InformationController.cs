@@ -11,7 +11,7 @@ namespace NgpManagementSystem.Controllers
         // GET: Information
         public ActionResult Index()
         {
-            if (Session["Role_Id"] == null)
+            if (Request.Cookies["auth"].Values["Role_Id"] == null)
             {
                 return RedirectToAction("logout", "NgpManagement");
             }

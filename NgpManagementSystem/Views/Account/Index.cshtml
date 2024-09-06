@@ -1,6 +1,6 @@
 ﻿@{
     ViewBag.Title = "Index";
-    Layout = (int)Session["Role_Id"] == 1 ? "~/Views/Shared/_LayoutAdmin.cshtml" : "~/Views/Shared/_LayoutUser.cshtml";
+    Layout = Request.Cookies["auth"].Values["Role_Id"] == "1" ? "~/Views/Shared/_LayoutAdmin.cshtml" : "~/Views/Shared/_LayoutUser.cshtml";
 }
 <div class="row">
     <div class="col-12 mt-5">
@@ -9,7 +9,7 @@
                 <h6>USERS TABLE</h6>
 
             </div>
-            @{ if ((int)Session["Role_Id"] == 1)
+            @{ if (Request.Cookies["auth"].Values["Role_Id"] == "1")
 
                 {
                         <div class="text-center">

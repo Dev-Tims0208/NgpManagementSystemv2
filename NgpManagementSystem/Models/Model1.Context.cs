@@ -29,6 +29,7 @@ namespace NgpManagementSystem.Models
         public virtual DbSet<NgpBarangay> NgpBarangays { get; set; }
         public virtual DbSet<NgplocationBarangay> NgplocationBarangays { get; set; }
         public virtual DbSet<NgplocationMunicipality> NgplocationMunicipalities { get; set; }
+        public virtual DbSet<NgpLoginLog> NgpLoginLogs { get; set; }
         public virtual DbSet<NgpLog> NgpLogs { get; set; }
         public virtual DbSet<NgpMaintenanceMode> NgpMaintenanceModes { get; set; }
         public virtual DbSet<NgpMunicipality> NgpMunicipalities { get; set; }
