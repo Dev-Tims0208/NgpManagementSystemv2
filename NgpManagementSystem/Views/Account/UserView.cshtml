@@ -1,0 +1,414 @@
+﻿
+@{
+    ViewBag.Title = "UserView";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<div class="row">
+    <div class="col-12 mt-5">
+        <div class="card">
+            <div class="card-header">
+                <h6>USERS TABLE</h6>
+
+            </div>
+          
+
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-striped" id="usertable" width="100%">
+                        <thead>
+                            <tr>
+
+                                <th class="bg-green  text-white">Id</th>
+                                <th class="bg-green    text-white">Name</th>
+                                <th class="bg-green   text-white">Email</th>
+                                <th class="bg-green  text-white">UserName</th>
+                                <th class="bg-green  text-white">Position</th>
+                                <th class="bg-green   text-white"> Action</th>
+                                <th class="bg-green   text-white"> Change</th>
+                                <th class="bg-green   text-white">Role</th>
+
+                            </tr>
+                        </thead>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@*CREATE ROLE IN MODAL *@
+<div class="modal fade" id="createroleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-green">
+                <h5 class="modal-title text-white" id="staticBackdropLabel">CREATE ROLE</h5>
+                <button type="button" class="btn-close bg-dark" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="createrole">
+
+                    <div class="row">
+                        <div class="col-sm-12">
+
+                            <div class="form-group">
+                                <label class="text-uppercase" for="name">Role Name</label>
+
+                                <input type="text" class="form-control" name="RoleName" id="RoleName" value="" />
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="text-center">
+
+                        <button class="btn btn-success btn-sm  text-white" id="btnsubmit" type="submit">SAVE</button>
+                    </div>
+
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="createModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-xl">
+        <div class="modal-content">
+            <div class="modal-header bg-green">
+                <h5 class="modal-title text-white" id="staticBackdropLabel">CREATE ACCOUNT</h5>
+                <button type="button" class="btn-close bg-dark" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="createaccount" enctype="multipart/form-data">
+                    @*<div class="text-center">
+                            <img id="imgs" style=" position: relative; height: 190px; width: 32%; overflow: hidden;" src="~/Images/try.png" />
+                        </div>*@
+                    <br />
+                    <div class="form-group" style="display:none;">
+                        <label for="name">Id</label>
+                        <input type="text" class="form-control" name="id" id="id" value="" />
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="text-uppercase" for="name">Name</label>
+                                <input type="text" class="form-control" name="Name" id="Name" value="" />
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="text-uppercase" for="name">Email</label>
+                                <input type="email" class="form-control" name="Email" id="Email" value="" />
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="text-uppercase" for="position">Position</label>
+                                <select class="form-control" style="width:100%" name="position" id="position">
+                                    <option value="">Please Select a Designated Position</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+
+                            <div class="form-group">
+                                <label class="text-uppercase" for="name">UserName</label>
+                                <input type="text" class="form-control" name="UserName" id="UserName" value="" required>
+                                <p id="Status" />
+                            </div>
+
+                            <div class="form-group">
+                                <label class="text-uppercase" for="name">Image</label>
+                                <input type="file" class="form-control" id="FilePath" name="FilePath" accept="image/*" />
+                                <input type="hidden" class="form-control" name="FileName" id="FileName">
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-sm-6">
+
+
+                            <div class="form-group">
+                                <label class="text-uppercase" for="name">Password</label>
+                                <input type="password" name="Password" class="form-control" required="" id="Password">
+
+
+
+                            </div>
+
+
+                            <div class="form-group">
+                                <label class="text-uppercase" for="RoleID">Role</label>
+                                <select class="form-control" style="width:100%" name="roleId" id="roleId">
+                                    <option value="">Please Select a Role</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="text-center mt-2">
+
+                        <button class="btn btn-success btn-sm  text-white" id="btnsubmit" type="submit">SAVE</button>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+@*EDIT ACCOUNT IN MODAL*@
+
+<div class="modal fade" id="editAccountModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-green">
+                <h5 class="modal-title text-white" id="staticBackdropLabel">EDIT ACCOUNT</h5>
+                <button type="button" class="btn-close bg-dark" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                @*UPLOAD PICTURE *@
+                <div class="text-center">
+
+                    <div id="pic-holder">
+
+                    </div>
+                </div>
+                <br />
+
+                <form id="editaccount">
+                    <div class=" row">
+                        <div class="col-sm-6">
+                            <div class="input-group" style="display:none;">
+                                <label for="name">Id</label>
+                                <input type="text" class="form-control" name="id" id="id" value="" />
+                            </div>
+                            <label for="name">Name</label>
+                            <div class="input-group">
+
+
+                                <input type="text" class="form-control" name="name" id="name" value="" />
+                            </div>
+
+
+                            <label for="RoleID">Role</label>
+
+                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                            <select class="form-control" style="width:100%" name="roleID" id="roleID">
+                                <option value="">Please Select a Role</option>
+                            </select>
+
+
+
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="name">Email</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="ti-email"></i></span>
+                                <input type="email" class="form-control" name="email" id="email" value="" />
+                            </div>
+
+                            <label for="name">UserName</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="ti-user"></i></span>
+                                <input type="text" class="form-control" name="userName" id="userName" value="" />
+                            </div>
+                        </div>
+
+                    </div>
+                    <br />
+                    <div class="text-center">
+
+                        <button class="btn btn-success btn-sm text-white btn-grd-*" id="btnsubmit" type="submit">SAVE CHANGES</button>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+@*DELETE ACCOUNT IN MODAL *@
+<div class="modal fade" id="deleteAccountModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-green">
+                <h5 class="modal-title text-white" id="staticBackdropLabel">DELETE ACCOUNT</h5>
+                <button type="button" class="btn-close bg-dark" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="deleteaccount">
+                <div class="modal-body">
+                    <br />
+                    <h5 class="card-subtitle text-center ">Are you sure you want to Delete This Account ?</h5>
+                </div>
+                <div class="modal-footer coolTZ">
+                    <input type="hidden" name="DeleteAccountId" id="DeleteAccountId" />
+
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    <a href="#" class="btn bg-green text-white" id="btnAccounteDelete">Confirm</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@*CHANGE PHOTO MODAL *@
+<div class="modal fade" id="changePhotoModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-green">
+                <h5 class="modal-title text-white" id="staticBackdropLabel">CHANGE PROFILE</h5>
+                <button type="button" class="btn-close bg-dark" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <div class="text-center">
+                        <div id="imageshow" style=" position: relative; height: 196px; width: 100%; overflow: hidden;">
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <br />
+                <form id="changephoto" enctype="multipart/form-data">
+
+                    <input type="hidden" class="form-control" id="AccountId" name="AccountId" />
+                    <input type="hidden" class="form-control" id="Id" name="Id" />
+                    <input type="hidden" class="form-control" name="userId" id="userId">
+                    <input type="hidden" class="form-control" name="userName" id="userName">
+                    <input type="hidden" class="form-control" name="namelang" id="namelang">
+
+                    <div class="text-center">
+                        <div class="alert alert-danger">
+                            <h6 class="text-white fs-6">
+                                Please Choose an Image File to Change a Photo
+                            </h6>
+
+
+                        </div>
+                        <input type="text" class="form-control mb-4 text-center" id="name" name="name" readonly />
+
+
+
+                        <input type="file" class="form-control" id="FilePath" name="FilePath" accept="image/*" required />
+                        <br />
+                    </div>
+
+                    <div class="text-center">
+                        <button class="btn btn-success " id="btnsubmit" type="submit">SAVE</button>
+                    </div>
+
+
+                </form>
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="card-body">
+    <div class="card">
+        @*RESET PASSWORD IN MODAL*@
+        <div class="modal fade" id="resetpassModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header bg-green">
+                        <h5 class="modal-title text-white" id="staticBackdropLabel">RESET PASSWORD</h5>
+                        <button type="button" class="btn-close bg-dark" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <form id="resetpassword">
+                        <div class="modal-body">
+
+
+                            <div class="form-group">
+
+                                <input type="hidden" class="form-control" name="id" id="id" value="" />
+                                <input type="hidden" class="form-control" name="name" id="name" value="" />
+                                <input type="hidden" class="form-control" name="email" id="email" value="" />
+                                <input type="hidden" class="form-control" name="roleID" id="roleID" value="" />
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-6">
+
+
+                                    <div class="form-group">
+                                        <label for="userName">UserName</label>
+                                        <input type="text" class="form-control" name="userName" id="userName" value="" readonly />
+                                    </div>
+
+                                </div>
+
+                                <div class="col-sm-6">
+
+                                    <div class="form-group">
+                                        <label for="password">Password</label>
+
+                                        <input type="password" placeholder="Enter a New Password" class="form-control" name="password" id="password" value="" />
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="text-center">
+
+                            <button class="btn btn-success btn-sm text-white  btn-grd-* " id="btnsave" type="submit">SAVE</button>
+                        </div>
+                        <div class="modal-footer ">
+
+
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<script>$(window).ready(function () {
+    AccountforUsers();
+    });
+    //NEED THIS FOR MODAL</script>

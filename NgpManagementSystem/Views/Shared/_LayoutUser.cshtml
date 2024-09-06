@@ -1,8 +1,376 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <script src="~/Scripts/jquery-3.4.1.js"></script>  @*meed this   laging sa taas *@
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" sizes="76x76" href="~/Content/assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="~/Content/assets/img/favicon.png">
+    <title>
+        Ngp Mangement System
+    </title>
+    <link href="~/fontawesome-free-5.15.4-web/css/all.css" rel="stylesheet" />
+    <link href="~/fontawesome-free-5.15.4-web/css/all.min.css" rel="stylesheet" />
+    <!--     Fonts and icons     -->
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <!-- Nucleo Icons -->
+    <link href="~/Content/assets/css/nucleo-icons.css" rel="stylesheet" />
+    <link href="~/Content/assets/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <link href="~/Content/assets/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link id="pagestyle" href="~/Content/assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
     <link href="~/Content/Custom.css" rel="stylesheet" />
+
+    <link href="~/Content/toastr.css" rel="stylesheet" />
+    <link href="~/Content/toastr.min.css" rel="stylesheet" />
+    <link href="~/Content/datatables.css" rel="stylesheet" />
+    <link href="~/Content/datatables.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery.dataTables.css" rel="stylesheet" />
+    <link href="~/Content/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="~/Content/select2.css" rel="stylesheet" />
+    <link href="~/Content/select2.min.css" rel="stylesheet" />
+</head>
+
+<body class="g-sidenav-show   bg-gray-100">
+
+    <div class="min-height-300 bg-green position-absolute w-100"></div>
+    <aside class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 " id="sidenav-main">
+        <div class="mt-2">
+
+
+        </div>
+
+
+        <div class="sidenav-header text-center mb-5 mt-2">
+            <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+            @{
+
+                Html.RenderAction("DisplayPicNameandRole", "Account");
+            }
+
+        </div>
+
+        <hr class="horizontal dark mt-0">
+
+        <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
+            @*Display Profilepicture for developer only*@
+            <div class="text-center mt-2 mb-2">
+
+                <div id="dynamicContentContainer"></div>
+            </div>
+
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/User/Index">
+                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">Dashboard</span>
+
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/Account/UserView">
+                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">AccountList</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/Contractor/Create">
+                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">Create Contractor</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/Information/Index">
+                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="ni ni-app text-info text-sm opacity-10"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">Information</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="sidenav-footer mx-3 ">
+
+        </div>
+        <div class="card card-plain shadow-none mt-5" id="sidenavCard">
+
+            <div class="card-body text-center p-3 w-100 pt-0">
+                <div class="docs-info">
+                </div>
+            </div>
+            <div class="text-center mt-5 " style=" background-color: #edf7ef !important; border-radius: 15px !important; margin:  7.5% !important;">
+                <a href="/NgpManagement/logout" target="">
+                    <img class="w-20 mx-auto " src="~/DefaultImage/icons8-leave-100.png" alt="" width="100" />
+                    <div class="text-center">
+                        <span class=" text-bold text-success  fs-6">Logout<i class="fa fa-sign-out-alt ms-2"></i></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </aside>
+
+    <main class="main-content position-relative border-radius-lg ">
+
+        <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur" data-scroll="false">
+            <div class="container-fluid py-1 px-3">
+                <nav aria-label="breadcrumb">
+                    <h5 class="font-weight-bolder text-white text-uppercase mb-0">National Greening Program Management System</h5>
+                </nav>
+                <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+                    <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+                        <div class="input-group">
+
+
+                        </div>
+                    </div>
+                    <ul class="navbar-nav  justify-content-end">
+
+                        <li style="cursor: pointer; position: relative; " class="text-white">
+                            <a data-bs-toggle="modal" data-bs-target="#maint_modal"><i class="fa fa-cog f-20"></i> </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- End Navbar -->
+
+        <div class="container-fluid py-4">
+            <div class="row">
+                <div class="col-xl-4 col-sm-6 mb-xl-0 mb-4">
+                    <div class="card">
+                        <div class="card-body p-3">
+                            <div class="row">
+                                <div class="col-8">
+                                    <div class="numbers">
+                                        <p class="text-sm mb-0 text-uppercase font-weight-bold">Total Users</p>
+                                        <h5 class="font-weight-bolder mt-4" id="UserAccountadmincount">
+                                        </h5>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-4 text-end">
+                                    <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
+                                        <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-sm-6 mb-xl-0 mb-4">
+                    <div class="card">
+                        <div class="card-body p-3">
+                            <div class="row">
+                                <div class="col-8">
+                                    <div class="numbers">
+                                        <p class="text-sm mb-0 text-uppercase font-weight-bold">Total Contractors</p>
+                                        <h5 class="font-weight-bolder mt-4" id="Contractoradmincount">
+                                        </h5>
+
+                                    </div>
+                                </div>
+                                <div class="col-4 text-end">
+                                    <div class="icon icon-shape bg-gradient-danger shadow-danger text-center rounded-circle">
+                                        <i class="ni ni-world text-lg opacity-10" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-sm-6 mb-xl-0 mb-4">
+                    <div class="card">
+                        <div class="card-body p-3">
+                            <div class="row">
+                                <div class="col-8">
+                                    <div class="numbers">
+                                        <p class="text-sm mb-0 text-uppercase font-weight-bold">Total Logs</p>
+                                        <h5 class="font-weight-bolder mt-4" id="Totallogscount">
+                                        </h5>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-4 text-end">
+                                    <div class="icon icon-shape bg-gradient-success shadow-success text-center rounded-circle">
+                                        <i class="ni ni-paper-diploma text-lg opacity-10" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             
+            </div>
+
+            <script src="~/Scripts/jquery-3.4.1.js"></script>  @*meed this   laging sa taas *@
+            @RenderBody()
+            <footer class="footer pt-3  ">
+                <div class="container-fluid">
+                    <div class="row align-items-center justify-content-lg-between">
+                        <div class="col-lg-6 mb-lg-0 mb-4">
+                            <div class="copyright text-center text-sm text-muted text-lg-start">
+                                ©
+                                <script>
+                                    document.write(new Date().getFullYear())
+                                </script>,
+                                Ngp Management System
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </main>
+    <!--   Core JS Files   -->
+
+    <div class="modal fade" id="maint_modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-green">
+                    <h5 class="modal-title text-white" id="staticBackdropLabel">MAINTENANCE MODE</h5>
+                    <button type="button" class="btn-close bg-dark" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="text-center">
+                                <div class="">
+                                    <h6 class="text-black-50 fs-6">
+                                        Turn On/Off Maintenance Mode for the National Greening Program Management System
+                                    </h6>
+
+
+                                </div>
+                            </div>
+
+                            <form id="maintenanceStatus">
+                                <div class="form-group">
+                                    <select class="form-control" id="isActive" name="isActive">
+                                        <option value="0">No</option>
+                                        <option value="1">Yes</option>
+                                    </select>
+                                    <input type="hidden" id="id" name="id">
+                                </div>
+                                <div class="form-group">
+                                    <label for="maintenanceMessage">Maintenance Message</label>
+                                    <textarea type="text" id="message" name="message" required
+                                              class="form-control" rows="3" style="background: #fff;"></textarea>
+                                </div>
+
+
+
+
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-success btn-md" style="margin: 0 auto;"
+                                            id="saveMaintenance">
+                                        CONFIRM
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer ">
+                    <button type="button" class="btn btn-danger " data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed-plugin">
+        <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
+            <i class="fa fa-cog py-2"> </i>
+        </a>
+        <div class="card shadow-lg">
+            <div class="card-header pb-0 pt-3 ">
+                <div class="float-start">
+                    <h5 class="mt-3 mb-0">Argon Configurator</h5>
+                    <p>See our dashboard options.</p>
+                </div>
+                <div class="float-end mt-4">
+                    <button class="btn btn-link text-dark p-0 fixed-plugin-close-button">
+                        <i class="fa fa-close"></i>
+                    </button>
+                </div>
+                <!-- End Toggle Button -->
+            </div>
+            <hr class="horizontal dark my-1">
+            <div class="card-body pt-sm-3 pt-0 overflow-auto">
+                <!-- Sidebar Backgrounds -->
+                <div>
+                    <h6 class="mb-0">Sidebar Colors</h6>
+                </div>
+                <a href="javascript:void(0)" class="switch-trigger background-color">
+                    <div class="badge-colors my-2 text-start">
+                        <span class="badge filter bg-gradient-primary active" data-color="primary" onclick="sidebarColor(this)"></span>
+                        <span class="badge filter bg-gradient-dark" data-color="dark" onclick="sidebarColor(this)"></span>
+                        <span class="badge filter bg-gradient-info" data-color="info" onclick="sidebarColor(this)"></span>
+                        <span class="badge filter bg-gradient-success" data-color="success" onclick="sidebarColor(this)"></span>
+                        <span class="badge filter bg-gradient-warning" data-color="warning" onclick="sidebarColor(this)"></span>
+                        <span class="badge filter bg-gradient-danger" data-color="danger" onclick="sidebarColor(this)"></span>
+                    </div>
+                </a>
+                <!-- Sidenav Type -->
+                <div class="mt-3">
+                    <h6 class="mb-0">Sidenav Type</h6>
+                    <p class="text-sm">Choose between 2 different sidenav types.</p>
+                </div>
+                <div class="d-flex">
+                    <button class="btn bg-gradient-primary w-100 px-3 mb-2 active me-2" data-class="bg-white" onclick="sidebarType(this)">White</button>
+                    <button class="btn bg-gradient-primary w-100 px-3 mb-2" data-class="bg-default" onclick="sidebarType(this)">Dark</button>
+                </div>
+                <p class="text-sm d-xl-none d-block mt-2">You can change the sidenav type just on desktop view.</p>
+                <!-- Navbar Fixed -->
+                <div class="d-flex my-3">
+                    <h6 class="mb-0">Navbar Fixed</h6>
+                    <div class="form-check form-switch ps-0 ms-auto my-auto">
+                        <input class="form-check-input mt-1 ms-auto" type="checkbox" id="navbarFixed" onclick="navbarFixed(this)">
+                    </div>
+                </div>
+                <hr class="horizontal dark my-sm-4">
+                <div class="mt-2 mb-5 d-flex">
+                    <h6 class="mb-0">Light / Dark</h6>
+                    <div class="form-check form-switch ps-0 ms-auto my-auto">
+                        <input class="form-check-input mt-1 ms-auto" type="checkbox" id="dark-version" onclick="darkMode(this)">
+                    </div>
+                </div>
+                <a class="btn bg-gradient-dark w-100" href="https://www.creative-tim.com/product/argon-dashboard">Free Download</a>
+                <a class="btn btn-outline-dark w-100" href="https://www.creative-tim.com/learning-lab/bootstrap/license/argon-dashboard">View documentation</a>
+                <div class="w-100 text-center">
+                    <a class="github-button" href="https://github.com/creativetimofficial/argon-dashboard" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star creativetimofficial/argon-dashboard on GitHub">Star</a>
+                    <h6 class="mt-3">Thank you for sharing!</h6>
+                    <a href="https://twitter.com/intent/tweet?text=Check%20Argon%20Dashboard%20made%20by%20%40CreativeTim%20%23webdesign%20%23dashboard%20%23bootstrap5&amp;url=https%3A%2F%2Fwww.creative-tim.com%2Fproduct%2Fargon-dashboard" class="btn btn-dark mb-0 me-2" target="_blank">
+                        <i class="fab fa-twitter me-1" aria-hidden="true"></i> Tweet
+                    </a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.creative-tim.com/product/argon-dashboard" class="btn btn-dark mb-0 me-2" target="_blank">
+                        <i class="fab fa-facebook-square me-1" aria-hidden="true"></i> Share
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/fontawesome-free-5.15.4-web/js/all.js"></script>
+    <script src="~/fontawesome-free-5.15.4-web/js/all.min.js"></script>
+    <script src="~/Scripts/General.js"></script>
     <script src="~/Scripts/jquery.validate-vsdoc.js"></script>
     <script src="~/Scripts/jquery.validate.js"></script>
     <script src="~/Scripts/jquery.validate.min.js"></script>
@@ -11,478 +379,92 @@
     <script src="~/Scripts/modernizr-2.8.3.js"></script>
     <script src="~/Scripts/toastr.js"></script>
     <script src="~/Scripts/toastr.min.js"></script>
-    <link href="~/Content/toastr.css" rel="stylesheet" />
-    <link href="~/Content/toastr.min.css" rel="stylesheet" />
-    <link href="~/Content/jquery.dataTables.css" rel="stylesheet" />
-    <link href="~/Content/jquery.dataTables.min.css" rel="stylesheet" />
-    <script src="~/Scripts/jquery.dataTables.js"></script>
-    <script src="~/Scripts/jquery.dataTables.min.js"></script>
-    <link href="~/Content/select2.css" rel="stylesheet" />
-    <link href="~/Content/select2.min.css" rel="stylesheet" />
-    <link href="~/Content/assets/modules/prism/prism.css" rel="stylesheet" />
+    <script src="~/Content/assets/js/core/popper.min.js"></script>
+    <script src="~/Content/assets/js/core/bootstrap.min.js"></script>
+    <script src="~/Content/assets/js/plugins/perfect-scrollbar.min.js"></script>
+    <script src="~/Content/assets/js/plugins/smooth-scrollbar.min.js"></script>
+    <script src="~/Content/assets/js/plugins/chartjs.min.js"></script>
     <script src="~/Scripts/select2.js"></script>
     <script src="~/Scripts/select2.min.js"></script>
-    <script src="~/Scripts/General.js"></script>
+    <script src="~/Scripts/jquery.dataTables.js"></script>
+    <script src="~/Scripts/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/moment.js"></script>
 
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-    <title> Ngp Management System</title>
-
-    <!-- General CSS Files -->
-    <link rel="stylesheet" href="/Content/assets/modules/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/Content/assets/modules/fontawesome/css/all.min.css">
-
-    <!-- CSS Libraries -->
-    <link rel="stylesheet" href="/Content/assets/modules/jqvmap/dist/jqvmap.min.css">
-    <link rel="stylesheet" href="/Content/assets/modules/summernote/summernote-bs4.css">
+    <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+    <script src="~/Content/assets/js/argon-dashboard.min.js?v=2.0.4"></script>
 
 
-    <!-- Template CSS -->
-    <link rel="stylesheet" href="/Content/assets/css/style.css">
-    <link rel="stylesheet" href="/Content/assets/css/components.css">
-    <!-- Start GA -->
-
-
-
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-94034622-3');
-    </script>
-    <!-- /END GA -->
-</head>
-
-<body>
-
-    <div id="app">
-        <div class="main-wrapper main-wrapper-1">
-            <div class="navbar-bg " style="background-color: #20642f !important "></div>
-            <nav class="navbar navbar-expand-lg main-navbar">
-                <form class="form-inline mr-auto">
-                    <ul class="navbar-nav mr-3">
-                        <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
-
-
-
-                    </ul>
-
-                </form>
-             
-
-
-
-                    @*FOR User*@
-                    @{ if ((int)Session["Role_Id"] != 1)
-
-                        {
-
-                            <ul class="navbar-nav navbar-right">
-                                <li class="dropdown dropdown-list-toggle">
-                                    <a href="#" data-toggle="dropdown" class="nav-link nav-link-lg message-toggle beep"><i class="far fa-envelope"></i></a>
-                                    <div class="dropdown-menu dropdown-list dropdown-menu-right">
-                                        <div class="dropdown-header">
-                                            Messages
-                                            <div class="float-right">
-                                                <a href="#">Mark All As Read</a>
-                                            </div>
-                                        </div>
-                                        <div class="dropdown-list-content dropdown-list-message">
-                                            <a href="#" class="dropdown-item dropdown-item-unread">
-                                                <div class="dropdown-item-avatar">
-                                                    <img alt="image" src="assets/img/avatar/avatar-1.png" class="rounded-circle">
-                                                    <div class="is-online"></div>
-                                                </div>
-                                                <div class="dropdown-item-desc">
-                                                    <b>Kusnaedi</b>
-                                                    <p>Hello, Bro!</p>
-                                                    <div class="time">10 Hours Ago</div>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="dropdown-item dropdown-item-unread">
-                                                <div class="dropdown-item-avatar">
-                                                    <img alt="image" src="assets/img/avatar/avatar-2.png" class="rounded-circle">
-                                                </div>
-                                                <div class="dropdown-item-desc">
-                                                    <b>Dedik Sugiharto</b>
-                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
-                                                    <div class="time">12 Hours Ago</div>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="dropdown-item dropdown-item-unread">
-                                                <div class="dropdown-item-avatar">
-                                                    <img alt="image" src="assets/img/avatar/avatar-3.png" class="rounded-circle">
-                                                    <div class="is-online"></div>
-                                                </div>
-                                                <div class="dropdown-item-desc">
-                                                    <b>Agung Ardiansyah</b>
-                                                    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                                    <div class="time">12 Hours Ago</div>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="dropdown-item">
-                                                <div class="dropdown-item-avatar">
-                                                    <img alt="image" src="assets/img/avatar/avatar-4.png" class="rounded-circle">
-                                                </div>
-                                                <div class="dropdown-item-desc">
-                                                    <b>Ardian Rahardiansyah</b>
-                                                    <p>Duis aute irure dolor in reprehenderit in voluptate velit ess</p>
-                                                    <div class="time">16 Hours Ago</div>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="dropdown-item">
-                                                <div class="dropdown-item-avatar">
-                                                    <img alt="image" src="assets/img/avatar/avatar-5.png" class="rounded-circle">
-                                                </div>
-                                                <div class="dropdown-item-desc">
-                                                    <b>Alfa Zulkarnain</b>
-                                                    <p>Exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
-                                                    <div class="time">Yesterday</div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="dropdown-footer text-center">
-                                            <a href="#">View All <i class="fas fa-chevron-right"></i></a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="dropdown dropdown-list-toggle">
-                                    <a href="#" data-toggle="dropdown" class="nav-link notification-toggle nav-link-lg beep"><i class="far fa-bell"></i></a>
-                                    <div class="dropdown-menu dropdown-list dropdown-menu-right">
-                                        <div class="dropdown-header">
-                                            Notifications
-                                            <div class="float-right">
-                                                <a href="#">Mark All As Read</a>
-                                            </div>
-                                        </div>
-                                        <div class="dropdown-list-content dropdown-list-icons">
-                                            <a href="#" class="dropdown-item dropdown-item-unread">
-                                                <div class="dropdown-item-icon bg-primary text-white">
-                                                    <i class="fas fa-code"></i>
-                                                </div>
-                                                <div class="dropdown-item-desc">
-                                                    Template update is available now!
-                                                    <div class="time text-primary">2 Min Ago</div>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="dropdown-item">
-                                                <div class="dropdown-item-icon bg-info text-white">
-                                                    <i class="far fa-user"></i>
-                                                </div>
-                                                <div class="dropdown-item-desc">
-                                                    <b>You</b> and <b>Dedik Sugiharto</b> are now friends
-                                                    <div class="time">10 Hours Ago</div>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="dropdown-item">
-                                                <div class="dropdown-item-icon bg-success text-white">
-                                                    <i class="fas fa-check"></i>
-                                                </div>
-                                                <div class="dropdown-item-desc">
-                                                    <b>Kusnaedi</b> has moved task <b>Fix bug header</b> to <b>Done</b>
-                                                    <div class="time">12 Hours Ago</div>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="dropdown-item">
-                                                <div class="dropdown-item-icon bg-danger text-white">
-                                                    <i class="fas fa-exclamation-triangle"></i>
-                                                </div>
-                                                <div class="dropdown-item-desc">
-                                                    Low disk space. Let's clean it!
-                                                    <div class="time">17 Hours Ago</div>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="dropdown-item">
-                                                <div class="dropdown-item-icon bg-info text-white">
-                                                    <i class="fas fa-bell"></i>
-                                                </div>
-                                                <div class="dropdown-item-desc">
-                                                    Welcome to Stisla template!
-                                                    <div class="time">Yesterday</div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="dropdown-footer text-center">
-                                            <a href="#">View All <i class="fas fa-chevron-right"></i></a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                                        @{
-                                            Html.RenderAction("AdminNameViewinProfile", "Account");
-                                        }
-
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-right">
-                                        <div class="dropdown-title">Ngp Management System</div>
-                                        <a href="/User/Index" class="dropdown-item has-icon">
-                                            <i class="fa fa-fire"></i> User Dashboard
-                                        </a>
-                                        <a href="/Account/Index" class="dropdown-item has-icon">
-                                            <i class="fas fa-user"></i> Account
-                                        </a>
-
-                                        <div class="dropdown-divider"></div>
-                                        <a href="/NgpManagement/Logout" class="dropdown-item has-icon text-danger">
-                                            <i class="fas fa-sign-out-alt"></i> Logout
-                                        </a>
-                                    </div>
-                                </li>
-                            </ul>
-                        }
-                    }
-               
-
-            </nav>
-
-            <div class="main-sidebar sidebar-style-2">
-                <aside id="sidebar-wrapper">
-                    <div class="sidebar-brand">
-                        <a href="index.html"> Ngp Management System</a>
-                    </div>
-
-                    @{
-                        Html.RenderAction("DisplayPicNameandRole", "Account");
-                    }
-                    <div class="sidebar-brand sidebar-brand-sm">
-                        <a href="index.html">St</a>
-                    </div>
-                    <ul class="sidebar-menu">
-                        <li><a class="nav-link" style="color: #28a745 !important;" href="/User/Index"><i class="fa fa-fire"></i> <span> User Dashboard</span></a></li>
-                        <li class="menu-header">Starter</li>
-                        <li class="dropdown">
-                            <a href="#" style="color: #28a745 !important;" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fa fa-user"></i> <span>Manage Account</span></a>
-                            <ul class="dropdown-menu">
-
-                                <li><a class="nav-link" href="/Account/Index">Users Table</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="dropdown">
-                            <a href="" style="color: #28a745 !important;" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Contractor</span></a>
-                            <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="/Contractor/Create">Create Contractor<i class="fa fa-plus-circle"></i></a></li>
-
-
-                            </ul>
-                        </li>
-
-
-                        <li class="dropdown">
-                            <a href="" style="color: #28a745 !important;" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>UserActivityLogs</span></a>
-                            <ul class="dropdown-menu">
-                                <li><a class="nav-link" href="/UserActivityLogs/UserContractorLogs"> Contractor Logs</a></li>
-                                <li><a class="nav-link" href="/UserActivityLogs/UserProjectLogs"> Project Logs</a></li>
-                                <li><a class="nav-link" href="/UserActivityLogs/UserContractLogs"> Contract Logs</a></li>
-                                <li><a class="nav-link" href="/UserActivityLogs/UserPaymentLogs"> Payment Logs</a></li>
-                                <li><a class="nav-link" href="/UserActivityLogs/UserAccountLogs"> Account Logs</a></li>
-                            </ul>
-                        </li>
-
-                        <li><a class="nav-link" href="/Information/Index" style="color: #28a745 !important;"><i class="fas fa-pencil-ruler"></i> <span>Information List</span></a></li>
-                    </ul>
-
-
-                </aside>
-            </div>
-
-
-
-            <!-- Main Content -->
-            <div class="main-content">
-                <section class="section">
-                    <div class="section-header">
-                        <h1>
-                            National Greening Project Management System
-                        </h1>
-                        <div class="col-6">
-                            <div class="btn-group mb-2">
-                               
-                                <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 35px, 0px); top: 0px; left: 0px; will-change: transform;">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Separated link</a>
-                                </div>
-                                <div class="col-6">
-                                   
-                                    <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 35px, 0px); top: 0px; left: 0px; will-change: transform;">
-                                        <a class="dropdown-item" href="/Information/Index">Action</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Separated link</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                    <div class="row">
-                        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                            <div class="card card-statistic-1">
-                                <div class="card-icon bg-primary">
-                                    <i class="fa fa-users text-white" style="font-size:20px;"></i>
-                                </div>
-                                <div class="card-wrap">
-                                    <div class="card-header">
-                                        <h4 class="text-black-50">Total Users Account</h4>
-                                    </div>
-                                    <div class="card-body">
-                                        <h4 id="UserAccountadmincount"></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                            <div class="card card-statistic-1">
-                                <div class="card-icon bg-danger">
-                                    <i class="far fa-user-circle"></i>
-                                </div>
-                                <div class="card-wrap">
-                                    <div class="card-header">
-                                        <h4 class="text-black-50">Total Contractors</h4>
-                                    </div>
-                                    <div class="card-body">
-                                        <h4 id="Contractoradmincount"></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                            <div class="card card-statistic-1">
-                                <div class="card-icon bg-warning">
-                                    <i class="far fa-file"></i>
-                                </div>
-                                <div class="card-wrap">
-                                    <div class="card-header">
-                                        <h4 class="text-black-50">Total Projects</h4>
-                                    </div>
-                                    <div class="card-body">
-                                        <h4 id="Projectsadmincount"></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                            <div class="card card-statistic-1">
-                                <div class="card-icon bg-success">
-                                    <i class="fas fa-file-contract"></i>
-                                </div>
-                                <div class="card-wrap">
-                                    <div class="card-header">
-                                        <h4 class="text-black-50">Total Contract</h4>
-                                    </div>
-                                    <div class="card-body">
-                                        <h4 id="Contractsadmincount"></h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    @RenderBody();
-
-                </section>
-            </div>
-
-
-            <footer class="main-footer">
-                <div class="footer-left">
-                    Copyright &copy; 2023 <div class="bullet"></div>  <a href="">NgpMangementSystem</a>
-                </div>
-                <div class="footer-right">
-
-                </div>
-            </footer>
-        </div>
-    </div>
-    <!-- General JS Scripts -->
-    @*MAINTENANCE MODE USER*@
-    <div class="modal fade" id="modalshowmaintenance" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" data-keyboard="false"
-         aria-hidden="true">
-        <div class="modal-dialog modal-notify modal-danger modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header card-header2">
-                    <h5 class="heading" style="color:white;">MAINTENANCE MODE</h5>
-                </div>
-
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <a href="/NgpManagement/Login">
-                                <img src="~/DefaultImage/maintenance.jpg" style="display: block; width: 100%; height: 550px;" />
-                                <input type="hidden" id="message" name="message">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="modal-footer ">
-                    <a class="btn btn-danger" href="/NgpManagement/Login" style="color:white;">Close</a>
-                </div>
-            </div>
-        </div>
-
-    </div>
     <script>
         $(document).ready(function () {
-            setInterval(function () {
-                $.ajax({
-                    type: 'GET',
-                    url: '/Maintenance/Get',
-                    success: function (data) {
-                        console.log('getmaintenance', data[0].isActive);
-
-                        if (data[0].isActive == true) {
-                            $('#modalshowmaintenance').modal('show')
-
-                        }
+            $("#maintenanceStatus").validate({
+                rules: {
+                    message: {
+                        required: true,
+                    },
+                },
+                errorClass: "tomerror",
+                messages: {
+                    message: {
+                        required: "Please Input a Message",
+                    },
+                },
+            });
+            $('#maintenanceStatus').submit(function (e) {
+                e.preventDefault();
+                if ($("#maintenanceStatus").valid()) {
+                    $('#maint_modal').modal('hide');
+                    var id = $(this).attr('data-id');
+                    var url = '/api/maintenancemode/getmaintenancemode/' + id;
+                    $("#maintenanceStatus").attr('data-id', id);
+                    var isActive = $('select[name=isActive]').val();
+                    //check true or false
+                    if (isActive == 1) {
+                        isActive = true;
+                    } else {
+                        isActive = false;
                     }
-                });
-            }, 1500);
-        });
+                    var message = $('textarea[name=message]').val();
+                    // data
+                    var data = {
+                        isActive: isActive,
+                        id: 1,
+                        message: message,
 
-    </script>
-    <script src="/Content/assets/modules/popper.js"></script>
-    <script src="/Content/assets/modules/tooltip.js"></script>
-    <script src="/Content/assets/modules/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/Content/assets/modules/nicescroll/jquery.nicescroll.min.js"></script>
-    <script src="/Content/assets/modules/moment.min.js"></script>
-    <script src="/Content/assets/js/stisla.js"></script>
+                    };
+                    $.ajax({
+                        type: 'POST',
+                        url: '/api/maintenancemode/getmaintenancemode/' + id,
+                        data: data,
 
-    <!-- JS Libraies -->
+                        success: function (data) {
+                            toastr.success("Status Successfully Changed!");
 
-    <script src="~/Content/assets/modules/prism/prism.js"></script>
-    <script src="/Content/assets/modules/jquery.sparkline.min.js"></script>
-    <script src="/Content/assets/modules/chart.min.js"></script>
-    <script src="/Content/assets/modules/owlcarousel2/dist/owl.carousel.min.js"></script>
-    <script src="/Content/assets/modules/summernote/summernote-bs4.js"></script>
-    <script src="/Content/assets/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
+                            setTimeout(() => {
+                                location.reload();
 
-    <!-- Page Specific JS File -->
-    <!-- Page Specific JS File -->
-    <script src="/Content/assets/js/page/bootstrap-modal.js"></script>
-
-    <!-- Template JS File -->
-    <script src="/Content/assets/js/scripts.js"></script>
-    <script src="/Content/assets/js/custom.js"></script>
-
-    <script>
-        $(window).ready(function () {
-            TotalCounts();
-             //NEED THIS FOR MODAL
-            $(document).on('show.bs.modal', '.modal', function () {
-                $(this).appendTo('body');
+                                /*  $('#saveMaintenance')[0].reset();*/
+                            }, 1000);
+                        },
+                        //if failed
+                        error: function (data) {
+                            // toastr.info("Success")
+                        }
+                    });
+                }
             });
         });
     </script>
 
+    <script>
+        $(window).ready(function () {
+            TotalCounts();
+            //NEED THIS FOR MODAL
+            $(document).on('show.bs.modal', '.modal', function () {
+                $(this).appendTo('body');
+            });
+        });
 
+    </script>
 </body>
+
 </html>

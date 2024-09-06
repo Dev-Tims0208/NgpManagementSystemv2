@@ -2562,10 +2562,11 @@
     <Content Include="Views\UserActivityLogs\UserContractLogs.cshtml" />
     <Content Include="Views\UserActivityLogs\UserPaymentLogs.cshtml" />
     <Content Include="Views\UserActivityLogs\UserAccountLogs.cshtml" />
-    <Content Include="Views\Shared\Sample.cshtml" />
     <Content Include="Views\Account\Dashboard.cshtml" />
     <Content Include="Views\Dashboard\Index.cshtml" />
     <Content Include="Views\Account\DisplayPcitureOnlyDeveloperOnly.cshtml" />
+    <Content Include="Views\Shared\_LayoutDeveloper.cshtml" />
+    <Content Include="Views\Account\UserView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
