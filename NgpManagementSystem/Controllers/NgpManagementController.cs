@@ -1,4 +1,5 @@
-﻿using NgpManagementSystem.Models;
+﻿using NgpManagementSystem.DTO;
+using NgpManagementSystem.Models;
 using Scrypt;
 using System;
 using System.Collections.Generic;
@@ -46,11 +47,6 @@ namespace NgpManagementSystem.Controllers
                 }
 
 
-                //Session["LoginedTime"] = DateTime.Now.ToLongDateString();
-                //Session["LoginID"] = result.Id;
-
-                //Request.Cookies["auth"].Values["Role_Id"] = result.RoleID;
-                //create a cookie
                 HttpCookie myCookie = new HttpCookie("auth");
 
                 //Add key-values in the cookie
@@ -58,7 +54,6 @@ namespace NgpManagementSystem.Controllers
                 myCookie.Values.Add("LoginID", result.Id.ToString());
                 myCookie.Values.Add("RoleName", result.RoleName.ToString());
 
-                myCookie.Values.Add("LoginIDint", result.Id.ToString());
                 //set cookie expiry date-time. Made it to last for next 12 hours.
                 myCookie.Expires = DateTime.Now.AddHours(12);
 
@@ -67,6 +62,20 @@ namespace NgpManagementSystem.Controllers
 
                 FormsAuthentication.SetAuthCookie(result.UserName, false);
 
+                Db.NgpLoginLogs.Add(new NgpLoginLog()
+                {
+
+
+                    LoginId = result.Id,
+                    LoginTime = DateTime.Now,
+
+                    //UserName = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.UserName,
+                    //LogMessage = "Edit a  User Account  " + "Name of user: " + accountdt.Name + "Name of Editor:" + accountdt.UserName + "Role:" + accountdt.NgpRole.RoleName,
+                    //UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id,
+                    //RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.RoleID,
+                    //Position = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Position,
+                });
+                Db.SaveChanges();
                 //IF admin
                 if (result.RoleID == 1)
                 {
@@ -83,7 +92,8 @@ namespace NgpManagementSystem.Controllers
                     return RedirectToAction("Users", "Dashboard");
 
                 }
-              
+
+
             }
             else
             {
@@ -91,8 +101,7 @@ namespace NgpManagementSystem.Controllers
             }
 
 
-        
-       
+
             return View(log);
         }
 

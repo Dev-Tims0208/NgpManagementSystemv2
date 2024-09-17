@@ -205,7 +205,7 @@
           <Property Name="RoleID" Type="int" />
           <Property Name="RoleName" Type="nvarchar(max)" />
           <Property Name="LoginTime" Type="datetime" Nullable="false" />
-          <Property Name="LogoutTime" Type="datetime" Nullable="false" />
+          <Property Name="LogoutTime" Type="datetime" />
         </EntityType>
         <EntityType Name="NgpLogs">
           <Key>
@@ -769,7 +769,7 @@
           <Property Name="RoleID" Type="Int32" />
           <Property Name="RoleName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="LoginTime" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="LogoutTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LogoutTime" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="NgpLog">
           <Key>

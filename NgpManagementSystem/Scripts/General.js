@@ -2281,6 +2281,9 @@ function ContractorAnimation() {
                     dataType: 'json',
                     contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
                     data: valdata,
+                    xhrFields: {
+                        withCredentials: true
+                    }
                 });
                 setTimeout(function () {
                     $("#pleasewaitModal").modal('show');

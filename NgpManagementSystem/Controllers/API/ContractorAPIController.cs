@@ -31,7 +31,7 @@ namespace NgpManagementSystem.Controllers.API
         {
             var contractor = Mapper.Map<ContractorDTO, ngp_contractor>(contractorDTO);
 
-            var sess_id = (int)HttpContext.Current.Session["LoginID"];
+            var sess_id = Request.Headers.GetCookies("auth").FirstOrDefault()?["auth"].Values.Get("LoginID");
             if (contractorDTO.contractorID == 0)
             {
 
@@ -241,10 +241,10 @@ namespace NgpManagementSystem.Controllers.API
 
                 contractor.DateAdded = DateTime.Now;
 
-                contractor.RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.RoleID; //saving role depend in login id
-                contractor.UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id; //saving role depend in UserId login
-                contractor.UserName = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.UserName; //saving username depend in login
-                contractor.Name = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Name; //saving username depend in login
+                contractor.RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id.ToString() == sess_id)?.RoleID; //saving role depend in login id
+                contractor.UserId = Db.NgpUsers.FirstOrDefault(o => o.Id.ToString() == sess_id)?.Id; //saving role depend in UserId login
+                contractor.UserName = Db.NgpUsers.FirstOrDefault(o => o.Id.ToString() == sess_id)?.UserName; //saving username depend in login
+                contractor.Name = Db.NgpUsers.FirstOrDefault(o => o.Id.ToString() == sess_id)?.Name; //saving username depend in login
 
                 //contractor.Position = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Position;
 
@@ -255,12 +255,12 @@ namespace NgpManagementSystem.Controllers.API
             Db.NgpLogs.Add(new NgpLog()
             {
                 Date = DateTime.Now,
-                Name = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Name,
-                UserName = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.UserName,
+                Name = Db.NgpUsers.FirstOrDefault(o => o.Id.ToString() == sess_id)?.Name,
+                UserName = Db.NgpUsers.FirstOrDefault(o => o.Id.ToString() == sess_id)?.UserName,
                 LogMessage = "Added a Contractor " + "Name: " + contractorDTO.contractor_name,
-                UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id,
-                RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.RoleID,
-                Position = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Position,
+                UserId = Db.NgpUsers.FirstOrDefault(o => o.Id.ToString() == sess_id)?.Id,
+                RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id.ToString() == sess_id)?.RoleID,
+                Position = Db.NgpUsers.FirstOrDefault(o => o.Id.ToString() == sess_id)?.Position,
 
             });
 

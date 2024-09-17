@@ -21,6 +21,6 @@ namespace NgpManagementSystem.Models
         public Nullable<int> RoleID { get; set; }
         public string RoleName { get; set; }
         public System.DateTime LoginTime { get; set; }
-        public System.DateTime LogoutTime { get; set; }
+        public Nullable<System.DateTime> LogoutTime { get; set; }
     }
 }
