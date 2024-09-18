@@ -45,6 +45,31 @@ namespace NgpManagementSystem.Controllers
             return View();
         }
 
+        public ActionResult NgpLogsDeveloper()
+        {
+            if (Request.Cookies["auth"].Values["Role_Id"] == null)
+            {
+                return RedirectToAction("logout", "NgpManagement");
+            }
+            return View();
+        }
+        public ActionResult NgpLogsAdministrator()
+        {
+            if (Request.Cookies["auth"].Values["Role_Id"] == null)
+            {
+                return RedirectToAction("logout", "NgpManagement");
+            }
+            return View();
+        }
+
+        public ActionResult NgpLogsUser()
+        {
+            if (Request.Cookies["auth"].Values["Role_Id"] == null)
+            {
+                return RedirectToAction("logout", "NgpManagement");
+            }
+            return View();
+        }
         public ActionResult GetContractorReports()
         {
             //Server Side Parameter
@@ -58,9 +83,6 @@ namespace NgpManagementSystem.Controllers
 
             {
                 IQueryable<ngp_contractor> contractorlist = Db.ngp_contractor;
-
-             
-
 
                 int totalrows = contractorlist.Count();
 
@@ -147,6 +169,13 @@ namespace NgpManagementSystem.Controllers
             {
                 IQueryable<NgpLog> loglist = Db.NgpLogs;
 
+                //SHOWING FILTER DATA BASE ON ROLE ID  DEPENDENT IN LOGIN ID
+                var sess_id = Request.Cookies["auth"].Values["LoginID"];
+
+                if (Request.Cookies["auth"].Values["Role_Id"] != "1")
+                {
+                    loglist = loglist.Where(d => d.Id.ToString() == sess_id);
+                }
 
 
 
@@ -200,6 +229,214 @@ namespace NgpManagementSystem.Controllers
 
         }
 
+
+        public ActionResult NgpLogsDeveloperTake()
+        {
+            //Server Side Parameter
+            int start = Convert.ToInt32(Request["start"]);
+            int length = Convert.ToInt32(Request["length"]);
+            string searchValue = Request["search[value]"];
+            string sortColumnName = Request["columns[" + Request["order[0][column]"] + "][name]"];
+            string sortDirection = Request["order[0][dir]"];
+
+            using (NgpdbmsEntities Db = new NgpdbmsEntities())
+
+            {
+                IQueryable<NgpLog> loglist = Db.NgpLogs;
+
+            
+
+                int totalrows = loglist.Count();
+
+                if (!string.IsNullOrEmpty(searchValue))//FILTER SEARCH
+                {
+                    loglist = loglist.
+                        Where(x => x.Id.ToString().Contains(searchValue.ToLower()) ||
+                            x.Date.ToString().Contains(searchValue.ToLower()) ||
+                            x.UserName.ToLower().Contains(searchValue.ToLower()) ||
+                            x.Name.ToString().Contains(searchValue.ToLower()) ||
+                            x.LogMessage.ToString().Contains(searchValue.ToLower()) ||
+                            x.UserId.ToString().Contains(searchValue.ToLower()) ||
+                             x.Position.ToString().Contains(searchValue.ToLower()) ||
+                            x.NgpRole.RoleName.ToString().Contains(searchValue.ToLower()));
+
+                }
+
+
+
+
+                int totalrowsafterfiltering = loglist.Count();
+                //sorting
+                loglist = loglist.OrderBy(sortColumnName + " " + sortDirection).Take(5)
+                    .OrderByDescending(a => a.Date); //ADD SYSTEM LINQ DYNAMINC IN NUGGET MANAGER(DOWNLOAD)
+
+                //paging
+                loglist = loglist.Skip(start).Take(length);
+
+                var totallogsview = loglist.Select(user => new NgpLogsVM()
+                {
+
+
+                    Id = user.Id,
+                    Date = user.Date,
+                    UserName = user.UserName,
+                    Name = user.Name,
+                    LogMessage = user.LogMessage,
+                    RoleId = user.NgpRole.RoleName,
+                    Position = user.Position,
+
+                }).ToList();
+
+
+                return Json(new { data = totallogsview, draw = Request["draw"], recordsTotal = totalrows, recordsFiltered = totalrowsafterfiltering }, JsonRequestBehavior.AllowGet);
+
+            }
+
+
+
+        }
+
+        public ActionResult NgpLogsAdministratorTake()
+        {
+            //Server Side Parameter
+            int start = Convert.ToInt32(Request["start"]);
+            int length = Convert.ToInt32(Request["length"]);
+            string searchValue = Request["search[value]"];
+            string sortColumnName = Request["columns[" + Request["order[0][column]"] + "][name]"];
+            string sortDirection = Request["order[0][dir]"];
+
+            using (NgpdbmsEntities Db = new NgpdbmsEntities())
+
+            {
+                IQueryable<NgpLog> loglist = Db.NgpLogs;
+
+               
+
+
+                int totalrows = loglist.Count();
+
+                if (!string.IsNullOrEmpty(searchValue))//FILTER SEARCH
+                {
+                    loglist = loglist.
+                        Where(x => x.Id.ToString().Contains(searchValue.ToLower()) ||
+                            x.Date.ToString().Contains(searchValue.ToLower()) ||
+                            x.UserName.ToLower().Contains(searchValue.ToLower()) ||
+                            x.Name.ToString().Contains(searchValue.ToLower()) ||
+                            x.LogMessage.ToString().Contains(searchValue.ToLower()) ||
+                            x.UserId.ToString().Contains(searchValue.ToLower()) ||
+                             x.Position.ToString().Contains(searchValue.ToLower()) ||
+                            x.NgpRole.RoleName.ToString().Contains(searchValue.ToLower()));
+
+                }
+
+
+
+
+                int totalrowsafterfiltering = loglist.Count();
+                //sorting
+                loglist = loglist.OrderBy(sortColumnName + " " + sortDirection).Take(5)
+                    .OrderByDescending(a => a.Id); //ADD SYSTEM LINQ DYNAMINC IN NUGGET MANAGER(DOWNLOAD)
+
+                //paging
+                loglist = loglist.Skip(start).Take(length);
+
+                var totallogsview = loglist.Select(user => new NgpLogsVM()
+                {
+
+
+                    Id = user.Id,
+                    Date = user.Date,
+                    UserName = user.UserName,
+                    Name = user.Name,
+                    LogMessage = user.LogMessage,
+                    RoleId = user.NgpRole.RoleName,
+                    Position = user.Position,
+
+                }).ToList();
+
+
+                return Json(new { data = totallogsview, draw = Request["draw"], recordsTotal = totalrows, recordsFiltered = totalrowsafterfiltering }, JsonRequestBehavior.AllowGet);
+
+            }
+
+
+
+        }
+
+
+        public ActionResult NgpLogsUserTake()
+        {
+            //Server Side Parameter
+            int start = Convert.ToInt32(Request["start"]);
+            int length = Convert.ToInt32(Request["length"]);
+            string searchValue = Request["search[value]"];
+            string sortColumnName = Request["columns[" + Request["order[0][column]"] + "][name]"];
+            string sortDirection = Request["order[0][dir]"];
+
+            using (NgpdbmsEntities Db = new NgpdbmsEntities())
+
+            {
+                IQueryable<NgpLog> loglist = Db.NgpLogs;
+
+                //SHOWING FILTER DATA BASE ON ROLE ID  DEPENDENT IN LOGIN ID
+                var sess_id = Request.Cookies["auth"].Values["LoginID"];
+
+                if (Request.Cookies["auth"].Values["Role_Id"] != "1")
+                {
+                    loglist = loglist.Where(d => d.Id.ToString() == sess_id);
+                }
+
+
+
+                int totalrows = loglist.Count();
+
+                if (!string.IsNullOrEmpty(searchValue))//FILTER SEARCH
+                {
+                    loglist = loglist.
+                        Where(x => x.Id.ToString().Contains(searchValue.ToLower()) ||
+                            x.Date.ToString().Contains(searchValue.ToLower()) ||
+                            x.UserName.ToLower().Contains(searchValue.ToLower()) ||
+                            x.Name.ToString().Contains(searchValue.ToLower()) ||
+                            x.LogMessage.ToString().Contains(searchValue.ToLower()) ||
+                            x.UserId.ToString().Contains(searchValue.ToLower()) ||
+                             x.Position.ToString().Contains(searchValue.ToLower()) ||
+                            x.NgpRole.RoleName.ToString().Contains(searchValue.ToLower()));
+
+                }
+
+
+
+
+                int totalrowsafterfiltering = loglist.Count();
+                //sorting
+                loglist = loglist.OrderBy(sortColumnName + " " + sortDirection).Take(5)
+                    .OrderByDescending(a => a.Id); //ADD SYSTEM LINQ DYNAMINC IN NUGGET MANAGER(DOWNLOAD)
+
+                //paging
+                loglist = loglist.Skip(start).Take(length);
+
+                var totallogsview = loglist.Select(user => new NgpLogsVM()
+                {
+
+
+                    Id = user.Id,
+                    Date = user.Date,
+                    UserName = user.UserName,
+                    Name = user.Name,
+                    LogMessage = user.LogMessage,
+                    RoleId = user.NgpRole.RoleName,
+                    Position = user.Position,
+
+                }).ToList();
+
+
+                return Json(new { data = totallogsview, draw = Request["draw"], recordsTotal = totalrows, recordsFiltered = totalrowsafterfiltering }, JsonRequestBehavior.AllowGet);
+
+            }
+
+
+
+        }
 
     }
 }

@@ -1,6 +1,6 @@
 ﻿@{
     ViewBag.Title = "Index";
-    Layout = Request.Cookies["auth"].Values["Role_Id"] == "1" ? "~/Views/Shared/_LayoutAdmin.cshtml" : "~/Views/Shared/_LayoutUser.cshtml";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
 <head>
@@ -226,7 +226,7 @@
 
                     </div>
                     <div class="form-card">
-                      
+
 
                         <div class="row">
                             <div class="col-12">
@@ -495,7 +495,7 @@
 
                     </div>
                     <div class="form-card">
-                     
+
                         <div class="row">
                             <div class="col-12 col-sm-12 col-lg-12">
                                 <div class="card">
@@ -520,7 +520,7 @@
                                                 <a class="nav-link" id="contact-tab4" data-bs-toggle="tab" href="#contact4" role="tab" aria-controls="contact" aria-selected="false">Year3</a>
                                             </li>
                                         </ul>
-                                       
+
                                         <div class="row">
                                             <div class="col-12 col-sm-12 col-md-12">
                                                 <div class="tab-content no-padding" id="myTab2Content">
@@ -541,7 +541,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="grossammount_year1_1st"
+                                                                                <input type="text" class="form-control" id="grossammount_year1_1st"
                                                                                        name="grossammount_year1_1st" />
                                                                             </div>
                                                                         </div>
@@ -567,7 +567,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="date_lddap_year1_1st"
+                                                                                <input type="text" class="form-control" id="date_lddap_year1_1st"
                                                                                        name="date_lddap_year1_1st" />
                                                                             </div>
                                                                         </div>
@@ -588,7 +588,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="grossammount_year1_2nd"
+                                                                                <input type="text" class="form-control" id="grossammount_year1_2nd"
                                                                                        name="grossammount_year1_2nd" />
                                                                             </div>
                                                                         </div>
@@ -601,7 +601,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="retentionfee_year1_2nd"
+                                                                                <input type="text" class="form-control" id="retentionfee_year1_2nd"
                                                                                        name="retentionfee_year1_2nd" />
                                                                             </div>
                                                                         </div>
@@ -627,7 +627,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="amountless_rf_mf_year1_2nd"
+                                                                                <input type="text" class="form-control" id="amountless_rf_mf_year1_2nd"
                                                                                        name="amountless_rf_mf_year1_2nd" />
                                                                             </div>
                                                                         </div>
@@ -640,7 +640,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="bir_year1_2nd"
+                                                                                <input type="text" class="form-control" id="bir_year1_2nd"
                                                                                        name="bir_year1_2nd" />
                                                                             </div>
                                                                         </div>
@@ -653,7 +653,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="netammountpaid_year1_2nd"
+                                                                                <input type="text" class="form-control" id="netammountpaid_year1_2nd"
                                                                                        name="netammountpaid_year1_2nd" />
                                                                             </div>
                                                                         </div>
@@ -679,7 +679,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="date_lddap_year1_2nd"
+                                                                                <input type="text" class="form-control" id="date_lddap_year1_2nd"
                                                                                        name="date_lddap_year1_2nd" />
                                                                             </div>
                                                                         </div>
@@ -707,7 +707,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="grossammount_year1_3rd"
+                                                                                <input type="text" class="form-control" id="grossammount_year1_3rd"
                                                                                        name="grossammount_year1_3rd" />
                                                                             </div>
                                                                         </div>
@@ -720,7 +720,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="retentionfee_year1_3rd"
+                                                                                <input type="text" class="form-control" id="retentionfee_year1_3rd"
                                                                                        name="retentionfee_year1_3rd" />
                                                                             </div>
                                                                         </div>
@@ -733,7 +733,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="mobilization_fund_year1_2nd"
+                                                                                <input type="text" class="form-control" id="mobilization_fund_year1_2nd"
                                                                                        name="mobilization_fund_year1_3rd" />
                                                                             </div>
                                                                         </div>
@@ -746,7 +746,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="amountless_rf_mf_year1_3rd"
+                                                                                <input type="text" class="form-control" id="amountless_rf_mf_year1_3rd"
                                                                                        name="amountless_rf_mf_year1_3rd" />
                                                                             </div>
                                                                         </div>
@@ -759,7 +759,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="bir_year1_3rd"
+                                                                                <input type="text" class="form-control" id="bir_year1_3rd"
                                                                                        name="bir_year1_3rd" />
                                                                             </div>
                                                                         </div>
@@ -772,7 +772,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="netammountpaid_year1_3rd"
+                                                                                <input type="text" class="form-control" id="netammountpaid_year1_3rd"
                                                                                        name="netammountpaid_year1_3rd" />
                                                                             </div>
                                                                         </div>
@@ -785,7 +785,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="lddapno_year1_3rd"
+                                                                                <input type="text" class="form-control" id="lddapno_year1_3rd"
                                                                                        name="lddapno_year1_3rd" />
                                                                             </div>
                                                                         </div>
@@ -798,7 +798,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="date_lddap_year1_3rd"
+                                                                                <input type="text" class="form-control" id="date_lddap_year1_3rd"
                                                                                        name="date_lddap_year1_3rd" />
                                                                             </div>
                                                                         </div>
@@ -821,7 +821,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="grossammount_year1_4th"
+                                                                                <input type="text" class="form-control" id="grossammount_year1_4th"
                                                                                        name="grossammount_year1_4th" />
                                                                             </div>
                                                                         </div>
@@ -834,7 +834,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="retentionfee_year1_4th"
+                                                                                <input type="text" class="form-control" id="retentionfee_year1_4th"
                                                                                        name="retentionfee_year1_4th" />
                                                                             </div>
                                                                         </div>
@@ -847,7 +847,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="mobilization_fund_year1_4th"
+                                                                                <input type="text" class="form-control" id="mobilization_fund_year1_4th"
                                                                                        name="mobilization_fund_year1_4th" />
                                                                             </div>
                                                                         </div>
@@ -860,7 +860,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="amountless_rf_mf_year1_4th"
+                                                                                <input type="text" class="form-control" id="amountless_rf_mf_year1_4th"
                                                                                        name="amountless_rf_mf_year1_4th" />
                                                                             </div>
                                                                         </div>
@@ -873,7 +873,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="bir_year1_4th"
+                                                                                <input type="text" class="form-control" id="bir_year1_4th"
                                                                                        name="bir_year1_4th" />
                                                                             </div>
                                                                         </div>
@@ -886,7 +886,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="netammountpaid_year1_4th"
+                                                                                <input type="text" class="form-control" id="netammountpaid_year1_4th"
                                                                                        name="netammountpaid_year1_4th" />
                                                                             </div>
                                                                         </div>
@@ -899,7 +899,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="lddapno_year1_4th"
+                                                                                <input type="text" class="form-control" id="lddapno_year1_4th"
                                                                                        name="lddapno_year1_4th" />
                                                                             </div>
                                                                         </div>
@@ -912,7 +912,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="date_lddap_year1_4th"
+                                                                                <input type="text" class="form-control" id="date_lddap_year1_4th"
                                                                                        name="date_lddap_year1_4th" />
                                                                             </div>
                                                                         </div>
@@ -951,7 +951,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="retentionfee_year1_5th"
+                                                                                <input type="text" class="form-control" id="retentionfee_year1_5th"
                                                                                        name="retentionfee_year1_5th" />
                                                                             </div>
                                                                         </div>
@@ -964,7 +964,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="mobilization_fund_year1_5th"
+                                                                                <input type="text" class="form-control" id="mobilization_fund_year1_5th"
                                                                                        name="mobilization_fund_year1_5th" />
                                                                             </div>
                                                                         </div>
@@ -977,7 +977,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="amountless_rf_mf_year1_5th"
+                                                                                <input type="text" class="form-control" id="amountless_rf_mf_year1_5th"
                                                                                        name="amountless_rf_mf_year1_5th" />
                                                                             </div>
                                                                         </div>
@@ -990,7 +990,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="bir_year1_5th"
+                                                                                <input type="text" class="form-control" id="bir_year1_5th"
                                                                                        name="bir_year1_5th" />
                                                                             </div>
                                                                         </div>
@@ -1016,7 +1016,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="lddapno_year1_5th"
+                                                                                <input type="text" class="form-control" id="lddapno_year1_5th"
                                                                                        name="lddapno_year1_5th" />
                                                                             </div>
                                                                         </div>
@@ -1053,7 +1053,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="grossammount_year1_6th"
+                                                                                <input type="text" class="form-control" id="grossammount_year1_6th"
                                                                                        name="grossammount_year1_6th" />
                                                                             </div>
                                                                         </div>
@@ -1079,7 +1079,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="mobilization_fund_year1_6th"
+                                                                                <input type="text" class="form-control" id="mobilization_fund_year1_6th"
                                                                                        name="mobilization_fund_year1_6th" />
                                                                             </div>
                                                                         </div>
@@ -1092,7 +1092,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="amountless_rf_mf_year1_6th"
+                                                                                <input type="text" class="form-control" id="amountless_rf_mf_year1_6th"
                                                                                        name="amountless_rf_mf_year1_6th" />
                                                                             </div>
                                                                         </div>
@@ -1105,7 +1105,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="bir_year1_6th"
+                                                                                <input type="text" class="form-control" id="bir_year1_6th"
                                                                                        name="bir_year1_6th" />
                                                                             </div>
                                                                         </div>
@@ -1118,7 +1118,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="netammountpaid_year1_6th"
+                                                                                <input type="text" class="form-control" id="netammountpaid_year1_6th"
                                                                                        name="netammountpaid_year1_6th" />
                                                                             </div>
                                                                         </div>
@@ -1131,7 +1131,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="lddapno_year1_6th"
+                                                                                <input type="text" class="form-control" id="lddapno_year1_6th"
                                                                                        name="lddapno_year1_6th" />
                                                                             </div>
                                                                         </div>
@@ -1144,7 +1144,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="date_lddap_year1_6th"
+                                                                                <input type="text" class="form-control" id="date_lddap_year1_6th"
                                                                                        name="date_lddap_year1_6th" />
                                                                             </div>
                                                                         </div>
@@ -1191,7 +1191,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="grossammount_year2_1st"
+                                                                                <input type="text" class="form-control" id="grossammount_year2_1st"
                                                                                        name="grossammount_year2_1st" />
                                                                             </div>
                                                                         </div>
@@ -1204,7 +1204,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="retentionfee_year2_1st"
+                                                                                <input type="text" class="form-control" id="retentionfee_year2_1st"
                                                                                        name="retentionfee_year2_1st" />
                                                                             </div>
                                                                         </div>
@@ -1230,7 +1230,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="bir_year2_1st"
+                                                                                <input type="text" class="form-control" id="bir_year2_1st"
                                                                                        name="bir_year2_1st" />
                                                                             </div>
                                                                         </div>
@@ -1256,7 +1256,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="lddapno_year2_1st"
+                                                                                <input type="text" class="form-control" id="lddapno_year2_1st"
                                                                                        name="lddapno_year2_1st" />
                                                                             </div>
                                                                         </div>
@@ -1269,7 +1269,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="date_lddap_year2_1st"
+                                                                                <input type="text" class="form-control" id="date_lddap_year2_1st"
                                                                                        name="date_lddap_year2_1st" />
                                                                             </div>
                                                                         </div>
@@ -1293,7 +1293,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="survivalrate_year2_2nd"
+                                                                                <input type="text" class="form-control" id="survivalrate_year2_2nd"
                                                                                        name="survivalrate_year2_2nd" />
                                                                             </div>
                                                                         </div>
@@ -1306,7 +1306,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="grossammount_year2_2nd"
+                                                                                <input type="text" class="form-control" id="grossammount_year2_2nd"
                                                                                        name="grossammount_year2_2nd" />
                                                                             </div>
                                                                         </div>
@@ -1319,7 +1319,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="retentionfee_year2_2nd"
+                                                                                <input type="text" class="form-control" id="retentionfee_year2_2nd"
                                                                                        name="retentionfee_year2_2nd" />
                                                                             </div>
                                                                         </div>
@@ -1332,7 +1332,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="amountless_rf_year2_2nd"
+                                                                                <input type="text" class="form-control" id="amountless_rf_year2_2nd"
                                                                                        name="amountless_rf_year2_2nd" />
                                                                             </div>
                                                                         </div>
@@ -1345,7 +1345,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="bir_year2_2nd"
+                                                                                <input type="text" class="form-control" id="bir_year2_2nd"
                                                                                        name="bir_year2_2nd" />
                                                                             </div>
                                                                         </div>
@@ -1358,7 +1358,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="netamount_paid_year2_2nd"
+                                                                                <input type="text" class="form-control" id="netamount_paid_year2_2nd"
                                                                                        name="netamount_paid_year2_2nd" />
                                                                             </div>
                                                                         </div>
@@ -1371,7 +1371,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="lddapno_year2_2nd"
+                                                                                <input type="text" class="form-control" id="lddapno_year2_2nd"
                                                                                        name="lddapno_year2_2nd" />
                                                                             </div>
                                                                         </div>
@@ -1384,7 +1384,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="date_lddap_year2_2nd"
+                                                                                <input type="text" class="form-control" id="date_lddap_year2_2nd"
                                                                                        name="date_lddap_year2_2nd" />
                                                                             </div>
                                                                         </div>
@@ -1412,7 +1412,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="survivalrate_year2_3rd"
+                                                                                <input type="text" class="form-control" id="survivalrate_year2_3rd"
                                                                                        name="survivalrate_year2_3rd" />
                                                                             </div>
                                                                         </div>
@@ -1425,7 +1425,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="grossammount_year2_3rd"
+                                                                                <input type="text" class="form-control" id="grossammount_year2_3rd"
                                                                                        name="grossammount_year2_3rd" />
                                                                             </div>
                                                                         </div>
@@ -1438,7 +1438,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="retentionfee_year2_3rd"
+                                                                                <input type="text" class="form-control" id="retentionfee_year2_3rd"
                                                                                        name="retentionfee_year2_3rd" />
                                                                             </div>
                                                                         </div>
@@ -1451,7 +1451,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="amountless_rf_year2_3rd"
+                                                                                <input type="text" class="form-control" id="amountless_rf_year2_3rd"
                                                                                        name="amountless_rf_year2_3rd" />
                                                                             </div>
                                                                         </div>
@@ -1464,7 +1464,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="bir_year2_3rd"
+                                                                                <input type="text" class="form-control" id="bir_year2_3rd"
                                                                                        name="bir_year2_3rd" />
                                                                             </div>
                                                                         </div>
@@ -1477,7 +1477,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="netamount_paid_year2_3rd"
+                                                                                <input type="text" class="form-control" id="netamount_paid_year2_3rd"
                                                                                        name="netamount_paid_year2_3rd" />
                                                                             </div>
                                                                         </div>
@@ -1490,7 +1490,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="lddapno_year2_3rd"
+                                                                                <input type="text" class="form-control" id="lddapno_year2_3rd"
                                                                                        name="lddapno_year2_3rd" />
                                                                             </div>
                                                                         </div>
@@ -1526,7 +1526,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="survivalrate_year2_4th"
+                                                                                <input type="text" class="form-control" id="survivalrate_year2_4th"
                                                                                        name="survivalrate_year2_4th" />
                                                                             </div>
                                                                         </div>
@@ -1539,7 +1539,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="grossammount_year2_4th"
+                                                                                <input type="text" class="form-control" id="grossammount_year2_4th"
                                                                                        name="grossammount_year2_4th" />
                                                                             </div>
                                                                         </div>
@@ -1552,7 +1552,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="retentionfee_year2_4th"
+                                                                                <input type="text" class="form-control" id="retentionfee_year2_4th"
                                                                                        name="retentionfee_year2_4th" />
                                                                             </div>
                                                                         </div>
@@ -1591,7 +1591,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="netamount_paid_year2_4th"
+                                                                                <input type="text" class="form-control" id="netamount_paid_year2_4th"
                                                                                        name="netamount_paid_year2_4th" />
                                                                             </div>
                                                                         </div>
@@ -1604,7 +1604,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="lddapno_year2_4th"
+                                                                                <input type="text" class="form-control" id="lddapno_year2_4th"
                                                                                        name="lddapno_year2_4th" />
                                                                             </div>
                                                                         </div>
@@ -1617,7 +1617,7 @@
                                                                             </div>
                                                                             <div class="col-md-10">
 
-                                                                                <input  type="text" class="form-control" id="date_lddap_year2_4th"
+                                                                                <input type="text" class="form-control" id="date_lddap_year2_4th"
                                                                                        name="date_lddap_year2_4th" />
                                                                             </div>
                                                                         </div>
@@ -2150,8 +2150,7 @@
 
 
 
-<script>
-    $(document).ready(function () {
+<script>$(document).ready(function () {
         ContractorAnimation();
 
     });
@@ -2207,8 +2206,7 @@
             textField.style.display = "none";
             textField.value = "";
         }
-    }
-</script>
+    }</script>
 
 
 

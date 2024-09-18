@@ -69,7 +69,7 @@ namespace NgpManagementSystem.Controllers.API
         [Route("api/addaccount/post")]
         public async Task<string> PostImage()
         {
-            var sess_id = (int)HttpContext.Current.Session["LoginID"];
+            var sess_id = Request.Headers.GetCookies("auth").FirstOrDefault()?["auth"].Values.Get("LoginID");
             var ctx = HttpContext.Current;
             var root = ctx.Server.MapPath("~/SampleImg/");
             var provider =
@@ -96,12 +96,12 @@ namespace NgpManagementSystem.Controllers.API
                     {
 
                         Date = DateTime.Now,
-                        Name = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Name,
-                        UserName = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.UserName,
+                        Name = Db.NgpUsers.FirstOrDefault(o => o.Id.ToString() == sess_id)?.Name,
+                        UserName = Db.NgpUsers.FirstOrDefault(o => o.Id.ToString() == sess_id)?.UserName,
                         LogMessage = "Added a  User Account  " + "Name of user: " + res.Name,
-                        UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id,
-                        RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.RoleID,
-                        Position = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Position,
+                        UserId = Db.NgpUsers.FirstOrDefault(o => o.Id.ToString() == sess_id)?.Id,
+                        RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id.ToString() == sess_id)?.RoleID,
+                        Position = Db.NgpUsers.FirstOrDefault(o => o.Id.ToString() == sess_id)?.Position,
 
 
                     });
@@ -242,7 +242,7 @@ namespace NgpManagementSystem.Controllers.API
         public IHttpActionResult EditAccount(AccountDTO editaccountDTO)
         {
 
-            var sess_id = (int)HttpContext.Current.Session["LoginID"];
+            var sess_id = Request.Headers.GetCookies("auth").FirstOrDefault()?["auth"].Values.Get("LoginID");
             if (ModelState.IsValid)
             {
                 var accountdt = Db.NgpUsers.Single(c => c.Id == editaccountDTO.Id);
@@ -258,12 +258,12 @@ namespace NgpManagementSystem.Controllers.API
             {
 
                 Date = DateTime.Now,
-                Name = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Name,
-                UserName = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.UserName,
+                Name = Db.NgpUsers.FirstOrDefault(o => o.Id.ToString() == sess_id)?.Name,
+                UserName = Db.NgpUsers.FirstOrDefault(o => o.Id.ToString() == sess_id)?.UserName,
                 LogMessage = "Edit a  User Account  " + "Name of user: " + accountdt.Name+ "Name of Editor:"+ accountdt.UserName + "Role:" + accountdt.NgpRole.RoleName,
-                UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id,
-                RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.RoleID,
-                Position = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Position,
+                UserId = Db.NgpUsers.FirstOrDefault(o => o.Id.ToString() == sess_id)?.Id,
+                RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id.ToString() == sess_id)?.RoleID,
+                Position = Db.NgpUsers.FirstOrDefault(o => o.Id.ToString() == sess_id)?.Position,
             });
 
             }
@@ -281,7 +281,7 @@ namespace NgpManagementSystem.Controllers.API
         public IHttpActionResult DeleteAccount(int id)
         {
 
-            var sess_id = (int)HttpContext.Current.Session["LoginID"];
+            var sess_id = Request.Headers.GetCookies("auth").FirstOrDefault()?["auth"].Values.Get("LoginID");
 
             var deletedb = Db.NgpUsers.SingleOrDefault(d => d.Id == id);
 
@@ -294,12 +294,12 @@ namespace NgpManagementSystem.Controllers.API
             {
 
                 Date = DateTime.Now,
-                Name = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Name,
-                UserName = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.UserName,
+                Name = Db.NgpUsers.FirstOrDefault(o => o.Id.ToString() == sess_id)?.Name,
+                UserName = Db.NgpUsers.FirstOrDefault(o => o.Id.ToString() == sess_id)?.UserName,
                 LogMessage = "Delete  a  User Account  " + "Name of user: " + deletedb.Name + "Name of Editor:" + deletedb.UserName + "Role:" + deletedb.NgpRole.RoleName,
-                UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id,
-                RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.RoleID,
-                Position = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Position,
+                UserId = Db.NgpUsers.FirstOrDefault(o => o.Id.ToString() == sess_id)?.Id,
+                RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id.ToString() == sess_id)?.RoleID,
+                Position = Db.NgpUsers.FirstOrDefault(o => o.Id.ToString() == sess_id)?.Position,
             });
 
             Db.SaveChanges();
@@ -325,7 +325,7 @@ namespace NgpManagementSystem.Controllers.API
         [Route("api/resetpassword/postresetpassword/{id}")]
         public IHttpActionResult SavingResetPassword(AccountDTO resetpass)
         {
-            var sess_id = (int)HttpContext.Current.Session["LoginID"];
+            var sess_id = Request.Headers.GetCookies("auth").FirstOrDefault()?["auth"].Values.Get("LoginID");
             ScryptEncoder encoder = new ScryptEncoder();
             if (ModelState.IsValid)
             {
@@ -342,12 +342,12 @@ namespace NgpManagementSystem.Controllers.API
                 {
 
                     Date = DateTime.Now,
-                    Name = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Name,
-                    UserName = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.UserName,
+                    Name = Db.NgpUsers.FirstOrDefault(o => o.Id.ToString() == sess_id)?.Name,
+                    UserName = Db.NgpUsers.FirstOrDefault(o => o.Id.ToString() == sess_id)?.UserName,
                     LogMessage = "Reset a Password " + "Name of user: " + accountdt.Name + "UserName:" + accountdt.UserName + " Role:" + accountdt.NgpRole.RoleName,
-                    UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id,
-                    RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.RoleID,
-                    Position = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Position,
+                    UserId = Db.NgpUsers.FirstOrDefault(o => o.Id.ToString() == sess_id)?.Id,
+                    RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id.ToString() == sess_id)?.RoleID,
+                    Position = Db.NgpUsers.FirstOrDefault(o => o.Id.ToString() == sess_id)?.Position,
                 });
 
             }

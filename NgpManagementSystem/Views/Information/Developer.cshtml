@@ -1,6 +1,6 @@
 ﻿@{
     ViewBag.Title = "Index";
-    Layout = Request.Cookies["auth"].Values["Role_Id"] == "1" ? "~/Views/Shared/_LayoutAdmin.cshtml" : "~/Views/Shared/_LayoutUser.cshtml" ;
+    Layout = "~/Views/Shared/_LayoutDeveloper.cshtml";
 }
 
 <div class="row mt-5">
@@ -122,7 +122,7 @@
                                     <div class="table-responsive">
                                         <table id="contracttables" class="table table-hover" width="100%">
 
-                                            <thead >
+                                            <thead>
                                                 <tr class="bg-green text-white">
 
                                                     <th style="display:none;">contractID</th>
@@ -179,12 +179,12 @@
                             </div>
 
 
-                           </div>
                         </div>
-
                     </div>
 
                 </div>
+
+            </div>
 
 
 
@@ -333,7 +333,10 @@
 
 
                         </div>
-
+                        <input type="hidden" name="fruitTrees" id="fruitTrees" />
+                        <input type="hidden" name="forestTrees" id="forestTrees" />
+                        <input type="hidden" name="bamboo" id="bamboo" />
+                        <input type="hidden" name="mangrove" id="mangrove" />
                         <input type="hidden" name="contractorID" id="contractorID" />
                         <input type="hidden" name="contractor_name" id="contractor_name" />
                         <input type="hidden" name="roleId" id="roleId" />
@@ -586,6 +589,11 @@
                                 </div>
 
 
+                                <input type="hidden" name="fruitTrees" id="fruitTrees" />
+                                <input type="hidden" name="forestTrees" id="forestTrees" />
+                                <input type="hidden" name="bamboo" id="bamboo" />
+                                <input type="hidden" name="mangrove" id="mangrove" />
+
                                 <input type="hidden" name="roleId" id="roleId" />
                                 <input type="hidden" name="name" id="name" />
                                 <input type="hidden" name="userId" id="userId" />
@@ -789,7 +797,10 @@
 
                             <input type="hidden" class="form-control" id="contractorID" name="contractorID" /> @*need id*@
 
-
+                            <input type="hidden" name="fruitTrees" id="fruitTrees" />
+                            <input type="hidden" name="forestTrees" id="forestTrees" />
+                            <input type="hidden" name="bamboo" id="bamboo" />
+                            <input type="hidden" name="mangrove" id="mangrove" />
 
 
 
@@ -1052,8 +1063,13 @@
                     <form id="edityear2contractform">
                         <div class="row">
 
-
                             <input type="hidden" class="form-control" id="contractorID" name="contractorID" /> @*need id*@
+
+
+                            <input type="hidden" name="fruitTrees" id="fruitTrees" />
+                            <input type="hidden" name="forestTrees" id="forestTrees" />
+                            <input type="hidden" name="bamboo" id="bamboo" />
+                            <input type="hidden" name="mangrove" id="mangrove" />
 
 
                             <div class="col-md-6">
@@ -1063,49 +1079,49 @@
                                            name="moanumber_year2">
                                 </div>
                                 <div class="form-group ">
-                                    <label  class="text-uppercase"  style="color: black;">datemoasigned year2 </label>
+                                    <label class="text-uppercase" style="color: black;">datemoasigned year2 </label>
                                     <input type="date" class="form-control" id="datemoasigned_year2"
                                            name="datemoasigned_year2">
                                 </div>
                                 <div class="form-group ">
-                                    <label  class="text-uppercase" style="color: black;">unitcost year2 </label>
+                                    <label class="text-uppercase" style="color: black;">unitcost year2 </label>
                                     <input type="text" class="form-control" id="unitcost_year2"
                                            name="unitcost_year2">
                                 </div>
                                 <div class="form-group ">
-                                    <label  class="text-uppercase"  style="color: black;">contractcost year2 </label>
+                                    <label class="text-uppercase" style="color: black;">contractcost year2 </label>
                                     <input type="text" class="form-control" id="contractcost_year2"
                                            name="contractcost_year2">
                                 </div>
                                 <div class="form-group ">
-                                    <label  class="text-uppercase" style="color: black;">dateobligated year2 </label>
+                                    <label class="text-uppercase" style="color: black;">dateobligated year2 </label>
                                     <input type="date" class="form-control" id="dateobligated_year2"
                                            name="dateobligated_year2">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group ">
-                                    <label  class="text-uppercase" style="color: black;">orsno year2 </label>
+                                    <label class="text-uppercase" style="color: black;">orsno year2 </label>
                                     <input type="text" class="form-control" id="orsno_year2"
                                            name="orsno_year2">
                                 </div>
                                 <div class="form-group ">
-                                    <label  class="text-uppercase" style="color: black;">number of seedlings planted year2 </label>
+                                    <label class="text-uppercase" style="color: black;">number of seedlings planted year2 </label>
                                     <input type="text" class="form-control" id="num_seedlings_planted_year2"
                                            name="num_seedlings_planted_year2">
                                 </div>
                                 <div class="form-group ">
-                                    <label  class="text-uppercase" style="color: black;">number of seedlings survive endofyear1-year2 </label>
+                                    <label class="text-uppercase" style="color: black;">number of seedlings survive endofyear1-year2 </label>
                                     <input type="text" class="form-control" id="num_seedlings_survive_endofyear_1_year2"
                                            name="num_seedlings_survive_endofyear_1_year2">
                                 </div>
                                 <div class="form-group ">
-                                    <label  class="text-uppercase" style="color: black;">survivalrate year2 </label>
+                                    <label class="text-uppercase" style="color: black;">survivalrate year2 </label>
                                     <input type="text" class="form-control" id="survivalrate_year2"
                                            name="survivalrate_year2">
                                 </div>
                                 <div class="form-group ">
-                                    <label  class="text-uppercase" style="color: black;">num seedlings replanted year2 </label>
+                                    <label class="text-uppercase" style="color: black;">num seedlings replanted year2 </label>
                                     <input type="text" class="form-control" id="num_seedlings_replanted_year2"
                                            name="num_seedlings_replanted_year2">
                                 </div>
@@ -1318,6 +1334,10 @@
 
 
                             <input type="hidden" class="form-control" id="contractorID" name="contractorID" /> @*need id*@
+                            <input type="hidden" name="fruitTrees" id="fruitTrees" />
+                            <input type="hidden" name="forestTrees" id="forestTrees" />
+                            <input type="hidden" name="bamboo" id="bamboo" />
+                            <input type="hidden" name="mangrove" id="mangrove" />
 
                             <div class="col-md-6">
                                 <div class="form-group ">
@@ -1365,12 +1385,12 @@
                                            name="num_seedlings_survive_endofyear_1_year3">
                                 </div>
                                 <div class="form-group ">
-                                    <label  class="text-uppercase" style="color: black;">survivalrate_year3 </label>
+                                    <label class="text-uppercase" style="color: black;">survivalrate_year3 </label>
                                     <input type="text" class="form-control" id="survivalrate_year3"
                                            name="survivalrate_year3">
                                 </div>
                                 <div class="form-group ">
-                                    <label  class="text-uppercase" style="color: black;">number of seedlings replanted year3 </label>
+                                    <label class="text-uppercase" style="color: black;">number of seedlings replanted year3 </label>
                                     <input type="text" class="form-control" id="num_seedlings_replanted_year3"
                                            name="num_seedlings_replanted_year3">
                                 </div>
@@ -1547,7 +1567,6 @@
                         <input type="hidden" name="netamount_paid_year3_4th" id="netamount_paid_year3_4th" />
                         <input type="hidden" name="lddapno_year3_4th" id="lddapno_year3_4th" />
                         <input type="hidden" name="date_lddap_year3_4th" id="date_lddap_year3_4th" />
-
 
                     </form>
 
@@ -1783,22 +1802,22 @@
                                            name="moanumber_year3">
                                 </div>
                                 <div class="form-group ">
-                                    <label  class="text-uppercase" style="color: black;">datemoasigned year3 </label>
+                                    <label class="text-uppercase" style="color: black;">datemoasigned year3 </label>
                                     <input type="date" class="form-control" id="datemoasigned_year3" readonly
                                            name="datemoasigned_year3">
                                 </div>
                                 <div class="form-group ">
-                                    <label  class="text-uppercase" style="color: black;">unitcost year3 </label>
+                                    <label class="text-uppercase" style="color: black;">unitcost year3 </label>
                                     <input type="text" class="form-control" id="unitcost_year3" readonly
                                            name="unitcost_year3">
                                 </div>
                                 <div class="form-group ">
-                                    <label  class="text-uppercase" style="color: black;">contractcost year3 </label>
+                                    <label class="text-uppercase" style="color: black;">contractcost year3 </label>
                                     <input type="text" class="form-control" id="contractcost_year3" readonly
                                            name="contractcost_year3">
                                 </div>
                                 <div class="form-group ">
-                                    <label  class="text-uppercase" style="color: black;">dateobligated year3 </label>
+                                    <label class="text-uppercase" style="color: black;">dateobligated year3 </label>
                                     <input type="date" class="form-control" id="dateobligated_year3" readonly
                                            name="dateobligated_year3">
                                 </div>
@@ -1812,17 +1831,17 @@
                                            name="orsno_year3">
                                 </div>
                                 <div class="form-group ">
-                                    <label  class="text-uppercase" style="color: black;">number of seedlings planted year3 </label>
+                                    <label class="text-uppercase" style="color: black;">number of seedlings planted year3 </label>
                                     <input type="text" class="form-control" id="num_seedlings_planted_year3" readonly
                                            name="num_seedlings_planted_year3">
                                 </div>
                                 <div class="form-group ">
-                                    <label  class="text-uppercase" style="color: black;">number of seedlings survive endofyear 1-year3 </label>
+                                    <label class="text-uppercase" style="color: black;">number of seedlings survive endofyear 1-year3 </label>
                                     <input type="text" class="form-control" id="num_seedlings_survive_endofyear_1_year3" readonly
                                            name="num_seedlings_survive_endofyear_1_year3">
                                 </div>
                                 <div class="form-group ">
-                                    <label  class="text-uppercase" style="color: black;">survivalrate year3 </label>
+                                    <label class="text-uppercase" style="color: black;">survivalrate year3 </label>
                                     <input type="text" class="form-control" id="survivalrate_year3" readonly
                                            name="survivalrate_year3">
                                 </div>
@@ -1858,7 +1877,7 @@
 
     @*YEAR1 PAYMENTS SHOW IN MODAL(READONLY)*@
     <<div class="modal fade" id="year1paymentModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl" >
+        <div class="modal-dialog modal-xl">
 
             <div class="modal-content">
                 <div class="modal-header  bg-green">
@@ -1983,7 +2002,7 @@
                                             </div>
                                             <div class="col-md-10">
 
-                                                <input  placeholder="bir_year1_2nd" type="text" class="form-control" id="bir_year1_2nd" readonly
+                                                <input placeholder="bir_year1_2nd" type="text" class="form-control" id="bir_year1_2nd" readonly
                                                        name="bir_year1_2nd" />
                                             </div>
                                         </div>
@@ -2618,7 +2637,7 @@
                                     <div class="form-group col-md-12">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <label  class="text-uppercase"style="color: black;">survivalrate year2-2nd</label>
+                                                <label class="text-uppercase" style="color: black;">survivalrate year2-2nd</label>
                                             </div>
                                             <div class="col-md-10">
 
@@ -2737,7 +2756,7 @@
                                     <div class="form-group col-md-12">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <label class="text-uppercase"  style="color: black;">survivalrate year2-3rd</label>
+                                                <label class="text-uppercase" style="color: black;">survivalrate year2-3rd</label>
                                             </div>
                                             <div class="col-md-10">
 
@@ -3006,7 +3025,7 @@
                                     <div class="form-group col-md-12">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <label  class="text-uppercase" style="color: black;">survivalrate year3-1st</label>
+                                                <label class="text-uppercase" style="color: black;">survivalrate year3-1st</label>
                                             </div>
                                             <div class="col-md-10">
 
@@ -3019,7 +3038,7 @@
                                     <div class="form-group col-md-12">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <label  class="text-uppercase" style="color: black;">bir year3-1st</label>
+                                                <label class="text-uppercase" style="color: black;">bir year3-1st</label>
                                             </div>
                                             <div class="col-md-10">
 
@@ -3032,7 +3051,7 @@
                                     <div class="form-group col-md-12">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <label  class="text-uppercase" style="color: black;">netamount paid year3-1st</label>
+                                                <label class="text-uppercase" style="color: black;">netamount paid year3-1st</label>
                                             </div>
                                             <div class="col-md-10">
 
@@ -3045,7 +3064,7 @@
                                     <div class="form-group col-md-12">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <label  class="text-uppercase" style="color: black;">lddapno year3-1st</label>
+                                                <label class="text-uppercase" style="color: black;">lddapno year3-1st</label>
                                             </div>
                                             <div class="col-md-10">
 
@@ -3058,7 +3077,7 @@
                                     <div class="form-group col-md-12">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <label  class="text-uppercase" style="color: black;">retentionfee year3-1st</label>
+                                                <label class="text-uppercase" style="color: black;">retentionfee year3-1st</label>
                                             </div>
                                             <div class="col-md-10">
 
@@ -3071,7 +3090,7 @@
                                     <div class="form-group col-md-12">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <label  class="text-uppercase" style="color: black;">amountless rf year3-1st</label>
+                                                <label class="text-uppercase" style="color: black;">amountless rf year3-1st</label>
                                             </div>
                                             <div class="col-md-10">
 
@@ -3084,7 +3103,7 @@
                                     <div class="form-group col-md-12">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <label  class="text-uppercase" style="color: black;">date lddap year3-1st</label>
+                                                <label class="text-uppercase" style="color: black;">date lddap year3-1st</label>
                                             </div>
                                             <div class="col-md-10">
 
@@ -3108,7 +3127,7 @@
                                     <div class="form-group col-md-12">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <label  class="text-uppercase" style="color: black;">survivalrate year3-2nd</label>
+                                                <label class="text-uppercase" style="color: black;">survivalrate year3-2nd</label>
                                             </div>
                                             <div class="col-md-10">
 
@@ -3121,7 +3140,7 @@
                                     <div class="form-group col-md-12">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <label  class="text-uppercase" style="color: black;">grossammount year3-2nd</label>
+                                                <label class="text-uppercase" style="color: black;">grossammount year3-2nd</label>
                                             </div>
                                             <div class="col-md-10">
 
@@ -3134,7 +3153,7 @@
                                     <div class="form-group col-md-12">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <label  class="text-uppercase" style="color: black;">retention fee year3-2nd</label>
+                                                <label class="text-uppercase" style="color: black;">retention fee year3-2nd</label>
                                             </div>
                                             <div class="col-md-10">
 
@@ -3147,7 +3166,7 @@
                                     <div class="form-group col-md-12">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <label  class="text-uppercase" style="color: black;">amountless rf year3-2nd</label>
+                                                <label class="text-uppercase" style="color: black;">amountless rf year3-2nd</label>
                                             </div>
                                             <div class="col-md-10">
 
@@ -3160,7 +3179,7 @@
                                     <div class="form-group col-md-12">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <label  class="text-uppercase" style="color: black;">bir year3-2nd</label>
+                                                <label class="text-uppercase" style="color: black;">bir year3-2nd</label>
                                             </div>
                                             <div class="col-md-10">
 
@@ -3173,7 +3192,7 @@
                                     <div class="form-group col-md-12">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <label  class="text-uppercase"  style="color: black;">netamount paid year3-2nd</label>
+                                                <label class="text-uppercase" style="color: black;">netamount paid year3-2nd</label>
                                             </div>
                                             <div class="col-md-10">
 
@@ -3186,7 +3205,7 @@
                                     <div class="form-group col-md-12">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <label  class="text-uppercase" style="color: black;">lddapno year3-2nd</label>
+                                                <label class="text-uppercase" style="color: black;">lddapno year3-2nd</label>
                                             </div>
                                             <div class="col-md-10">
 
@@ -3199,7 +3218,7 @@
                                     <div class="form-group col-md-12">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <label  class="text-uppercase" style="color: black;">date lddap year3-2nd</label>
+                                                <label class="text-uppercase" style="color: black;">date lddap year3-2nd</label>
                                             </div>
                                             <div class="col-md-10">
 
@@ -3227,7 +3246,7 @@
                                     <div class="form-group col-md-12">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <label  class="text-uppercase"  style="color: black;">survivalrate year3-3rd</label>
+                                                <label class="text-uppercase" style="color: black;">survivalrate year3-3rd</label>
                                             </div>
                                             <div class="col-md-10">
 
@@ -3240,7 +3259,7 @@
                                     <div class="form-group col-md-12">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <label  class="text-uppercase"  style="color: black;">gross ammount year3-3rd</label>
+                                                <label class="text-uppercase" style="color: black;">gross ammount year3-3rd</label>
                                             </div>
                                             <div class="col-md-10">
 
@@ -3253,7 +3272,7 @@
                                     <div class="form-group col-md-12">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <label  class="text-uppercase" style="color: black;">retentionfee year3-3rd</label>
+                                                <label class="text-uppercase" style="color: black;">retentionfee year3-3rd</label>
                                             </div>
                                             <div class="col-md-10">
 
@@ -3266,7 +3285,7 @@
                                     <div class="form-group col-md-12">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <label  class="text-uppercase" style="color: black;">amountless rf year3-3rd</label>
+                                                <label class="text-uppercase" style="color: black;">amountless rf year3-3rd</label>
                                             </div>
                                             <div class="col-md-10">
 
@@ -3279,7 +3298,7 @@
                                     <div class="form-group col-md-12">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <label  class="text-uppercase" style="color: black;">bir year3-3rd</label>
+                                                <label class="text-uppercase" style="color: black;">bir year3-3rd</label>
                                             </div>
                                             <div class="col-md-10">
 
@@ -3293,7 +3312,7 @@
                                     <div class="form-group col-md-12">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <label  class="text-uppercase" style="color: black;">netamount paid year3-3rd</label>
+                                                <label class="text-uppercase" style="color: black;">netamount paid year3-3rd</label>
                                             </div>
                                             <div class="col-md-10">
 
@@ -3307,7 +3326,7 @@
                                     <div class="form-group col-md-12">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <label  class="text-uppercase" style="color: black;">lddapno year3-3rd</label>
+                                                <label class="text-uppercase" style="color: black;">lddapno year3-3rd</label>
                                             </div>
                                             <div class="col-md-10">
 
@@ -3320,7 +3339,7 @@
                                     <div class="form-group col-md-12">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <label  class="text-uppercase"style="color: black;">date lddap year3-3rd</label>
+                                                <label class="text-uppercase" style="color: black;">date lddap year3-3rd</label>
                                             </div>
                                             <div class="col-md-10">
 
@@ -3343,7 +3362,7 @@
                                     <div class="form-group col-md-12">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <label  class="text-uppercase" style="color: black;">survivalrate year3-4th</label>
+                                                <label class="text-uppercase" style="color: black;">survivalrate year3-4th</label>
                                             </div>
                                             <div class="col-md-10">
 
@@ -3356,7 +3375,7 @@
                                     <div class="form-group col-md-12">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <label  class="text-uppercase" style="color: black;">gross ammount year3-4th</label>
+                                                <label class="text-uppercase" style="color: black;">gross ammount year3-4th</label>
                                             </div>
                                             <div class="col-md-10">
 
@@ -3369,7 +3388,7 @@
                                     <div class="form-group col-md-12">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <label  class="text-uppercase" style="color: black;">retention fee year3-4th</label>
+                                                <label class="text-uppercase" style="color: black;">retention fee year3-4th</label>
                                             </div>
                                             <div class="col-md-10">
 
@@ -3382,7 +3401,7 @@
                                     <div class="form-group col-md-12">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <label  class="text-uppercase" style="color: black;">amountless rf year3-4th</label>
+                                                <label class="text-uppercase" style="color: black;">amountless rf year3-4th</label>
                                             </div>
                                             <div class="col-md-10">
 
@@ -3395,7 +3414,7 @@
                                     <div class="form-group col-md-12">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <label  class="text-uppercase" style="color: black;">bir year3-4th</label>
+                                                <label class="text-uppercase" style="color: black;">bir year3-4th</label>
                                             </div>
                                             <div class="col-md-10">
 
@@ -3408,7 +3427,7 @@
                                     <div class="form-group col-md-12">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <label  class="text-uppercase" style="color: black;">netamount paid year3-4th</label>
+                                                <label class="text-uppercase" style="color: black;">netamount paid year3-4th</label>
                                             </div>
                                             <div class="col-md-10">
 
@@ -3421,7 +3440,7 @@
                                     <div class="form-group col-md-12">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <label  class="text-uppercase" style="color: black;">lddapno year3-4th</label>
+                                                <label class="text-uppercase" style="color: black;">lddapno year3-4th</label>
                                             </div>
                                             <div class="col-md-10">
 
@@ -3434,7 +3453,7 @@
                                     <div class="form-group col-md-12">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <label  class="text-uppercase" style="color: black;">date lddap year3-4th</label>
+                                                <label class="text-uppercase" style="color: black;">date lddap year3-4th</label>
                                             </div>
                                             <div class="col-md-10">
 
@@ -3473,6 +3492,11 @@
                 <div class="modal-body">
                     <form id="edityear1paymentform">
                         <input type="hidden" class="form-control" id="contractorID" name="contractorID" />
+
+                        <input type="hidden" name="fruitTrees" id="fruitTrees" />
+                        <input type="hidden" name="forestTrees" id="forestTrees" />
+                        <input type="hidden" name="bamboo" id="bamboo" />
+                        <input type="hidden" name="mangrove" id="mangrove" />
                         @*need id*@
                         @*1st release*@
                         <div class="row">
@@ -3817,7 +3841,7 @@
                                     <div class="form-group col-md-12">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <label  class="text-uppercase"style="color: black;">bir year1-4th</label>
+                                                <label class="text-uppercase" style="color: black;">bir year1-4th</label>
                                             </div>
                                             <div class="col-md-10">
 
@@ -4010,7 +4034,7 @@
                                     <div class="form-group col-md-12">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <label  class="text-uppercase"style="color: black;">retention fee year1-6th</label>
+                                                <label class="text-uppercase" style="color: black;">retention fee year1-6th</label>
                                             </div>
                                             <div class="col-md-10">
 
@@ -4266,6 +4290,10 @@
                 <div class="modal-body">
                     <form id="edityear3paymentform">
                         <input type="hidden" class="form-control" id="contractorID" name="contractorID" />
+                        <input type="hidden" name="fruitTrees" id="fruitTrees" />
+                        <input type="hidden" name="forestTrees" id="forestTrees" />
+                        <input type="hidden" name="bamboo" id="bamboo" />
+                        <input type="hidden" name="mangrove" id="mangrove" />
                         @*need id*@
 
 
@@ -4924,7 +4952,7 @@
 
     @*YEAR2 PAYMENTS SHOW IN MODAL(EDIT YEAR 2)*@
     <div class="modal fade" id="edityear2paymentModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl" >
+        <div class="modal-dialog modal-xl">
 
             <div class="modal-content">
                 <div class="modal-header bg-green">
@@ -4934,6 +4962,10 @@
                 <div class="modal-body">
                     <form id="edityear2paymentform">
                         <input type="hidden" class="form-control" id="contractorID" name="contractorID" />
+                        <input type="hidden" name="fruitTrees" id="fruitTrees" />
+                        <input type="hidden" name="forestTrees" id="forestTrees" />
+                        <input type="hidden" name="bamboo" id="bamboo" />
+                        <input type="hidden" name="mangrove" id="mangrove" />
                         @*need id*@
 
 
@@ -5607,14 +5639,12 @@
 
 
 
-    <script>
-        $(document).ready(function () {
+    <script>$(document).ready(function () {
             ContractorAnimation();
 
             //NEED THIS FOR MODAL
             $(document).on('show.bs.modal', '.modal', function () {
                 $(this).appendTo('body');
             });
-        });
-    </script>
+        });</script>
 

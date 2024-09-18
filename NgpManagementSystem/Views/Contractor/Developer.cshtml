@@ -1,0 +1,2212 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutDeveloper.cshtml";
+}
+
+<head>
+    <link href="~/Content/testing.css" rel="stylesheet" />
+</head>
+
+<div class="row justify-content-center">
+    <div class="col-md-12  ">
+        <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+
+            <form id="contract_main">
+                <!-- progressbar -->
+                <ul id="progressbar">
+                    <li class="active" id="contractor"><i class=""></i><strong>CONTRACTOR</strong></li>
+                    <li id="projects"><strong>PROJECTS</strong></li>
+                    <li id="contract"><strong>CONTRACT</strong></li>
+                    <li id="payment"><strong>PAYMENTS</strong></li>
+
+
+                </ul>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                </div> <br> <!-- fieldsets -->
+                <fieldset>
+                    <div class="card">
+                        <div class="card-header bg-green">
+                            <span class="text-white text-bold"> CREATE CONTRACTOR</span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-card">
+                        <div style="padding: 2px 2.5%">
+                            <div class="row">
+                                <div class="col-7">
+                                    <h1 class="fs-title"></h1>
+                                    <br />
+                                </div>
+
+                                <div class="col-5">
+                                    <h2 class="steps">Step 1 -4</h2>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label style="color:black;" class="text-uppercase">Contractor Name</label>
+                                        <input type="text" class="form-control" id="contractor_name" name="contractor_name">
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label style="color:black;" class="text-uppercase">Type</label>
+                                        <select class="form-control" style="width:100%" name="contractor_type" id="contractor_type">
+                                            <option value="">Type</option>
+                                            <option value="Group">Group</option>
+                                            <option value="Individual">Individual</option>
+                                        </select>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+                                        <label style="color:black;" class="text-uppercase">Address Municipality</label>
+                                        <select id="address_municipality" name="address_municipality" class="form-control" style="width:100%">
+                                            <option value=" ">Not Applicable</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group pt-2">
+                                        <label style="color:black;" class="text-uppercase">Address Barangay </label>
+                                        <select id="address_barangay" name="address_barangay" style="width:100%" class="form-control">
+                                            <option value=" ">Not Applicable</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div> <input type="button" name="next" class="next action-button" value="Next" />
+                </fieldset>
+
+                <fieldset>
+                    <div class="card">
+                        <div class="card-header bg-green">
+                            <span class="text-white text-bold"> CREATE PROJECTS</span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-card">
+                        <div style="padding: 2px 2.5%">
+                            <div class="row">
+                                <div class="col-7">
+
+                                    <h2 class="fs-title"> </h2>
+                                </div>
+
+                                <div class="col-5">
+                                    <h2 class="steps">Step 2 - 4</h2>
+                                </div>
+                            </div>
+
+
+
+                            <div class="row">
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group ">
+                                        <div class=" sample">
+                                            <label class="text-uppercase" style="color: black;">area </label>
+                                        </div>
+                                        <input type="text" class="form-control" id="area" name="area">
+
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <div class=" sample">
+                                            <label class="text-uppercase" style="color: black;">location municipality </label>
+                                        </div>
+                                        <select id="location_municipality" name="location_municipality" class="form-control" style="width:100%">
+                                            <option value=" ">Not Applicable</option>
+                                        </select>
+                                    </div>
+
+
+
+                                </div>
+
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group" hidden>
+                                        <div class=" sample">
+
+                                            <label class="text-uppercase" style="color: black;">region </label>
+                                        </div>
+                                        <select id="region" name="region" style="width:100%" class="form-control">
+                                            <option value="MIMAROPA">MIMAROPA</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class=" sample">
+
+                                            <label class="text-uppercase" style="color: black;">year </label>
+                                        </div>
+                                        <select id="year_form" name="year_form" style="width:100%" class="form-control" required>
+                                            <option value=" ">Select a Year</option>
+                                            <option value="2028">2028</option>
+                                            <option value="2027">2027</option>
+                                            <option value="2026">2026</option>
+                                            <option value="2025">2025</option>
+                                            <option value="2024">2024</option>
+                                            <option value="2023">2023</option>
+                                            <option value="2022">2022</option>
+                                            <option value="2021">2021</option>
+                                            <option value="2020">2020</option>
+                                            <option value="2019">2019</option>
+                                            <option value="2018">2018</option>
+                                            <option value="2017">2017</option>
+                                            <option value="2016">2016</option>
+                                            <option value="2015">2015</option>
+                                            <option value="2014">2014</option>
+                                            <option value="2013">2013</option>
+                                            <option value="2012">2012</option>
+                                            <option value="2011">2011</option>
+
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group pt-2">
+                                        <div class=" sample">
+
+                                            <label class="text-uppercase" style="color: black;">location barangay </label>
+                                        </div>
+                                        <select id="location_barangay" name="location_barangay" style="width:100%" class="form-control">
+                                            <option value=" ">Not Applicable</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group" hidden>
+                                        <div class=" sample">
+
+                                            <label style="color: black;">penro </label>
+                                        </div>
+                                        <select id="penro" name="penro" style="width:100%" class="form-control">
+                                            <option value="PENRO">PENRO</option>
+                                        </select>
+                                    </div>
+
+
+
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div> <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                </fieldset>
+                <fieldset>
+                    <div class="card">
+                        <div class="card-header bg-green">
+                            <span class="text-white text-bold"> CREATE CONTRACT</span>
+
+                        </div>
+
+                    </div>
+                    <div class="form-card">
+
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="row " style="padding: 2px 2.5% !important;">
+                                        <div class="col-7">
+
+                                            <h2 class="fs-title">  </h2>
+                                        </div>
+
+                                        <div class="col-5">
+                                            <h2 class="steps">Step 3 - 4</h2>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <ul class="nav nav-pills mb-5" id="myTab3" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" id="home-tab3" data-bs-toggle="tab" href="#home3" role="tab" aria-controls="home" aria-selected="true">Year 1</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="profile-tab3" data-bs-toggle="tab" href="#profile3" role="tab" aria-controls="profile" aria-selected="false">Year 2</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="contact-tab3" data-bs-toggle="tab" href="#contact3" role="tab" aria-controls="contact" aria-selected="false">Year 3</a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content" id="myTabContent2">
+                                            <div class="tab-pane fade show active" id="home3" role="tabpanel" aria-labelledby="home-tab3">
+
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <div class="form-group ">
+                                                            <label class="text-uppercase" style="color: black;">moanumber year1 </label>
+                                                            <input type="text" class="form-control" id="moanumber_year1"
+                                                                   name="moanumber_year1">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group ">
+                                                            <label class="text-uppercase" style="color: black;"> Number of seedlings produced year1 </label>
+                                                            <input type="text" class="form-control" id="num_seedlings_produced_year1"
+                                                                   name="num_seedlings_produced_year1">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group ">
+                                                            <label class="text-uppercase" style="color: black;">orsno year1 </label>
+                                                            <input type="text" class="form-control" id="orsno_year1"
+                                                                   name="orsno_year1">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row">
+
+
+                                                    <div class="col-md-6">
+
+                                                        <div class="form-group ">
+                                                            <label class="text-uppercase" style="color: black;">datemoasigned year1 </label>
+                                                            <input type="date" class="form-control" id="datemoasigned_year1"
+                                                                   name="datemoasigned_year1">
+                                                        </div>
+
+                                                        <div class="form-group ">
+                                                            <label class="text-uppercase" style="color: black;">contractcost year1 </label>
+                                                            <input type="text" class="form-control" id="contractcost_year1"
+                                                                   name="contractcost_year1">
+                                                        </div>
+
+                                                        <div class="form-group ">
+                                                            <label class="text-uppercase" style="color: black;">dateobligated year1 </label>
+                                                            <input type="date" class="form-control" id="dateobligated_year1"
+                                                                   name="dateobligated_year1">
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label class="text-uppercase" style="color: black;">forestTrees  </label>
+                                                            <input type="text" class="form-control" id="forestTrees"
+                                                                   name="forestTrees">
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label class="text-uppercase" style="color: black;">fruitTrees  </label>
+                                                            <input type="text" class="form-control" id="fruitTrees"
+                                                                   name="fruitTrees">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+
+                                                        <div class="form-group ">
+                                                            <label class="text-uppercase" style="color: black;">Number of seedlings planted year1 </label>
+                                                            <input type="text" class="form-control" id="num_seedlings_planted_year1"
+                                                                   name="num_seedlings_planted_year1">
+                                                        </div>
+
+                                                        <div class="form-group ">
+                                                            <label class="text-uppercase" style="color: black;">Number of seedlings survive year1 </label>
+                                                            <input type="text" class="form-control" id="num_seedlings_survive_year1"
+                                                                   name="num_seedlings_survive_year1">
+                                                        </div>
+
+                                                        <div class="form-group ">
+                                                            <label class="text-uppercase" style="color: black;">survivalrate year1 </label>
+                                                            <input type="text" class="form-control" id="survivalrate_year1"
+                                                                   name="survivalrate_year1">
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label class="text-uppercase" style="color: black;">bamboo  </label>
+                                                            <input type="text" class="form-control" id="bamboo"
+                                                                   name="bamboo">
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label class="text-uppercase" style="color: black;">mangrove  </label>
+                                                            <input type="text" class="form-control" id="mangrove"
+                                                                   name="mangrove">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="profile3" role="tabpanel" aria-labelledby="profile-tab3">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group ">
+                                                            <label class="text-uppercase" style="color: black;">moanumber year2 </label>
+                                                            <input type="text" class="form-control" id="moanumber_year2"
+                                                                   name="moanumber_year2">
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label class="text-uppercase" style="color: black;">datemoasigned year2 </label>
+                                                            <input type="date" class="form-control" id="datemoasigned_year2"
+                                                                   name="datemoasigned_year2">
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label class="text-uppercase" style="color: black;">unitcost year2 </label>
+                                                            <input type="text" class="form-control" id="unitcost_year2"
+                                                                   name="unitcost_year2">
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label class="text-uppercase" style="color: black;">contractcost year2 </label>
+                                                            <input type="text" class="form-control" id="contractcost_year2"
+                                                                   name="contractcost_year2">
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label class="text-uppercase" style="color: black;">dateobligated year2 </label>
+                                                            <input type="date" class="form-control" id="dateobligated_year2"
+                                                                   name="dateobligated_year2">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group ">
+                                                            <label class="text-uppercase" style="color: black;">orsno year2 </label>
+                                                            <input type="text" class="form-control" id="orsno_year2"
+                                                                   name="orsno_year2">
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label class="text-uppercase" style="color: black;">Number of seedlings planted year2 </label>
+                                                            <input type="text" class="form-control" id="num_seedlings_planted_year2"
+                                                                   name="num_seedlings_planted_year2">
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label class="text-uppercase" style="color: black;">Number of seedlings survive end of year1-year2 </label>
+                                                            <input type="text" class="form-control" id="num_seedlings_survive_endofyear_1_year2"
+                                                                   name="num_seedlings_survive_endofyear_1_year2">
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label class="text-uppercase" style="color: black;">survivalrate year2 </label>
+                                                            <input type="text" class="form-control" id="survivalrate_year2"
+                                                                   name="survivalrate_year2">
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label class="text-uppercase" style="color: black;">Number of seedlings replanted year2 </label>
+                                                            <input type="text" class="form-control" id="num_seedlings_replanted_year2"
+                                                                   name="num_seedlings_replanted_year2">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                            <div class="tab-pane fade" id="contact3" role="tabpanel" aria-labelledby="contact-tab3">
+
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group ">
+                                                            <label class="text-uppercase" style="color: black;">moanumber year3 </label>
+                                                            <input type="text" class="form-control" id="moanumber_year3"
+                                                                   name="moanumber_year3">
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label class="text-uppercase" style="color: black;">datemoasigned year3 </label>
+                                                            <input type="date" class="form-control" id="datemoasigned_year3"
+                                                                   name="datemoasigned_year3">
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label class="text-uppercase" style="color: black;">unitcost year3 </label>
+                                                            <input type="text" class="form-control" id="unitcost_year3"
+                                                                   name="unitcost_year3">
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label class="text-uppercase" style="color: black;">contractcost year3 </label>
+                                                            <input type="text" class="form-control" id="contractcost_year3"
+                                                                   name="contractcost_year3">
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label class="text-uppercase" style="color: black;">dateobligated year3 </label>
+                                                            <input type="date" class="form-control" id="dateobligated_year3"
+                                                                   name="dateobligated_year3">
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group ">
+                                                            <label class="text-uppercase" style="color: black;">orsno year3 </label>
+                                                            <input type="text" class="form-control" id="orsno_year3"
+                                                                   name="orsno_year3">
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label class="text-uppercase" style="color: black;">Number of seedlings planted year3 </label>
+                                                            <input type="text" class="form-control" id="num_seedlings_planted_year3"
+                                                                   name="num_seedlings_planted_year3">
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label class="text-uppercase" style="color: black;">Number of seedlings survive end of year1-year3 </label>
+                                                            <input type="text" class="form-control" id="num_seedlings_survive_endofyear_1_year3"
+                                                                   name="num_seedlings_survive_endofyear_1_year3">
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label class="text-uppercase" style="color: black;">survivalrate year3 </label>
+                                                            <input type="text" class="form-control" id="survivalrate_year3"
+                                                                   name="survivalrate_year3">
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label class="text-uppercase" style="color: black;">Number of seedlings replanted year3 </label>
+                                                            <input type="text" class="form-control" id="num_seedlings_replanted_year3"
+                                                                   name="num_seedlings_replanted_year3">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+
+                    </div>
+                    <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                </fieldset>
+
+                <fieldset>
+                    <div class="card">
+                        <div class="card-header bg-green">
+                            <span class="text-white text-bold"> CREATE PAYMENT</span>
+
+                        </div>
+
+                    </div>
+                    <div class="form-card">
+
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-lg-12">
+                                <div class="card">
+
+                                    <div class="row" style="padding: 2px 2.5% !important;">
+                                        <div class="col-7">
+
+                                        </div>
+                                        <div class="col-5 mt-2">
+                                            <h2 class="steps">Step 4 - 4</h2>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul class="nav nav-pills" id="myTab4" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active show" id="home-tab4" data-bs-toggle="tab" href="#home4" role="tab" aria-controls="home" aria-selected="true">Year1</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="profile-tab4" data-bs-toggle="tab" href="#profile4" role="tab" aria-controls="profile" aria-selected="false">Year2</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="contact-tab4" data-bs-toggle="tab" href="#contact4" role="tab" aria-controls="contact" aria-selected="false">Year3</a>
+                                            </li>
+                                        </ul>
+
+                                        <div class="row">
+                                            <div class="col-12 col-sm-12 col-md-12">
+                                                <div class="tab-content no-padding" id="myTab2Content">
+                                                    <div class="tab-pane fade active show" id="home4" role="tabpanel" aria-labelledby="home-tab4">
+
+                                                        @*1st release*@
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+
+                                                                <div class="row mt-5">
+                                                                    <div class="col-md-12">
+                                                                        <h5>1st Release</h5>
+                                                                    </div>
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">Gross Ammount</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="grossammount_year1_1st"
+                                                                                       name="grossammount_year1_1st" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">Iddap No</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="lddap_no_year1_1st"
+                                                                                       name="lddap_no_year1_1st" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">date lddap year1-1st</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="date_lddap_year1_1st"
+                                                                                       name="date_lddap_year1_1st" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-12">
+
+                                                                <div class="row mt-5">
+                                                                    <div class="col-md-12">
+
+                                                                        <h5>2nd Release</h5>
+                                                                    </div>
+                                                                    <div class="form-group col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">Gross Ammount</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="grossammount_year1_2nd"
+                                                                                       name="grossammount_year1_2nd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">retention fee year1-2nd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="retentionfee_year1_2nd"
+                                                                                       name="retentionfee_year1_2nd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">mobilization fund year1-2nd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="mobilization_fund_year1_2nd"
+                                                                                       name="mobilization_fund_year1_2nd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">amountlessrf mf year1-2nd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="amountless_rf_mf_year1_2nd"
+                                                                                       name="amountless_rf_mf_year1_2nd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">bir year1-2nd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="bir_year1_2nd"
+                                                                                       name="bir_year1_2nd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">netammountpaid year1-2nd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="netammountpaid_year1_2nd"
+                                                                                       name="netammountpaid_year1_2nd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">lddapno year1-2nd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="lddapno_year1_2nd"
+                                                                                       name="lddapno_year1_2nd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-6">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">date lddap year1-2nd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="date_lddap_year1_2nd"
+                                                                                       name="date_lddap_year1_2nd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        @*2nd release*@
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+
+
+                                                                <div class="row mt-5">
+                                                                    <div class="col-md-12">
+
+                                                                        <h5>3rd Release</h5>
+                                                                    </div>
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">Gross Ammount year1-3rd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="grossammount_year1_3rd"
+                                                                                       name="grossammount_year1_3rd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">retention fee year1-3rd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="retentionfee_year1_3rd"
+                                                                                       name="retentionfee_year1_3rd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">mobilization fund year1-3rd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="mobilization_fund_year1_2nd"
+                                                                                       name="mobilization_fund_year1_3rd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">amountless rf mf year1-3rd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="amountless_rf_mf_year1_3rd"
+                                                                                       name="amountless_rf_mf_year1_3rd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">bir year1-3rd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="bir_year1_3rd"
+                                                                                       name="bir_year1_3rd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">netammountpaid year1-3rd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="netammountpaid_year1_3rd"
+                                                                                       name="netammountpaid_year1_3rd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">lddapno year1-3rd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="lddapno_year1_3rd"
+                                                                                       name="lddapno_year1_3rd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">date lddap year1-3rd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="date_lddap_year1_3rd"
+                                                                                       name="date_lddap_year1_3rd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+
+                                                                <div class="row mt-5">
+                                                                    <div class="col-md-12">
+
+                                                                        <h5>4th Release</h5>
+                                                                    </div>
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">Gross Ammount year1-4th</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="grossammount_year1_4th"
+                                                                                       name="grossammount_year1_4th" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">retention fee year1-4th</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="retentionfee_year1_4th"
+                                                                                       name="retentionfee_year1_4th" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">mobilization fund year1-4th</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="mobilization_fund_year1_4th"
+                                                                                       name="mobilization_fund_year1_4th" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">amountless rf_mf year1-4th</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="amountless_rf_mf_year1_4th"
+                                                                                       name="amountless_rf_mf_year1_4th" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">bir year1-4th</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="bir_year1_4th"
+                                                                                       name="bir_year1_4th" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">netammountpaid year1-4th</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="netammountpaid_year1_4th"
+                                                                                       name="netammountpaid_year1_4th" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">lddapno year1-4th</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="lddapno_year1_4th"
+                                                                                       name="lddapno_year1_4th" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">date lddap year1-4th</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="date_lddap_year1_4th"
+                                                                                       name="date_lddap_year1_4th" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+
+                                                                <div class="row mt-5">
+                                                                    <div class="col-md-12">
+
+                                                                        <h5>5th Release</h5>
+                                                                    </div>
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">Gross Ammount year1-5th</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="grossammount_year1_5th"
+                                                                                       name="grossammount_year1_5th" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">retention fee year1-5th</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="retentionfee_year1_5th"
+                                                                                       name="retentionfee_year1_5th" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">mobilization fund year1-5th</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="mobilization_fund_year1_5th"
+                                                                                       name="mobilization_fund_year1_5th" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">amountless rf mf year1-5th</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="amountless_rf_mf_year1_5th"
+                                                                                       name="amountless_rf_mf_year1_5th" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">bir year1-5th</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="bir_year1_5th"
+                                                                                       name="bir_year1_5th" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">netammountpaid year1-5th</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="netammountpaid_year1_5th"
+                                                                                       name="netammountpaid_year1_5th" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">lddapno year1-5th</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="lddapno_year1_5th"
+                                                                                       name="lddapno_year1_5th" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">date lddap year1-5th</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="date_lddap_year1_5th"
+                                                                                       name="date_lddap_year1_5th" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+
+                                                                <div class="row mt-5">
+                                                                    <div class="col-md-12">
+
+                                                                        <h5>6th Release</h5>
+
+                                                                    </div>
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">Gross Ammount year1-6th</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="grossammount_year1_6th"
+                                                                                       name="grossammount_year1_6th" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">retention fee year1-6th</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="retentionfee_year1_6th"
+                                                                                       name="retentionfee_year1_6th" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">mobilization fund year1-6th</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="mobilization_fund_year1_6th"
+                                                                                       name="mobilization_fund_year1_6th" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">amountless rf mf year1-6th</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="amountless_rf_mf_year1_6th"
+                                                                                       name="amountless_rf_mf_year1_6th" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">bir year1-6th</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="bir_year1_6th"
+                                                                                       name="bir_year1_6th" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">netammountpaid year1-6th</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="netammountpaid_year1_6th"
+                                                                                       name="netammountpaid_year1_6th" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">lddapno year1-6th</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="lddapno_year1_6th"
+                                                                                       name="lddapno_year1_6th" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">date lddap year1-6th</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="date_lddap_year1_6th"
+                                                                                       name="date_lddap_year1_6th" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+
+                                                    </div>
+                                                    <div class="tab-pane fade" id="profile4" role="tabpanel" aria-labelledby="profile-tab4">
+
+
+
+                                                        @*YEAR 2  FOR PAYMENTS*@
+
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+
+
+                                                                <div class="row mt-5">
+                                                                    <div class="col-md-12">
+
+                                                                        <h5>1st Release</h5>
+                                                                    </div>
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">survivalrate year2-1stt</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="survivalrate_year2_1st"
+                                                                                       name="survivalrate_year2_1st" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">grossammount year2-1st</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="grossammount_year2_1st"
+                                                                                       name="grossammount_year2_1st" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">retentionfee year2-1st</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="retentionfee_year2_1st"
+                                                                                       name="retentionfee_year2_1st" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">amountless rf year2-1st</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="amountless_rf_year2_1st"
+                                                                                       name="amountless_rf_year2_1st" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">bir year2-1st</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="bir_year2_1st"
+                                                                                       name="bir_year2_1st" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">netamount paid year2-1st</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="netamount_paid_year2_1st"
+                                                                                       name="netamount_paid_year2_1st" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">lddapno year2-1st</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="lddapno_year2_1st"
+                                                                                       name="lddapno_year2_1st" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">date lddap year2-1st</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="date_lddap_year2_1st"
+                                                                                       name="date_lddap_year2_1st" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+
+                                                                @*YEAR 2 FOR PAYMENTS*@
+                                                                <div class="row mt-5">
+                                                                    <div class="col-md-12">
+
+                                                                        <h5>2nd Release</h5>
+                                                                    </div>
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">survivalrate year2-2nd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="survivalrate_year2_2nd"
+                                                                                       name="survivalrate_year2_2nd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">grossammount year2-2nd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="grossammount_year2_2nd"
+                                                                                       name="grossammount_year2_2nd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">retentionfee year2-2nd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="retentionfee_year2_2nd"
+                                                                                       name="retentionfee_year2_2nd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">amountless rf year2-2nd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="amountless_rf_year2_2nd"
+                                                                                       name="amountless_rf_year2_2nd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">bir year2-2nd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="bir_year2_2nd"
+                                                                                       name="bir_year2_2nd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">netamount paid year2-2nd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="netamount_paid_year2_2nd"
+                                                                                       name="netamount_paid_year2_2nd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">lddapno year2-2nd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="lddapno_year2_2nd"
+                                                                                       name="lddapno_year2_2nd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">date lddap year2-2nd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="date_lddap_year2_2nd"
+                                                                                       name="date_lddap_year2_2nd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+
+                                                                @*YEAR2 FOR PAYMENTS*@
+                                                                <div class="row mt-5">
+                                                                    <div class="col-md-12">
+
+                                                                        <h5>3rd Release</h5>
+                                                                    </div>
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">survivalrate year2-3rd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="survivalrate_year2_3rd"
+                                                                                       name="survivalrate_year2_3rd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">grossammount year2-3rd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="grossammount_year2_3rd"
+                                                                                       name="grossammount_year2_3rd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">retentionfee year2-3rd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="retentionfee_year2_3rd"
+                                                                                       name="retentionfee_year2_3rd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">amountless rf year2-3rd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="amountless_rf_year2_3rd"
+                                                                                       name="amountless_rf_year2_3rd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">bir year2-3rd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="bir_year2_3rd"
+                                                                                       name="bir_year2_3rd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">netamount paid year2-3rd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="netamount_paid_year2_3rd"
+                                                                                       name="netamount_paid_year2_3rd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">lddapno year2-3rd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="lddapno_year2_3rd"
+                                                                                       name="lddapno_year2_3rd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">date lddap year2-3rd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="date_lddap_year2_3rd"
+                                                                                       name="date_lddap_year2_3rd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+
+                                                                <div class="row mt-5">
+                                                                    <div class="col-md-12">
+                                                                        @*YEAR2 FOR PAYMENTS*@
+                                                                        <h5>4th Release</h5>
+                                                                    </div>
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">survivalrate year2-4th</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="survivalrate_year2_4th"
+                                                                                       name="survivalrate_year2_4th" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">grossammount year2-4th</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="grossammount_year2_4th"
+                                                                                       name="grossammount_year2_4th" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">retentionfee year2 4th</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="retentionfee_year2_4th"
+                                                                                       name="retentionfee_year2_4th" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">amountless rf year2-4th</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="amountless_rf_year2_4th"
+                                                                                       name="amountless_rf_year2_4th" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">bir year2-4th</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="bir_year2_4th"
+                                                                                       name="bir_year2_4th" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">netamount paid year2-4th</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="netamount_paid_year2_4th"
+                                                                                       name="netamount_paid_year2_4th" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">lddapno year2-4th</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="lddapno_year2_4th"
+                                                                                       name="lddapno_year2_4th" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">date lddap year2-4th</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="date_lddap_year2_4th"
+                                                                                       name="date_lddap_year2_4th" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+
+                                                    </div>
+                                                    <div class="tab-pane fade" id="contact4" role="tabpanel" aria-labelledby="contact-tab4">
+
+
+
+                                                        @*YEAR 3  FOR PAYMENTS*@
+
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+
+
+                                                                <div class="row mt-5">
+                                                                    <div class="col-md-12">
+
+                                                                        <h5>1st Release</h5>
+                                                                    </div>
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">grossammount year3-1st</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="grossammount_year3_1st"
+                                                                                       name="grossammount_year3_1st" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">survivalrate year3-1st</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="survivalrate_year3_1st"
+                                                                                       name="survivalrate_year3_1st" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">biryear3-1st</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="bir_year3_1st"
+                                                                                       name="bir_year3_1st" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">netamount paid year3-1st</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="netamount_paid_year3_1st"
+                                                                                       name="netamount_paid_year3_1st" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">lddapno year3-1st</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="lddapno_year3_1st"
+                                                                                       name="lddapno_year3_1st" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">retentionfee year3-1st</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="retentionfee_year3_1st"
+                                                                                       name="retentionfee_year3_1st" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">amountless rf year3-1st</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="amountless_rf_year3_1st"
+                                                                                       name="amountless_rf_year3_1st" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">date lddap year3-1st</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="date_lddap_year3_1st"
+                                                                                       name="date_lddap_year3_1st" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+
+                                                                @*YEAR 3 FOR PAYMENTS*@
+                                                                <div class="row mt-5">
+                                                                    <div class="col-md-12">
+
+                                                                        <h5>2nd Release</h5>
+                                                                    </div>
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">survivalrate year3-2nd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="survivalrate_year3_2nd"
+                                                                                       name="survivalrate_year3_2nd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">grossammount year3-2nd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="grossammount year3-2nd"
+                                                                                       name="grossammount year3-2nd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">retentionfee year3-2nd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="retentionfee_year3_2nd"
+                                                                                       name="retentionfee_year3_2nd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">amountless rf year3-2nd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="amountless_rf_year3_2nd"
+                                                                                       name="amountless_rf_year3_2nd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">bir year3 2nd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="bir_year3_2nd"
+                                                                                       name="bir_year3_2nd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">netamount paid year3-2nd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="netamount_paid_year3_2nd"
+                                                                                       name="netamount_paid_year3_2nd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">lddapno year3-2nd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="lddapno_year3_2nd"
+                                                                                       name="lddapno_year3_2nd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">date lddap year3-2nd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="date_lddap_year3_2nd"
+                                                                                       name="date_lddap_year3_2nd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+
+                                                                @*YEAR 3 FOR PAYMENTS*@
+                                                                <div class="row mt-5">
+                                                                    <div class="col-md-12">
+
+                                                                        <h5>3rd Release</h5>
+                                                                    </div>
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">survivalrate year3-3rd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="survivalrate_year3_3rd"
+                                                                                       name="survivalrate_year3_3rd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">grossammount year3-3rd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="grossammount_year3_3rd"
+                                                                                       name="grossammount_year3_3rd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">retentionfee year3-3rd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="retentionfee_year3_3rd"
+                                                                                       name="retentionfee_year3_3rd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">amountless rf year3-3rd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="amountless_rf_year3_3rd"
+                                                                                       name="amountless_rf_year3_3rd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label style="color: black;">bir_year3_3rd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="bir_year3_3rd"
+                                                                                       name="bir_year3_3rd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">netamount paid year3-3rd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="netamount_paid_year3_3rd"
+                                                                                       name="netamount_paid_year3_3rd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">lddapno year3-3rd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="lddapno_year3_3rd"
+                                                                                       name="lddapno_year3_3rd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">date lddap year3-3rd</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="date_lddap_year3_3rd"
+                                                                                       name="date_lddap_year3_3rd" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+
+                                                                <div class="row mt-5">
+                                                                    <div class="col-md-12">
+                                                                        @*YEAR 3 FOR PAYMENTS*@
+                                                                        <h5>4th Release</h5>
+                                                                    </div>
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">survivalrate year3-4th</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="survivalrate_year3_4th"
+                                                                                       name="survivalrate_year3_4th" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">grossammount year3-4th</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="grossammount_year3_4th"
+                                                                                       name="grossammount_year3_4th" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">retentionfee year3-4th</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="retentionfee_year3_4th"
+                                                                                       name="retentionfee_year3_4th" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">amountless rf year3-4th</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="amountless_rf_year3_4th"
+                                                                                       name="amountless_rf_year3_4th" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">bir year3-4th</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="bir_year3_4th"
+                                                                                       name="bir_year3_4th" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">netamount paid year3-4th</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="netamount_paid_year3_4th"
+                                                                                       name="netamount_paid_year3_4th" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">lddapno year3-4th</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="lddapno_year3_4th"
+                                                                                       name="lddapno_year3_4th" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="form-group col-md-12">
+                                                                        <div class="row">
+                                                                            <div class="col-md-2">
+                                                                                <label class="text-uppercase" style="color: black;">date lddap year3-4th</label>
+                                                                            </div>
+                                                                            <div class="col-md-10">
+
+                                                                                <input type="text" class="form-control" id="date_lddap_year3_4th"
+                                                                                       name="date_lddap_year3_4th" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                    <button type="submit" class="next action-button" value="Submit">Save</button>
+
+
+                    <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+
+
+                </fieldset>
+
+
+
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="pleasewaitModal">
+    <div class="modal-dialog modal-m modal-dialog-centered">
+        <div class="modal-content">
+            <img id="loading" style="height: 100%; width: 100%; padding-left: 8px; " src="~/Images/picturepleasewait.gif" />
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script>$(document).ready(function () {
+        ContractorAnimation();
+
+    });
+
+
+    inputElements.forEach(function (input) {
+        // Skip these elements
+        if (input.classList.contains('next') || input.classList.contains('previous') ||
+            input.id == "forest_trees_checkbox" || input.id == "forest_trees_year1" ||
+            input.id == "fruit_trees_checkbox" || input.id == "fruit_trees_year1" ||
+            input.id == "bamboo_checkbox" || input.id == "bamboo_year1" ||
+            input.id == "mangrove_checkbox" || input.id == "mangrove_year1") {
+            return;
+        }
+
+        // Ccheckbox
+        var nullCheckbox = document.createElement('input');
+        nullCheckbox.setAttribute('type', 'checkbox');
+        nullCheckbox.setAttribute('id', input.id + '_null_checkbox');
+        nullCheckbox.setAttribute('onchange', 'handleNullCheckbox("' + input.id + '", this)');
+
+        // Label
+        var label = document.createElement('label');
+        label.setAttribute('for', input.id + '_null_checkbox');
+        label.textContent = 'N/A';
+
+        // Insert the new checkbox and label after the current input or select element
+        input.insertAdjacentElement('afterend', label);
+        input.insertAdjacentElement('afterend', nullCheckbox);
+    });
+
+    function handleNullCheckbox(inputId, nullCheckbox) {
+        var inputField = document.getElementById(inputId);
+
+        if (nullCheckbox.checked) {
+            inputField.value = '';
+            inputField.disabled = true; // Disable editing
+            inputField.style = 'background-color: #ada5a5;';
+        } else {
+            inputField.disabled = false; // Enable editing
+            inputField.style = 'background-color: #ECEFF1;';
+        }
+    }
+
+    function toggleCommodityTextField(checkbox) {
+        var textFieldId = checkbox.id.replace("_checkbox", "_year1");
+        var textField = document.getElementById(textFieldId);
+
+        if (checkbox.checked) {
+            textField.style.display = "block";
+            textField.focus();
+        } else {
+            textField.style.display = "none";
+            textField.value = "";
+        }
+    }</script>
+
+
+

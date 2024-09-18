@@ -2540,14 +2540,11 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
-    <Content Include="Views\Account\Index.cshtml" />
     <Content Include="Views\NgpManagement\Login.cshtml" />
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />
     <Content Include="Views\Account\AdminNameViewinProfile.cshtml" />
     <Content Include="Views\Account\DisplayPicNameandRole.cshtml" />
-    <Content Include="Views\Contractor\Create.cshtml" />
     <Content Include="Views\Project\Create.cshtml" />
-    <Content Include="Views\Information\Index.cshtml" />
     <Content Include="Views\Contract\Create.cshtml" />
     <Content Include="Views\Payment\Create.cshtml" />
     <Content Include="Views\Sched\Create.cshtml" />
@@ -2562,7 +2559,6 @@
     <Content Include="Views\UserActivityLogs\UserContractLogs.cshtml" />
     <Content Include="Views\UserActivityLogs\UserPaymentLogs.cshtml" />
     <Content Include="Views\UserActivityLogs\UserAccountLogs.cshtml" />
-    <Content Include="Views\Account\Dashboard.cshtml" />
     <Content Include="Views\Account\DisplayPcitureOnlyDeveloperOnly.cshtml" />
     <Content Include="Views\Shared\_LayoutDeveloper.cshtml" />
     <Content Include="Views\Account\UserView.cshtml" />
@@ -2570,6 +2566,17 @@
     <Content Include="Views\Dashboard\Administrator.cshtml" />
     <Content Include="Views\Dashboard\Users.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Account\Developer.cshtml" />
+    <Content Include="Views\Dashboard\NgpLogsDeveloper.cshtml" />
+    <Content Include="Views\Dashboard\NgpLogsAdministrator.cshtml" />
+    <Content Include="Views\Dashboard\NgpLogsUser.cshtml" />
+    <Content Include="Views\Account\Administrator.cshtml" />
+    <Content Include="Views\Contractor\Developer.cshtml" />
+    <Content Include="Views\Contractor\Users.cshtml" />
+    <Content Include="Views\Contractor\Administrator.cshtml" />
+    <Content Include="Views\Information\Developer.cshtml" />
+    <Content Include="Views\Information\Administrator.cshtml" />
+    <Content Include="Views\Information\Users.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

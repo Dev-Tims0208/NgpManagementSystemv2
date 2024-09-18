@@ -52,7 +52,7 @@ namespace NgpManagementSystem.Controllers
                 //Add key-values in the cookie
                 myCookie.Values.Add("Role_Id", result.RoleID.ToString());
                 myCookie.Values.Add("LoginID", result.Id.ToString());
-                myCookie.Values.Add("RoleName", result.RoleName.ToString());
+                //myCookie.Values.Add("RoleName", result.RoleName.ToString());
 
                 //set cookie expiry date-time. Made it to last for next 12 hours.
                 myCookie.Expires = DateTime.Now.AddHours(12);

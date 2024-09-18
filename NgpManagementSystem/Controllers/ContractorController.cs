@@ -27,7 +27,7 @@ namespace NgpManagementSystem.Controllers
             }
             return View();
         }
-        public ActionResult Create()
+        public ActionResult Developer()
         {
             if (Request.Cookies["auth"].Values["Role_Id"] == null)
             {
@@ -35,6 +35,25 @@ namespace NgpManagementSystem.Controllers
             }
             return View();
         }
+        public ActionResult Administrator()
+        {
+            if (Request.Cookies["auth"].Values["Role_Id"] == null)
+            {
+                return RedirectToAction("logout", "NgpManagement");
+            }
+            return View();
+        }
+
+        public ActionResult Users()
+        {
+            if (Request.Cookies["auth"].Values["Role_Id"] == null)
+            {
+                return RedirectToAction("logout", "NgpManagement");
+            }
+            return View();
+        }
+
+
         public ActionResult GetContractorTable()
         {
             //Server Side Parameter

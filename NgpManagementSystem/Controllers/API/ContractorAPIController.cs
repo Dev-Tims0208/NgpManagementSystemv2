@@ -32,6 +32,7 @@ namespace NgpManagementSystem.Controllers.API
             var contractor = Mapper.Map<ContractorDTO, ngp_contractor>(contractorDTO);
 
             var sess_id = Request.Headers.GetCookies("auth").FirstOrDefault()?["auth"].Values.Get("LoginID");
+
             if (contractorDTO.contractorID == 0)
             {
 
@@ -294,7 +295,7 @@ namespace NgpManagementSystem.Controllers.API
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var sess_id = (int)HttpContext.Current.Session["LoginID"];
+            var sess_id = Request.Headers.GetCookies("auth").FirstOrDefault()?["auth"].Values.Get("LoginID");
             var contractorinDb = Db.ngp_contractor.SingleOrDefault(d => d.contractorID == id);
             if (contractorinDb == null)
             {
@@ -333,6 +334,12 @@ namespace NgpManagementSystem.Controllers.API
             contractorinDb.mangrove_year1 = contractorDTO.mangrove_year1;
             contractorinDb.num_seedlings_planted_year1 = contractorDTO.num_seedlings_planted_year1;
             contractorinDb.survivalrate_year1 = contractorDTO.survivalrate_year1;
+
+            //added
+            contractorinDb.fruitTrees = contractorDTO.fruitTrees;
+            contractorinDb.forestTrees = contractorDTO.forestTrees;
+            contractorinDb.bamboo = contractorDTO.bamboo;
+            contractorinDb.mangrove = contractorDTO.mangrove;
             //for contract year 2
             contractorinDb.moanumber_year2 = contractorDTO.moanumber_year2;
             contractorinDb.datemoasigned_year2 = contractorDTO.datemoasigned_year2;
@@ -505,13 +512,22 @@ namespace NgpManagementSystem.Controllers.API
             contractorinDb.lddapno_year3_4th = contractorDTO.lddapno_year3_4th;
             contractorinDb.date_lddap_year3_4th = contractorDTO.date_lddap_year3_4th;
 
-
-
             contractorinDb.DateAdded  = DateTime.Now;
 
+            Db.NgpLogs.Add(new NgpLog()
+            {
+                Date = DateTime.Now,
+                Name = Db.NgpUsers.FirstOrDefault(o => o.Id.ToString() == sess_id)?.Name,
+                UserName = Db.NgpUsers.FirstOrDefault(o => o.Id.ToString() == sess_id)?.UserName,
+                LogMessage = "Edit a Contractor " + "Name: " + contractorDTO.contractor_name    
+                + "Address Municipality: " + contractorDTO.address_municipality  
+                +  "Address Barangay: " + contractorDTO.address_barangay
+                + "Contractor Type: " + contractorDTO.contractor_type,
+                UserId = Db.NgpUsers.FirstOrDefault(o => o.Id.ToString() == sess_id)?.Id,
+                RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id.ToString() == sess_id)?.RoleID,
+                Position = Db.NgpUsers.FirstOrDefault(o => o.Id.ToString() == sess_id)?.Position,
 
-
-
+            });
 
             Db.SaveChanges();
             return Ok();
@@ -523,7 +539,7 @@ namespace NgpManagementSystem.Controllers.API
         [Route("api/contractordelete/delete/{id}")]
         public IHttpActionResult DeleteContractor(int id)
         {
-            var sess_id = (int)HttpContext.Current.Session["LoginID"];
+            var sess_id = Request.Headers.GetCookies("auth").FirstOrDefault()?["auth"].Values.Get("LoginID");
             var contractorinDb = Db.ngp_contractor.SingleOrDefault(d => d.contractorID == id);
             if (contractorinDb == null)
             {
@@ -534,18 +550,16 @@ namespace NgpManagementSystem.Controllers.API
             {
 
                 Date = DateTime.Now,
-                Name = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Name,
-                UserName = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.UserName,
+                Name = Db.NgpUsers.FirstOrDefault(o => o.Id.ToString() == sess_id)?.Name,
+                UserName = Db.NgpUsers.FirstOrDefault(o => o.Id.ToString() == sess_id)?.UserName,
                 LogMessage = "Delete a Contractor " + "Name: " + contractorinDb.contractor_name,
-                UserId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Id,
-                RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.RoleID,
-                Position = Db.NgpUsers.FirstOrDefault(o => o.Id == sess_id)?.Position,
+                UserId = Db.NgpUsers.FirstOrDefault(o => o.Id.ToString() == sess_id)?.Id,
+                RoleId = Db.NgpUsers.FirstOrDefault(o => o.Id.ToString() == sess_id)?.RoleID,
+                Position = Db.NgpUsers.FirstOrDefault(o => o.Id.ToString() == sess_id)?.Position,
 
 
             });
             Db.SaveChanges();
-
-
             return Ok();
         }
 
