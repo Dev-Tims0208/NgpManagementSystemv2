@@ -52,6 +52,14 @@ namespace NgpManagementSystem.Controllers.API
             return Ok(role);
         }
 
+        [HttpGet]
+        [Route("api/roledatauser/get")]
+        public IHttpActionResult GetRoleDataUser()
+        {
+            var role = Db.NgpRoles.ToList().Where(a=>a.Id != 1 &&  a.Id != 2).Select(Mapper.Map<NgpRole, RoleDTO>);
+            return Ok(role);
+        }
+
         //GET DATA ONLY FOR EDIT ACCOUNT with ID
         [HttpGet]
         [Route("api/editaccount/geteditaccount/{id}")]

@@ -50,7 +50,14 @@
 
 
         </div>
+        <div class="text-center mt-2">
+            @{ if (Request.Cookies["auth"].Values["Role_Id"] == "1")
 
+                {
+                    Html.RenderAction("DisplayPcitureOnlyDeveloperOnly", "Account");
+                }
+            }
+        </div>
         <hr class="horizontal dark mt-0">
 
         <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
@@ -83,7 +90,7 @@
                         <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
                         </div>
-                        <span class="nav-link-text ms-1 text-uppercase" > Contractor</span>
+                        <span class="nav-link-text ms-1 text-uppercase"> Contractor</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -104,16 +111,6 @@
                 </li>
 
             </ul>
-        </div>
-        <div class="sidenav-footer mx-3 ">
-
-        </div>
-        <div class="card card-plain shadow-none mt-5" id="sidenavCard">
-
-            <div class="card-body text-center p-3 w-100 pt-0">
-                <div class="docs-info">
-                </div>
-            </div>
             <div class="text-center mt-5 " style=" background-color: #edf7ef !important; border-radius: 15px !important; margin:  7.5% !important;">
                 <a href="/NgpManagement/logout" target="">
                     <img class="w-20 mx-auto " src="~/DefaultImage/icons8-leave-100.png" alt="" width="100" />
@@ -123,7 +120,7 @@
                 </a>
             </div>
         </div>
-
+       
     </aside>
 
     <main class="main-content position-relative border-radius-lg ">
@@ -387,13 +384,6 @@
         });
     </script>
 
-
-    <script>
-
-    $.get('@Url.Action("MyActionThatGeneratesAPartial", "mycontrollerpartial")', {id : 1}, function(data){
-            $("#myActionContentContainer").html(data);
-        });
-    </script>
     <script>
             $(window).ready(function () {
                 TotalCounts();

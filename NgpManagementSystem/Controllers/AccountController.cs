@@ -70,8 +70,11 @@ namespace NgpManagementSystem.Controllers
                 //SHOWING FILTER DATA BASE ON ROLE ID  DEPENDENT IN LOGIN ID
                 var sess_id = Request.Cookies["auth"].Values["LoginID"];
 
-             
-               
+                if (Request.Cookies["auth"].Values["Role_Id"] != "1")
+                {
+                    userlist = userlist.Where(d => d.Id.ToString() == sess_id);
+                }
+
 
 
 
@@ -244,22 +247,35 @@ namespace NgpManagementSystem.Controllers
             {
                 return RedirectToAction("logout", "NgpManagement");
             }
-
-            var adminname = Db.NgpUploads.ToList();
+            NgpUpload pic = new NgpUpload();
+            var imageuploadprofile = Db.NgpUploads.ToList();
 
             var sess_id = Request.Cookies["auth"].Values["LoginID"];
             var userID = Db.NgpUploads.FirstOrDefault(o => o.AccountId.ToString() == sess_id)?.AccountId;
 
-            adminname = adminname.Where(d => d.AccountId == userID).ToList();
+
+            if (Request.Cookies["auth"].Values["Role_Id"] == "3")
+            {
+                pic = imageuploadprofile.LastOrDefault(d => d.AccountId == userID);
+            }
+
+          else  if (Request.Cookies["auth"].Values["Role_Id"] == "2")
+            {
+                pic = imageuploadprofile.LastOrDefault(d => d.AccountId == userID);
+            }
+            else if (Request.Cookies["auth"].Values["Role_Id"] == "1")
+            {
+                pic = imageuploadprofile.LastOrDefault(d => d.AccountId == userID);
+            }
 
 
-            return PartialView(adminname);
+            return PartialView(pic);
         }
 
 
-      
 
 
+    
 
 
     }

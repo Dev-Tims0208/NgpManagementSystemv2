@@ -1,8 +1,49 @@
-﻿
-@{
-    ViewBag.Title = "NgpLogsUser";
-    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+﻿﻿@{
+
+
+    Layout = Request.Cookies["auth"].Values["Role_Id"] == "3" ? "~/Views/Shared/_LayoutUser.cshtml" : "";
 }
 
-<h2>NgpLogsUser</h2>
+<div class="row">
+    <div class="col-12 mt-5">
+        <div class="card">
+            <div class="card-header">
+                <h6>TOTAL LOGS TABLE</h6>
+
+            </div>
+
+            <div class="card-body p-0">
+                <div class="table-responsive ms-3  mx-3">
+                    <table class="table table-striped" id="logstotaldatatableuser" width="100%">
+                        <thead>
+                            <tr>
+                                <th class="">MESSAGE LOGS</th>
+                                <th class="">HIDE</th>
+                                <th class="">DATE</th>
+                                <th class="">CREATE BY</th>
+                                <th class="">POSITION</th>
+                                <th class="">ROLE</th>
+
+                            </tr>
+                        </thead>
+
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+<script>
+    $(document).ready(function () {
+
+        NgpTotalLogs();
+    });</script>
+
 
