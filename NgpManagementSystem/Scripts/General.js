@@ -2976,7 +2976,7 @@ function ContractorAdministratorAnimation() {
                     toastr.success('Successsfully Added a Contractor');
                     setTimeout(function () {
                         location.reload();
-                        window.location.href = "/Information/Index";
+                        window.location.href = "/Information/Administrator";
                     }, 2000)
                 }, 2000);
             }
