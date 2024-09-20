@@ -183,7 +183,7 @@
 @*EDIT ACCOUNT IN MODAL*@
 
 <div class="modal fade" id="editAccountModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+    <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header bg-green">
                 <h5 class="modal-title text-white" id="staticBackdropLabel">EDIT ACCOUNT</h5>
@@ -211,15 +211,14 @@
                             <div class="input-group">
 
 
-                                <input type="text" class="form-control" name="name" id="name" value="" />
+                                <input type="text" class="form-control" name="name" id="name" value=""readonly />
                             </div>
 
 
                             <label for="RoleID">Role</label>
 
-                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
                             <select class="form-control" style="width:100%" name="roleID" id="roleID">
-                                <option value="">Please Select a Role</option>
+                               
                             </select>
 
 
@@ -228,14 +227,14 @@
                         <div class="col-sm-6">
                             <label for="name">Email</label>
                             <div class="input-group">
-                                <span class="input-group-addon"><i class="ti-email"></i></span>
-                                <input type="email" class="form-control" name="email" id="email" value="" />
+                         
+                                <input type="email" class="form-control" style="width:100%" name="email" id="email" value=""  readonly/>
                             </div>
 
                             <label for="name">UserName</label>
                             <div class="input-group">
-                                <span class="input-group-addon"><i class="ti-user"></i></span>
-                                <input type="text" class="form-control" name="userName" id="userName" value="" />
+                               
+                                <input type="text" class="form-control" name="userName" id="userName" value=""  />
                             </div>
                         </div>
 

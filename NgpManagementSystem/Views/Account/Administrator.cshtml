@@ -224,16 +224,11 @@
                             <div class="input-group">
 
 
-                                <input type="text" class="form-control" name="name" id="name" value="" />
+                                <input type="text" class="form-control" name="name" id="name" value="" readonly />
                             </div>
 
 
-                            <label for="RoleID">Role</label>
 
-                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                            <select class="form-control" style="width:100%" name="roleID" id="roleID">
-                                <option value="">Please Select a Role</option>
-                            </select>
 
 
 
@@ -241,20 +236,32 @@
                         <div class="col-sm-6">
                             <label for="name">Email</label>
                             <div class="input-group">
-                                <span class="input-group-addon"><i class="ti-email"></i></span>
-                                <input type="email" class="form-control" name="email" id="email" value="" />
+                    
+                                <input type="email" class="form-control" name="email" id="email" value="" readonly />
                             </div>
 
+
+
+                        </div>
+
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
                             <label for="name">UserName</label>
                             <div class="input-group">
-                                <span class="input-group-addon"><i class="ti-user"></i></span>
+                               
                                 <input type="text" class="form-control" name="userName" id="userName" value="" />
                             </div>
                         </div>
-
                     </div>
-                    <br />
-                    <div class="text-center">
+
+
+
+                    <select class="form-control" style="width:100%" name="roleID" id="roleID" hidden>
+                        <option value="">Please Select a Role</option>
+                    </select>
+                    <div class="text-center mt-4">
 
                         <button class="btn btn-success btn-sm text-white btn-grd-*" id="btnsubmit" type="submit">SAVE CHANGES</button>
                     </div>

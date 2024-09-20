@@ -53,6 +53,14 @@ namespace NgpManagementSystem.Controllers.API
         }
 
         [HttpGet]
+        [Route("api/roledataadminisstrator/get")]
+        public IHttpActionResult GetRoleDataAdministrator()
+        {
+            var role = Db.NgpRoles.ToList().Where(a => a.Id != 1 && a.Id != 2).Select(Mapper.Map<NgpRole, RoleDTO>);
+            return Ok(role);
+        }
+
+        [HttpGet]
         [Route("api/roledatauser/get")]
         public IHttpActionResult GetRoleDataUser()
         {

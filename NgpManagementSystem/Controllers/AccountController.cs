@@ -137,7 +137,9 @@ namespace NgpManagementSystem.Controllers
             {
                 IQueryable<NgpUser> userlist = Db.NgpUsers;
 
-              
+                var sess_id = Request.Cookies["auth"].Values["LoginID"];
+
+             
 
 
                 int totalrows = userlist.Count();
@@ -157,7 +159,7 @@ namespace NgpManagementSystem.Controllers
 
                 int totalrowsafterfiltering = userlist.Count();
                 //sorting
-                userlist = userlist.OrderBy(sortColumnName + " " + sortDirection)
+                userlist = userlist.OrderBy(sortColumnName + " " + sortDirection).Where(a=>a.RoleID == 3  || a.Id.ToString() == sess_id)
                     .OrderByDescending(a => a.Id); //ADD SYSTEM LINQ DYNAMINC IN NUGGET MANAGER(DOWNLOAD)
 
                 //paging
